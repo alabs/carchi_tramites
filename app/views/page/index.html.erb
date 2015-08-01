@@ -1,0 +1,17 @@
+<div class="starter-template">
+  <h1>Eventos</h1>
+  <div class="lead"> Producto 4.4 </div>
+  <% @categories.each do |category| %>
+    <div class="hero">
+      <h3><%= category.title %></h3>
+      <ul>
+        <% category.events.each do |event| %>
+          <li>
+            <%= event.title %>
+            - <%= link_to "Inscribirse", new_inscription_path(event_id: event.id), class: "label label-primary" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>

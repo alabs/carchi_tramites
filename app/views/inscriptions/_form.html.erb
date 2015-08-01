@@ -1,0 +1,38 @@
+<%= form_for(@inscription) do |f| %>
+  <% if @inscription.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inscription.errors.count, "error") %> han prohibido que esta inscripción se guarde:</h2>
+
+      <ul>
+      <% @inscription.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group hide">
+    <%= f.label :event_id %><br>
+    <%= f.text_field :event_id, value: @event.id, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :phone %><br>
+    <%= f.number_field :phone, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email %><br>
+    <%= f.email_field :email, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+    <%= link_to 'Cancelar', root_path, class: "btn btn-danger" %>
+  </div>
+<% end %>

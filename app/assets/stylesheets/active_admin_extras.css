@@ -1,0 +1,75 @@
+.alert{
+  display:inline;
+  padding:.2em .6em .3em;
+  font-size:75%;
+  font-weight:700;
+  line-height:1;
+  color:#fff;
+  text-align:center;
+  white-space:nowrap;
+  vertical-align:baseline;
+  border-radius:.25em
+}
+
+a.alert:focus,a.alert:hover{
+  color:#fff;
+  text-decoration:none;
+  cursor:pointer
+}
+
+.alert:empty{
+  display:none
+}
+
+.btn .alert{
+  position:relative;
+  top:-1px
+}
+
+.alert-default{
+  background-color:#777
+}
+
+.alert-default[href]:focus,.alert-default[href]:hover{
+  background-color:#5e5e5e
+}
+
+.alert-primary{
+  background-color:#337ab7
+}
+
+.alert-primary[href]:focus,.alert-primary[href]:hover{
+  background-color:#286090
+}
+
+.alert-success{
+  background-color:#5cb85c
+}
+
+.alert-success[href]:focus,.alert-success[href]:hover{
+  background-color:#449d44
+}
+
+.alert-info{
+  background-color:#5bc0de
+}
+
+.alert-info[href]:focus,.alert-info[href]:hover{
+  background-color:#31b0d5
+}
+
+.alert-warning{
+  background-color:#f0ad4e
+}
+
+.alert-warning[href]:focus,.alert-warning[href]:hover{
+  background-color:#ec971f
+}
+
+.alert-danger{
+  background-color:#d9534f
+}
+
+.alert-danger[href]:focus,.alert-danger[href]:hover{
+  background-color:#c9302c
+}

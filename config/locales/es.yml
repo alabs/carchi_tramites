@@ -1,0 +1,33 @@
+es:
+  activerecord:
+    models:
+      user: Usuario
+      users: Usuarios
+      event: Evento
+      events: Eventos
+      category: Categoría
+      categories: Categorías
+      inscription: Inscripción
+      inscriptions: Inscripciones
+    attributes:
+      category:
+        title: "Título"
+      event:
+        title: "Título"
+      inscription:
+        first_name: "Nombre"
+        last_name: "Apellido"
+        email: "Correo electrónico"
+        phone: "Teléfono"
+  active_admin:
+    scopes:
+      pending: "Pendientes"
+      approved: "Aprobados"
+      denied: "Rechazados"
+  inscription_mailer:
+    new:
+      subject: "[carchi-juventud] Has sido inscrito a la actividad"
+    approved:
+      subject: "[carchi-juventud] Has sido aprovado para la actividad"
+    denied:
+      subject: "[carchi-juventud] No has sido aprovado para la actividad"

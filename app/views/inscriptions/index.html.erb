@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Inscriptions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inscriptions.each do |inscription| %>
+      <tr>
+        <td><%= inscription.event %></td>
+        <td><%= inscription.first_name %></td>
+        <td><%= inscription.last_name %></td>
+        <td><%= inscription.phone %></td>
+        <td><%= inscription.email %></td>
+        <td><%= link_to 'Show', inscription %></td>
+        <td><%= link_to 'Edit', edit_inscription_path(inscription) %></td>
+        <td><%= link_to 'Destroy', inscription, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Inscription', new_inscription_path %>
