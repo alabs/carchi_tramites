@@ -17,19 +17,19 @@
   </div>
   <div class="form-group">
     <%= f.label :first_name %><br>
-    <%= f.text_field :first_name, class: "form-control" %>
+    <%= f.text_field :first_name, class: "form-control", required: true %>
   </div>
   <div class="form-group">
     <%= f.label :last_name %><br>
-    <%= f.text_field :last_name, class: "form-control" %>
+    <%= f.text_field :last_name, class: "form-control", required: true %>
   </div>
   <div class="form-group">
     <%= f.label :phone %><br>
-    <%= f.number_field :phone, class: "form-control" %>
+    <%= f.number_field :phone, class: "form-control", required: true %>
   </div>
   <div class="form-group">
     <%= f.label :email %><br>
-    <%= f.email_field :email, class: "form-control" %>
+    <%= f.email_field :email, class: "form-control", required: true %>
   </div>
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>

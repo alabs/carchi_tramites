@@ -1,5 +1,8 @@
 class Inscription < ActiveRecord::Base
+
   belongs_to :event
+
+  validates :first_name, :last_name, :phone, :email, :event, presence: true
 
   scope :pending, -> { where(status:1) }
   scope :approved, -> { where(status:2) }

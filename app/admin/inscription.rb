@@ -52,7 +52,7 @@ ActiveAdmin.register Inscription do
   member_action :approve, :method => :post do
     inscription = Inscription.find(params[:id])
     inscription.approve!
-    InscriptionMailer.approved(inscription).deliver_now
+    InscriptionMailer.approved(inscription.id).deliver_now
     flash[:notice] = "Hemos enviado un mail al usuario #{inscription.full_name} diciendole que ha sido aprobado."
     redirect_to action: :index
   end
@@ -60,7 +60,7 @@ ActiveAdmin.register Inscription do
   member_action :deny, :method => :post do
     inscription = Inscription.find(params[:id])
     inscription.deny!
-    InscriptionMailer.denied(inscription).deliver_now
+    InscriptionMailer.denied(inscription.id).deliver_now
     flash[:notice] = "Hemos enviado un mail al usuario #{inscription.full_name} diciendole que ha sido rechazado."
     redirect_to action: :index
   end

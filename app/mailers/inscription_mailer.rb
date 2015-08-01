@@ -1,18 +1,18 @@
 class InscriptionMailer < ApplicationMailer
 
-  def new inscription
-    @inscription = Inscription.find inscription
-    mail to: inscription.email
+  def new inscription_id
+    @inscription = Inscription.find inscription_id
+    mail to: @inscription.email
   end
 
-  def approved inscription
-    @inscription = Inscription.find inscription
-    mail to: inscription.email
+  def approved inscription_id
+    @inscription = Inscription.find inscription_id
+    mail to: @inscription.email
   end
 
-  def denied inscription
-    @inscription = Inscription.find inscription
-    mail to: inscription.email
+  def denied inscription_id
+    @inscription = Inscription.find inscription_id
+    mail to: @inscription.email
   end
 
 end
