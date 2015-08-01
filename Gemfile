@@ -19,7 +19,12 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
+  gem 'launchy'
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'minitest-rails-capybara'
+  gem 'minitest-reporters'
 end
 
 source 'https://rails-assets.org' do
