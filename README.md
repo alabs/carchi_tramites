@@ -19,16 +19,16 @@ rails server
 # Funcionalidades
 
 ## 3.1.- Emisión de certificado de estar al corriente de pago con la Prefectura
-* Conexión el sistema que haga falta
-* El responsable técnico nos tiene que proporcionar la información de conexión
-* Si no se puede conectar, definir procedimiento:
-** Solicitud usuario por web.
-** Genera un correo-e al funcionario encargado de emitir certificado.
-** El funcionario comprueba si el solicitante esta al corriente o no.
-*** En caso de que este al corriente el funcionario emite  el certificado de estar al coriente y le envia por correo-e al solicitante
-*** En caso de que no este al corriente, el funcionaro emite un certificado de no estar el corriente y lo envia por mail al solicitante.
-* Disponer de una CA para emitir los certificados (Banco Central es el emisor)
-* La app debe guardar un registro (log) de todas las solicitude tramitdas.
+A. Conexión el sistema que haga falta
+B. El responsable técnico nos tiene que proporcionar la información de conexión
+C. Si no se puede conectar, definir procedimiento:
+    a) Solicitud usuario por web.
+    b) Genera un correo-e al funcionario encargado de emitir certificado.
+    c) El funcionario comprueba si el solicitante esta al corriente o no.
+        c1) En caso de que este al corriente el funcionario emite  el certificado de estar al coriente y le envia por correo-e al solicitante
+        c2) En caso de que no este al corriente, el funcionaro emite un certificado de no estar el corriente y lo envia por mail al solicitante.
+    d) Disponer de una CA para emitir los certificados (Banco Central es el emisor)
+    e) La app debe guardar un registro (log) de todas las solicitude tramitdas.
 
 3.4.- Calendario de actividades para jovenes (gestionada por Casa Juventud) http://carchi.gob.ec/juventud/ es lo que tienen; esta hecho en joomla.
 
