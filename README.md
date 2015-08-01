@@ -19,6 +19,7 @@ rails server
 # Funcionalidades
 
 ## 3.1.- Emisión de certificado de estar al corriente de pago con la Prefectura
+
 A. Conexión el sistema que haga falta
 B. El responsable técnico nos tiene que proporcionar la información de conexión
 C. Si no se puede conectar, definir procedimiento:
