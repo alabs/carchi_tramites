@@ -1,7 +1,7 @@
 class CreateInscriptions < ActiveRecord::Migration
   def change
     create_table :inscriptions do |t|
-      t.references :event, index: true, foreign_key: true
+      t.references :event, index: true
       t.string :first_name
       t.string :last_name
       t.integer :phone
