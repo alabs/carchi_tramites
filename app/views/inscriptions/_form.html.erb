@@ -31,7 +31,14 @@
     <%= f.label :email %><br>
     <%= f.email_field :email, class: "form-control", required: true %>
   </div>
-  <div class="actions">
+  <% if @event.ttype_class == "plantas" %>
+    <div class="form-group">
+      <%= f.label :motive, "Planta que solicita y numero de plantas" %><br>
+      <%= f.text_area :motive, class: "form-control", required: true %>
+    </div>
+  <% end %>
+  <br>
+  <div class="form-group">
     <%= f.submit class: "btn btn-primary" %>
     <%= link_to 'Cancelar', root_path, class: "btn btn-danger" %>
   </div>

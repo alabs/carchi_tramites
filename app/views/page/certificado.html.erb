@@ -1,0 +1,15 @@
+<%= content_for :title, "Certificado de corriente de pago" %>
+<%= link_to "Volver al Inicio", root_path, class: "btn btn-warning pull-right" %>
+
+<h1>Certificado de corriente de pago</h1>
+
+<h5>Producto 3.1.- Emisión de certificado de estar al corriente de pago con la Prefectura</h5>
+<p>En el siguiente formulario podrás solicitar la Emisión de certificado de estar al corriente de pago con la Prefectura. Una vez tu petición sea realizada recibirás un correo electrónico como acuse de recibo. Una vez lo haya revisado nuestro departamento Financiero te enviaremos otro correo, emitiendo un certificado en caso de estar corriente con el pago, u otro certificado en caso de no estarlo.</p>
+<p>Por otro lado el funcionario tiene un panel de Administración donde puede ver todas las peticiones pendientes por resolver y aprobarlas o denegarlas.</p>
+
+<br>
+
+<div class="center">
+  <% ev_cert = Event.type_certificates.first %>
+  <%= link_to "Pedir certificado", new_inscription_path(event_id: ev_cert), class: "btn btn-primary btn-large" %>
+</div>

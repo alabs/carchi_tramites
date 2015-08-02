@@ -1,5 +1,1 @@
-InscriptionMailer#denied
-
-Hi
-
-<%= @greeting %>, find me in app/views/inscription_mailer/denied.text.erb
+<%= render partial: "inscription_mailer/denied/#{@inscription.event.ttype_class}" %>

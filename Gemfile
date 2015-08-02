@@ -32,5 +32,5 @@ source 'https://rails-assets.org' do
 end
 
 gem 'activeadmin', '~> 1.0.0.pre1'            # admin
+gem 'active_skin'                             # admin css
 gem 'devise'                                  # users
-

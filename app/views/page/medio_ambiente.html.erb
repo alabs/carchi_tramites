@@ -1,0 +1,16 @@
+<%= content_for :title, "Medio Ambiente" %>
+<%= link_to "Volver al Inicio", root_path, class: "btn btn-warning pull-right" %>
+
+<h1>Medio Ambiente</h1>
+
+<h5>Producto 3.3 - Solicitud a la dirección de Medio Ambiente de plantas autoctonas para reforestación </h5>
+<p>En el siguiente formulario podrás solicitar a la dirección de Medio Ambiente de plantas autoctonas para reforestación. Aparte de los datos que se piden normalmente verás que tendrás que poner un texto con la planta que solicita y numero de plantas. Una vez tu petición sea realizada recibirás un correo electrónico como acuse de recibo. Una vez lo haya revisado un funcionario del Departamento de Medio Ambiente, estudiará la solicitud y procederá a aceptarla o denegarla. Recibirás un correo electrónico con el resultado.</p>
+<p>Por otro lado el funcionario tiene un panel de Administración donde puede ver todas las peticiones pendientes por resolver y aprobarlas o denegarlas.</p>
+
+<br>
+
+<div class="center">
+  <% ev_trees = Event.type_trees.first %>
+  <%= link_to "Realizar solicitud", new_inscription_path(event_id: ev_trees), class: "btn btn-primary btn-large" %>
+</div>
+

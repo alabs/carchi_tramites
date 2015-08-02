@@ -1,5 +1,1 @@
-InscriptionMailer#approved
-
-Hi
-
-<%= @greeting %>, find me in app/views/inscription_mailer/approved.text.erb
+<%= render partial: "inscription_mailer/approved/#{@inscription.event.ttype_class}" %>

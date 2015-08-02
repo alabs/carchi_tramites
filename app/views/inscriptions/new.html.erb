@@ -1,6 +1,8 @@
-<h1>Nueva inscripción</h1>
+<%= content_for :title, "Nueva inscripción" %>
 
-<div class="jumbotron">
+<h1 class="page-heading">Nueva inscripción</h1>
+
+<div class="span8">
   <h1><%= @event.category.title %></h1>
   <p><%= @event.title %></p>
   <%= render 'form' %>

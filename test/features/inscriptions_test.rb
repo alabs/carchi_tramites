@@ -6,7 +6,7 @@ feature "Inscriptions" do
     category = FactoryGirl.create(:category)
     event = FactoryGirl.create(:event)
     visit root_path
-    click_link "Inscribirse"
+    click_link "Pedir certificado"
     fill_in "Nombre", with: "Kevin"
     fill_in "Apellido", with: "García"
     fill_in "Teléfono", with: "1245667890"

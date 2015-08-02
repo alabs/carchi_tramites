@@ -1,12 +1,19 @@
 ActiveAdmin.register Inscription do
 
-  permit_params :event, :first_name, :last_name, :email, :phone
+  permit_params :event, :first_name, :last_name, :email, :phone, :motive
 
   menu parent: "Actividades"
 
   scope :pending
   scope :approved
   scope :denied
+
+  filter :first_name
+  filter :last_name
+  filter :email
+  filter :phone
+  filter :status, as: :select, collection: Inscription::STATUS.to_a
+  filter :event_category_id, as: :select, collection: Event::TYPE.to_a
 
   index do
     selectable_column

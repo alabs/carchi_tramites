@@ -1,7 +1,1 @@
-<h1>InscriptionMailer#denied</h1>
-
-Hi
-
-<p>
-  <%= @greeting %>, find me in app/views/inscription_mailer/denied.html.erb
-</p>
+<%= render partial: "inscription_mailer/denied/#{@inscription.event.ttype_class}" %>

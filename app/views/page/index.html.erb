@@ -1,17 +1,90 @@
-<div class="starter-template">
-  <h1>Eventos</h1>
-  <div class="lead"> Producto 3.4 - Calendario de actividades para jovenes. Casa Juventud. </div>
-  <% @categories.each do |category| %>
-    <div class="hero">
-      <h3><%= category.title %></h3>
-      <ul>
-        <% category.events.each do |event| %>
-          <li>
-            <%= event.title %>
-            - <%= link_to "Inscribirse", new_inscription_path(event_id: event.id), class: "label label-primary" %>
-          </li>
-        <% end %>
-      </ul>
+<%= content_for :title, "Inicio" %>
+
+<div class="homepage">
+  <div class="hero hero-first">
+      <div class="container">
+        <h1>Trámites <span>El Carchi</span></h1>
+        <p>
+          Bienvenido al lugar donde podrás realizar todos los trámites con el Gobierno de la Prefectura del Carchi, Ecuador. 
+        </p>
+      </div>
+  </div>
+
+  <div role="main" class="hero-first">
+    <div class="container">
+      <div class="row row1">
+        <div class="span6 col2">
+          <div class="box">
+            <div class="inner">
+              <h3>Certificados</h3>
+              <p> Producto 3.1 - Emisión de certificado de estar al corriente de pago con la Prefectura. </p>
+              <% ev_cert = Event.type_certificates.first %>
+              <%= ev_cert.title %>
+              <br>
+              <br>
+              <%= link_to "Pedir certificado", new_inscription_path(event_id: ev_cert), class: "btn btn-primary pull-left" %>
+              <%= link_to "Ver ayuda", certificado_path, class: "btn btn-info pull-right" %>
+              <br>
+              <br>
+            </div>
+          </div>
+        </div>
+        <div class="span6 col2">
+          <div class="box">
+            <div class="inner">
+              <h3>Audiencia</h3>
+              <p> Producto 3.2 - Petición de audiencia con autoridades. </p>
+              Petición de audiencia con autoridades (Prefecto y Viceprefecta). 
+              <br>
+              <br>
+              <br>
+              <%= link_to "Pedir audiencia", "http://ocal.alabs.org/", class: "btn btn-primary pull-left", target: "_blank" %>
+              <%= link_to "Ver ayuda", audiencia_path, class: "btn btn-info pull-right" %>
+              <br>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
+  </div>
+
+  <div role="main" class="hero-first">
+    <div class="container">
+      <div class="row row1">
+        <div class="span6 col2">
+          <div class="box">
+            <div class="inner">
+              <h3>Medio Ambiente</h3>
+              <p> Producto 3.3 - Solicitud a la dirección de Medio Ambiente de plantas autoctonas para reforestación </p>
+              <% ev_trees = Event.type_trees.first %>
+              <% if ev_trees %>
+                <%= ev_trees.title %>
+                <br>
+                <br>
+                <%= link_to "Realizar solicitud", new_inscription_path(event_id: ev_trees), class: "btn btn-primary pull-left" %>
+                <%= link_to "Ver ayuda", medio_ambiente_path, class: "btn btn-info pull-right" %>
+                <br>
+                <br>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="span6 col2">
+          <div class="box">
+            <div class="inner">
+              <h3>Casa de la Juventud</h3>
+              <p>  Producto 3.4 - Calendario de actividades para jovenes. Casa Juventud.  </p>
+              Actividades gratuitas del Carchi de Informática, Danza, etc.
+              <br>
+              <br>
+              <%= link_to "Ver ayuda y actividades", juventud_path, class: "btn btn-primary pull-left" %>
+              <br>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

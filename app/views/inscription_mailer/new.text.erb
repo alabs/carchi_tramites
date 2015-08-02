@@ -1,5 +1,1 @@
-InscriptionMailer#new
-
-Hi
-
-<%= @greeting %>, find me in app/views/inscription_mailer/new.text.erb
+<%= render partial: "inscription_mailer/new/#{@inscription.event.ttype_class}" %>

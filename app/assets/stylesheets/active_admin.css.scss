@@ -12,6 +12,21 @@
 @import "active_admin/base";
 @import "active_admin_extras";
 
+$skinLogo: url("logo-header-admin.png") no-repeat 0 0;
+$skinActiveColor: #2F9B45;
+$skinHeaderBck: #237434;
+$panelHeaderBck: #237434;
+
+@import "active_skin";
+
+#header h1 img {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
 //

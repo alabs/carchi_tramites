@@ -14,6 +14,8 @@ es:
         title: "Título"
       event:
         title: "Título"
+        category: "Categoría"
+        ttype_name: "Tipo"
       inscription:
         first_name: "Nombre"
         last_name: "Apellido"
