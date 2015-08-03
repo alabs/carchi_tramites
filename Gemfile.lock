@@ -52,6 +52,9 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.3.8)
+    airbrake (4.3.0)
+      builder
+      multi_json
     ansi (1.5.0)
     arbre (1.0.3)
       activesupport (>= 3.0.0)
@@ -270,6 +273,7 @@ PLATFORMS
 DEPENDENCIES
   active_skin
   activeadmin (~> 1.0.0.pre1)
+  airbrake
   bundler (>= 1.8.4)
   byebug
   capistrano (~> 3.1)

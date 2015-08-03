@@ -38,4 +38,5 @@ gem 'capistrano',  '~> 3.1'                   # deploy
 gem 'capistrano-rails', '~> 1.1'              # deploy
 gem 'capistrano-rvm'                          # deploy
 gem 'capistrano-bundler'                      # deploy
+gem 'airbrake'                                # error tracking / errbit
 

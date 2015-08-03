@@ -1,3 +1,11 @@
+role :app, %w{capistrano@tramites.alabs.org}
+role :web, %w{capistrano@tramites.alabs.org}
+role :db,  %w{capistrano@tramites.alabs.org}
+
+set :rvm_ruby_version, '2.2.2'
+set :branch, :production
+set :deploy_to, '/var/www/tramites.alabs.org'
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
