@@ -8,8 +8,8 @@ class Inscription < ActiveRecord::Base
   scope :approved, -> { where(status:2) }
   scope :denied, -> { where(status:3) }
 
-  scope :last_week, -> { where("created_at >= ?", 7.days) }
-  scope :last_month, -> { where("created_at >= ?", 30.days) }
+  scope :last_week, -> { where("inscriptions.created_at >= ?", 7.days) }
+  scope :last_month, -> { where("inscriptions.created_at >= ?", 30.days) }
 
   before_save :default_values
 
