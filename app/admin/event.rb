@@ -1,8 +1,13 @@
 ActiveAdmin.register Event do
 
-  permit_params :title, :category_id, :ttype
+  permit_params :title, :description, :category_id, :ttype
 
-  menu parent: "Actividades"
+  #menu parent: "Actividades"
+
+  filter :title
+  filter :description
+  filter :category
+  filter :ttype, as: :select, collection: Event::TYPE.to_a
 
   index do
     selectable_column
@@ -17,6 +22,9 @@ ActiveAdmin.register Event do
     attributes_table do
       row :id
       row :title
+      row :description do |event|
+        event.description.html_safe
+      end
       row :category
     end
     table_for event.inscriptions do 
@@ -37,6 +45,7 @@ ActiveAdmin.register Event do
   form do |f|
     f.inputs "Evento" do
       f.input :title
+      f.input :description
       f.input :ttype, as: :radio, collection: Event::TYPE.to_a
       f.input :category, as: :radio, collection: Category.all, label_html: { class: "js-event-category hide" }
     end

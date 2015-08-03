@@ -1,0 +1,13 @@
+<% context.instance_eval do
+  tabs do
+    tab "todos" do
+      render partial: "stats", locals: { event_type: event_type, query: Inscription }
+    end
+    tab "7 días" do
+      render partial: "stats", locals: { event_type: event_type, query: Inscription.last_week }
+    end
+    tab "30 días" do
+      render partial: "stats", locals: { event_type: event_type, query: Inscription.last_month }
+    end
+  end
+end %>

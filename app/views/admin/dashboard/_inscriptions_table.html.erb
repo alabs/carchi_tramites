@@ -1,0 +1,18 @@
+<% if Inscription.by_event_type(event_type).pending.count > 0 %>
+  <table>
+    <thead>
+      <th>Nombre completo</th>
+      <th>Actividad</th>
+    </thead>
+    <tbody>
+      <% Inscription.by_event_type(event_type).pending.each do |inscription| %>
+        <tr>
+          <td><%= link_to(inscription.full_name, admin_inscription_path(inscription)) %> </td>
+          <td><%= link_to(inscription.event.title, admin_event_path(inscription.event)) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  No hay peticiones pendientes de procesar
+<% end %>

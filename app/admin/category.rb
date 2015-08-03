@@ -2,7 +2,7 @@ ActiveAdmin.register Category do
 
   permit_params :title
 
-  menu parent: "Actividades"
+  #menu parent: "Actividades"
 
   index do
     selectable_column

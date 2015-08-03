@@ -1,26 +1,41 @@
 es:
   activerecord:
     models:
-      user: Usuario
-      users: Usuarios
-      event: Evento
-      events: Eventos
-      category: Categoría
-      categories: Categorías
-      inscription: Inscripción
-      inscriptions: Inscripciones
+      user: "Usuario"
+      users: "Usuarios"
+      event: "Evento"
+      events: "Eventos"
+      category: "Categoría"
+      categories: "Categorías"
+      inscription: "Inscripción"
+      inscriptions: "Inscripciones"
     attributes:
       category:
         title: "Título"
+        events: "Eventos"
+        created_at: "Creado el"
+        updated_at: "Actualizado el" 
       event:
         title: "Título"
         category: "Categoría"
+        description: "Descripción"
+        ttype: "Tipo"
         ttype_name: "Tipo"
+        created_at: "Creado el"
+        updated_at: "Actualizado el" 
       inscription:
+        full_name: "Nombre completo"
         first_name: "Nombre"
         last_name: "Apellido"
         email: "Correo electrónico"
         phone: "Teléfono"
+        created_at: "Creado el"
+        updated_at: "Actualizado el" 
+        category: "Categoría"
+        actions: "Acciones"
+        event: "Evento"
+        status: "Estado"
+        status_name: "Estado"
   active_admin:
     scopes:
       pending: "Pendientes"
@@ -30,6 +45,6 @@ es:
     new:
       subject: "[carchi-juventud] Has sido inscrito a la actividad"
     approved:
-      subject: "[carchi-juventud] Has sido aprovado para la actividad"
+      subject: "[carchi-juventud] Has sido aprobado para la actividad"
     denied:
-      subject: "[carchi-juventud] No has sido aprovado para la actividad"
+      subject: "[carchi-juventud] Tu solicitud ha sido rechazada"

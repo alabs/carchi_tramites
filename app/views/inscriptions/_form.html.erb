@@ -12,28 +12,28 @@
   <% end %>
 
   <div class="form-group hide">
-    <%= f.label :event_id %><br>
+    <%= f.label :event_id %>
     <%= f.text_field :event_id, value: @event.id, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :first_name %><br>
+    <%= f.label :first_name %>
     <%= f.text_field :first_name, class: "form-control", required: true %>
   </div>
   <div class="form-group">
-    <%= f.label :last_name %><br>
+    <%= f.label :last_name %>
     <%= f.text_field :last_name, class: "form-control", required: true %>
   </div>
   <div class="form-group">
-    <%= f.label :phone %><br>
+    <%= f.label :phone %>
     <%= f.number_field :phone, class: "form-control", required: true %>
   </div>
   <div class="form-group">
-    <%= f.label :email %><br>
+    <%= f.label :email %>
     <%= f.email_field :email, class: "form-control", required: true %>
   </div>
   <% if @event.ttype_class == "plantas" %>
     <div class="form-group">
-      <%= f.label :motive, "Planta que solicita y numero de plantas" %><br>
+      <%= f.label :motive, "Planta que solicita y numero de plantas" %>
       <%= f.text_area :motive, class: "form-control", required: true %>
     </div>
   <% end %>

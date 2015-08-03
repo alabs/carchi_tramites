@@ -1,10 +1,9 @@
-<%= content_for :title, "Nueva inscripción" %>
+<%= content_for :title, @event.title %>
+<%= link_to "Volver al Inicio", root_path, class: "btn btn-warning pull-right" %>
 
-<h1 class="page-heading">Nueva inscripción</h1>
-
-<div class="span8">
+<div class="span11">
   <h1><%= @event.category.title %></h1>
-  <p><%= @event.title %></p>
+  <h2><%= @event.title %></h2>
+  <p><%= @event.description_html %></p>
   <%= render 'form' %>
 </div>
-

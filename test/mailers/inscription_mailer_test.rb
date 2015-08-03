@@ -13,7 +13,7 @@ class InscriptionMailerTest < ActionMailer::TestCase
   test "approved" do
     inscription = FactoryGirl.create :inscription
     mail = InscriptionMailer.approved inscription.id
-    assert_equal "[carchi-juventud] Has sido aprovado para la actividad", mail.subject
+    assert_equal "[carchi-juventud] Has sido aprobado para la actividad", mail.subject
     assert_equal [inscription.email], mail.to
     assert_equal ["from@example.com"], mail.from
     #assert_match "Hi", mail.body.encoded
@@ -22,7 +22,7 @@ class InscriptionMailerTest < ActionMailer::TestCase
   test "denied" do
     inscription = FactoryGirl.create :inscription
     mail = InscriptionMailer.denied inscription.id
-    assert_equal "[carchi-juventud] No has sido aprovado para la actividad", mail.subject
+    assert_equal "[carchi-juventud] Tu solicitud ha sido rechazada", mail.subject
     assert_equal [inscription.email], mail.to
     assert_equal ["from@example.com"], mail.from
     #assert_match "Hi", mail.body.encoded

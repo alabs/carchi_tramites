@@ -1,0 +1,8 @@
+<dl>
+  <dt>Pendientes</dt>
+  <dd><%= query.by_event_type(event_type).pending.count %></dt>
+  <dt>Aprobados</dt>
+  <dd><%= query.by_event_type(event_type).approved.count %></dt>
+  <dt>Denegados</dt>
+  <dd><%= query.by_event_type(event_type).denied.count %></dt>
+</dl>

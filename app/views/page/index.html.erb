@@ -19,13 +19,14 @@
               <h3>Certificados</h3>
               <p> Producto 3.1 - Emisión de certificado de estar al corriente de pago con la Prefectura. </p>
               <% ev_cert = Event.type_certificates.first %>
-              <%= ev_cert.title %>
-              <br>
-              <br>
-              <%= link_to "Pedir certificado", new_inscription_path(event_id: ev_cert), class: "btn btn-primary pull-left" %>
-              <%= link_to "Ver ayuda", certificado_path, class: "btn btn-info pull-right" %>
-              <br>
-              <br>
+              <% if ev_cert %>
+                <%= ev_cert.title %>
+                <br>
+                <br>
+                <%= link_to "Pedir certificado", new_inscription_path(event_id: ev_cert), class: "btn btn-primary pull-left" %>
+                <br>
+                <br>
+              <% end %>
             </div>
           </div>
         </div>
@@ -39,7 +40,6 @@
               <br>
               <br>
               <%= link_to "Pedir audiencia", "http://ocal.alabs.org/", class: "btn btn-primary pull-left", target: "_blank" %>
-              <%= link_to "Ver ayuda", audiencia_path, class: "btn btn-info pull-right" %>
               <br>
               <br>
             </div>
@@ -63,7 +63,6 @@
                 <br>
                 <br>
                 <%= link_to "Realizar solicitud", new_inscription_path(event_id: ev_trees), class: "btn btn-primary pull-left" %>
-                <%= link_to "Ver ayuda", medio_ambiente_path, class: "btn btn-info pull-right" %>
                 <br>
                 <br>
               <% end %>
@@ -78,7 +77,7 @@
               Actividades gratuitas del Carchi de Informática, Danza, etc.
               <br>
               <br>
-              <%= link_to "Ver ayuda y actividades", juventud_path, class: "btn btn-primary pull-left" %>
+              <%= link_to "Ver actividades", juventud_path, class: "btn btn-primary pull-left" %>
               <br>
               <br>
             </div>

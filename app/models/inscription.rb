@@ -8,11 +8,24 @@ class Inscription < ActiveRecord::Base
   scope :approved, -> { where(status:2) }
   scope :denied, -> { where(status:3) }
 
+  scope :last_week, -> { where("created_at >= ?", 7.days) }
+  scope :last_month, -> { where("created_at >= ?", 30.days) }
+
+  before_save :default_values
+
   STATUS = {
     "Pendiente" => 1,
     "Aprobado" => 2,
     "Rechazado" => 3
   }
+
+  def self.by_event_type type
+    joins(:event).where('events.ttype == ?', type)
+  end
+
+  def default_values
+    self.status ||= '1'
+  end
 
   def status_name
     Inscription::STATUS.invert[self.status]

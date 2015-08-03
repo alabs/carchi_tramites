@@ -3,7 +3,12 @@ class Event < ActiveRecord::Base
   has_many :inscriptions
   belongs_to :category
 
-  validates :title, :category, :ttype, presence: true
+  validates :title, :description, :category, :ttype, presence: true
+
+  scope :type_certificates, -> { where(ttype:0) }
+  scope :type_activities, -> { where(ttype:1) }
+  scope :type_audience, -> { where(ttype:2) }
+  scope :type_trees, -> { where(ttype:3) }
 
   TYPE = {
     "Certificado" => 0,
@@ -20,9 +25,8 @@ class Event < ActiveRecord::Base
     Event::TYPE.invert[self.ttype].downcase
   end
 
-  scope :type_certificates, -> { where(ttype:0) }
-  scope :type_activities, -> { where(ttype:1) }
-  scope :type_audience, -> { where(ttype:2) }
-  scope :type_trees, -> { where(ttype:3) }
+  def description_html
+    self.description? ? self.description.html_safe : nil
+  end
 
 end
