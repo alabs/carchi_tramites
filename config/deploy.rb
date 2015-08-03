@@ -13,11 +13,13 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 # set :keep_releases, 5
 
 namespace :deploy do
-
-  after :restart, :clear_cache do
+  # https://gist.github.com/mirek/7159245
+  after :restart, :restart_passenger do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
-      run "touch #{ current_path }/tmp/restart.txt"
+      within release_path do
+        execute :touch, 'tmp/restart.txt'
+      end
     end
   end
-
+  after :finishing, 'deploy:restart_passenger'
 end
