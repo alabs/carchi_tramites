@@ -8,7 +8,6 @@ feature "Admin" do
     fill_in "Email", with: user.email
     fill_in "Password", with: user.password
     click_button "iniciar sesión"
-    save_and_open_page
     page.must_have_content "Inicio"
     page.must_have_content "todos"
     page.must_have_content "7 días"

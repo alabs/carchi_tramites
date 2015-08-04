@@ -27,16 +27,18 @@ ActiveAdmin.register Event do
       end
       row :category
     end
-    table_for event.inscriptions do 
-      column :full_name do |user|
-        link_to user.full_name, admin_inscription_path(user)
-      end
-      column :phone
-      column :email do |user|
-        mail_to user.email
-      end
-      column :status do |user|
-        span user.status_name, class: user.status_class
+    panel "Todas las Inscripciones" do 
+      table_for event.inscriptions do 
+        column "Nombre completo", :full_name do |inscription|
+          link_to inscription.full_name, admin_inscription_path(inscription)
+        end
+        column "Teléfono", :phone
+        column "Correo electrónico", :email do |inscription|
+          mail_to inscription.email
+        end
+        column "Estado", :status do |inscription|
+          span inscription.status_name, class: inscription.status_class
+        end
       end
     end
     active_admin_comments

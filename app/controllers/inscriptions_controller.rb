@@ -8,7 +8,7 @@ class InscriptionsController < ApplicationController
   def create
     @inscription = Inscription.new(inscription_params)
     if @inscription.save
-      InscriptionMailer.new(@inscription.id).deliver_now
+      InscriptionMailer.pending(@inscription.id).deliver_now
       flash[:notice] = "Te has dado de alta en el curso. Revisaremos tu inscripción y te avisaremos el resultado dentro de unos días."
       redirect_to root_url
     else  

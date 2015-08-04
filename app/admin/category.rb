@@ -16,10 +16,21 @@ ActiveAdmin.register Category do
       row :id
       row :title
     end
-    table_for category.events do
-      column :id
-      column :title do |event|
-        link_to event.title, admin_event_path(event)
+    panel "Emails" do
+      table_for category.emails do
+        column :id
+        column "Asunto", :subject do |email|
+          link_to email.subject, admin_email_path(email)
+        end
+        column "Tipo", :ttype_name
+      end
+    end
+    panel "Eventos relacionados" do
+      table_for category.events do
+        column :id
+        column "Título", :title do |event|
+          link_to event.title, admin_event_path(event)
+        end
       end
     end
     active_admin_comments

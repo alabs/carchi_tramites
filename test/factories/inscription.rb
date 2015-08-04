@@ -1,6 +1,6 @@
 FactoryGirl.define do
 
-  sequence :email do |n|
+  sequence :email_seq do |n|
     "foo#{n}@example.com"
   end
 
@@ -8,7 +8,7 @@ FactoryGirl.define do
     first_name "Jorge"
     last_name "Macanudo"
     phone "123456789"
-    email
+    email { generate(:email_seq) }
     event
   end
 
