@@ -33,9 +33,9 @@ class Inscription < ActiveRecord::Base
 
   def status_class
     case status
-      when 1 then "alert alert-warning"
-      when 2 then "alert alert-success"
-      when 3 then "alert alert-danger"
+      when 0 then "alert alert-warning"
+      when 1 then "alert alert-success"
+      when 2 then "alert alert-danger"
       else        "alert alert-warning"
     end
   end
