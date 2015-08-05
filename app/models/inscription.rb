@@ -4,19 +4,19 @@ class Inscription < ActiveRecord::Base
 
   validates :first_name, :last_name, :phone, :email, :event, presence: true
 
-  scope :pending, -> { where(status: 0) }
+  scope :pending,  -> { where(status: 0) }
   scope :approved, -> { where(status: 1) }
-  scope :denied, -> { where(status: 2) }
+  scope :denied,   -> { where(status: 2) }
 
-  scope :last_week, -> { where("inscriptions.created_at >= ?", 7.days) }
+  scope :last_week,  -> { where("inscriptions.created_at >= ?", 7.days) }
   scope :last_month, -> { where("inscriptions.created_at >= ?", 30.days) }
 
   before_save :default_values
 
   STATUS = {
-    "Pendiente" => 1,
-    "Aprobado" => 2,
-    "Rechazado" => 3
+    "Pendiente" => 0,
+    "Aprobado"  => 1,
+    "Rechazado" => 2
   }
 
   def self.by_event_type type
