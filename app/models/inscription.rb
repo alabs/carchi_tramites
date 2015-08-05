@@ -4,9 +4,9 @@ class Inscription < ActiveRecord::Base
 
   validates :first_name, :last_name, :phone, :email, :event, presence: true
 
-  scope :pending, -> { where(status:1) }
-  scope :approved, -> { where(status:2) }
-  scope :denied, -> { where(status:3) }
+  scope :pending, -> { where(status: 0) }
+  scope :approved, -> { where(status: 1) }
+  scope :denied, -> { where(status: 2) }
 
   scope :last_week, -> { where("inscriptions.created_at >= ?", 7.days) }
   scope :last_month, -> { where("inscriptions.created_at >= ?", 30.days) }
@@ -20,11 +20,11 @@ class Inscription < ActiveRecord::Base
   }
 
   def self.by_event_type type
-    joins(:event).where('events.ttype == ?', type)
+    joins(:event).where('events.ttype = ?', type)
   end
 
   def default_values
-    self.status ||= '1'
+    self.status ||= '0'
   end
 
   def status_name
@@ -41,15 +41,15 @@ class Inscription < ActiveRecord::Base
   end
 
   def pending?
-    status == 1
+    status == 0
   end
 
   def approve!
-    update_attribute(:status, 2)
+    update_attribute(:status, 1)
   end
 
   def deny!
-    update_attribute(:status, 3)
+    update_attribute(:status, 2)
   end
 
   def full_name
