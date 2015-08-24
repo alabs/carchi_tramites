@@ -6,6 +6,9 @@ Aplicación Ruby On Rails para tramites a medida del proyecto 3, subproyectos n 
 # Instalación
 
 ```
+sudo apt-get install libqt4-dev          # capybara-webkit
+sudo apt-get install libmysqlclient-dev  # mysql2
+
 git clone git@git.alabs.org:carchi/tramites.git
 cd tramites
 rvm install 2.2.2
@@ -13,5 +16,6 @@ bundle install
 cp config/database.yml.example config/database.yml
 cp config/secrets.yml.example config/secrets.yml
 rake db:schema:load
+rake db:seed
 rails server
 ```

@@ -4,7 +4,8 @@ feature "Inscriptions" do
 
   scenario "Working all right" do
     category = FactoryGirl.create(:category)
-    event = FactoryGirl.create(:event)
+    event = FactoryGirl.create(:event, category: category)
+    email = FactoryGirl.create(:email, :pending, category: category)
     visit root_path
     click_link "Pedir certificado"
     fill_in "Nombre", with: "Kevin"

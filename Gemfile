@@ -24,10 +24,12 @@ group :development, :test do
   gem 'capybara-webkit'
   gem 'minitest-rails-capybara'
   gem 'minitest-reporters'
+  gem 'database_cleaner'
 end
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
+  gem 'rails-assets-bootstrap-datepicker'
 end
 
 gem 'activeadmin', '~> 1.0.0.pre1'            # admin
@@ -39,4 +41,4 @@ gem 'capistrano-rails', '~> 1.1'              # deploy
 gem 'capistrano-rvm'                          # deploy
 gem 'capistrano-bundler'                      # deploy
 gem 'airbrake'                                # error tracking / errbit
-
+#gem 'id_ecuador'                              # validates cedula Ecuador

@@ -5,7 +5,7 @@ def test_mail_from_db(action)
   mail = InscriptionMailer.send(action, @inscription.id)
   assert_equal(email.subject, mail.subject)
   assert_equal([@inscription.email], mail.to)
-  assert_equal(["from@example.com"], mail.from)
+  assert_equal([Rails.application.secrets.email["default_from"]], mail.from)
   assert_match(email.body_text, mail.body.encoded)
   assert_match(email.body_html, mail.body.encoded)
 end

@@ -1,8 +1,13 @@
 <dl>
+  <% pending = query.by_event_type(event_type).pending.count %>
+  <% approved = query.by_event_type(event_type).approved.count %>
+  <% denied = query.by_event_type(event_type).denied.count %>
   <dt>Pendientes</dt>
-  <dd><%= query.by_event_type(event_type).pending.count %></dt>
+  <dd><%= pending %></dt>
   <dt>Aprobados</dt>
-  <dd><%= query.by_event_type(event_type).approved.count %></dt>
+  <dd><%= approved %></dt>
   <dt>Denegados</dt>
-  <dd><%= query.by_event_type(event_type).denied.count %></dt>
+  <dd><%= denied %></dt>
 </dl>
+
+<%# column_chart [["Pendientes", pending], ["Aprobados", approved], ["Denegados", denied]] %>

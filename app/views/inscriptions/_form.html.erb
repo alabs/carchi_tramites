@@ -1,19 +1,26 @@
 <%= form_for(@inscription) do |f| %>
   <% if @inscription.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="alert alert-danger">
       <h2><%= pluralize(@inscription.errors.count, "error") %> han prohibido que esta inscripción se guarde:</h2>
 
       <ul>
-      <% @inscription.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @inscription.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
+  <legend>Datos personales</legend>
   <div class="form-group hide">
-    <%= f.label :event_id %>
-    <%= f.text_field :event_id, value: @event.id, class: "form-control" %>
+    <%= f.label :event_id, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :event_id, value: @event.id, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :document_id %>
+    <%= f.text_field :document_id, class: "form-control", required: true %>
   </div>
   <div class="form-group">
     <%= f.label :first_name %>
@@ -22,6 +29,30 @@
   <div class="form-group">
     <%= f.label :last_name %>
     <%= f.text_field :last_name, class: "form-control", required: true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :sex %>
+    <%= f.select :sex, Inscription::SEX.to_a, class: "form-control", required: true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :born_at %>
+    <%= f.date_field :born_at, class: "form-control js-datepicker", required: true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :provincia %>
+    <%= f.text_field :provincia, class: "form-control", required: true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :canton %>
+    <%= f.text_field :canton, class: "form-control", required: true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :parroquia %>
+    <%= f.text_field :parroquia, class: "form-control", required: true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :address %>
+    <%= f.text_area :address, class: "form-control", required: true %>
   </div>
   <div class="form-group">
     <%= f.label :phone %>

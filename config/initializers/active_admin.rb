@@ -1,3 +1,13 @@
+# hack so google's jsapi is on the top of ActiveAdmin javascripts
+# https://github.com/activeadmin/activeadmin/issues/340#issuecomment-92512556
+Rails.application.config.after_initialize do
+  javascripts = [] 
+  javascripts << '//www.google.com/jsapi'
+  #javascripts << '//code.highcharts.com/highcharts.js'
+  javascripts += ActiveAdmin.application.javascripts.to_a
+  ActiveAdmin.application.javascripts.replace javascripts
+end
+
 ActiveAdmin.setup do |config|
   # == Site Title
   #
@@ -165,7 +175,7 @@ ActiveAdmin.setup do |config|
   #
   # To load a javascript file:
   #   config.register_javascript 'my_javascript.js'
-
+  #
   # == CSV options
   #
   # Set the CSV builder separator

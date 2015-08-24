@@ -3,7 +3,7 @@
 <div class="homepage">
   <div class="hero hero-first">
       <div class="container">
-        <h1>Trámites <span>El Carchi</span></h1>
+        <h1>Atención al Ciudadano <span>El Carchi</span></h1>
         <p>
           Bienvenido al lugar donde podrás realizar todos los trámites con el Gobierno de la Prefectura del Carchi, Ecuador. 
         </p>
@@ -13,24 +13,7 @@
   <div role="main" class="hero-first">
     <div class="container">
       <div class="row row1">
-        <div class="span6 col2">
-          <div class="box">
-            <div class="inner">
-              <h3>Certificados</h3>
-              <p> Producto 3.1 - Emisión de certificado de estar al corriente de pago con la Prefectura. </p>
-              <% ev_cert = Event.type_certificates.first %>
-              <% if ev_cert %>
-                <%= ev_cert.title %>
-                <br>
-                <br>
-                <%= link_to "Pedir certificado", new_inscription_path(event_id: ev_cert), class: "btn btn-primary pull-left" %>
-                <br>
-                <br>
-              <% end %>
-            </div>
-          </div>
-        </div>
-        <div class="span6 col2">
+        <div class="span4 col3">
           <div class="box">
             <div class="inner">
               <h3>Audiencia</h3>
@@ -38,21 +21,13 @@
               Petición de audiencia con autoridades (Prefecto y Viceprefecta). 
               <br>
               <br>
-              <br>
-              <%= link_to "Pedir audiencia", "http://ocal.alabs.org/", class: "btn btn-primary pull-left", target: "_blank" %>
+              <%= link_to "Pedir audiencia", audiencia_path, class: "btn btn-primary pull-left" %>
               <br>
               <br>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <div role="main" class="hero-first">
-    <div class="container">
-      <div class="row row1">
-        <div class="span6 col2">
+        <div class="span4 col3">
           <div class="box">
             <div class="inner">
               <h3>Medio Ambiente</h3>
@@ -69,7 +44,7 @@
             </div>
           </div>
         </div>
-        <div class="span6 col2">
+        <div class="span4 col3">
           <div class="box">
             <div class="inner">
               <h3>Casa de la Juventud</h3>

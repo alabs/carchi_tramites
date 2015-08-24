@@ -1,6 +1,6 @@
 ActiveAdmin.register Inscription do
 
-  permit_params :event_id, :first_name, :last_name, :email, :phone, :motive
+  permit_params :event_id, :first_name, :last_name, :email, :phone, :motive, :document_id, :sex, :born_at, :address, :parroquia, :canton, :provincia
 
   #menu parent: "Actividades"
 
@@ -19,6 +19,7 @@ ActiveAdmin.register Inscription do
   filter :last_name
   filter :email
   filter :phone
+  filter :sex, as: :select, collection: Inscription::SEX.to_a
   filter :status, as: :select, collection: Inscription::STATUS.to_a
   filter :event_category_id, label: "Categoría", as: :select, collection: Event::TYPE.to_a
   filter :event
@@ -40,8 +41,15 @@ ActiveAdmin.register Inscription do
   form do |f|
     f.inputs "Inscripción" do
       f.input :event
+      f.input :document_id
       f.input :first_name
       f.input :last_name
+      f.input :sex, as: :select, collection: Inscription::SEX.to_a
+      f.input :born_at, as: :datepicker
+      f.input :address, input_html: {rows: 2}
+      f.input :parroquia
+      f.input :canton
+      f.input :provincia
       f.input :phone
       f.input :email
       if f.object.event and f.object.event.ttype_class == "plantas"
@@ -59,20 +67,20 @@ ActiveAdmin.register Inscription do
         inscription.event.category
       end
       row :full_name
+      row :first_name
+      row :last_name
+      row :document_id
+      row :sex
+      row :born_at
+      row :address
+      row :parroquia
+      row :canton
+      row :provincia
       row :phone
       row :email do |inscription|
         mail_to inscription.email
       end
       row :created_at
-      row :status_name do |inscription|
-        dd inscription.status_name, class: inscription.status_class
-      end
-      row :actions do 
-        if inscription.pending?
-          span link_to('Aprobar inscripción', approve_admin_inscription_path(inscription), class: "button", method: :post, data: { confirm: "¿Estas segura de querer aprobar esta inscripción? Enviaremos un email confirmandole la inscripción." }) 
-          span link_to('Rechazar inscripción', deny_admin_inscription_path(inscription), class: "button button-danger", method: :post, data: { confirm: "¿Estas segura de querer rechazar esta inscripción? Enviaremos un email comúnicandole que su inscripción ha sido rechazada." }) 
-        end
-      end
     end
     active_admin_comments
   end
@@ -81,9 +89,10 @@ ActiveAdmin.register Inscription do
     dl do
       dt "Estado"
       dd inscription.status_name, class: inscription.status_class
+      # FIXME: be more beauty, refactory TTYPES/Category relation
       if inscription.pending?
         dt "Acciones"
-        dd link_to('Aprobar inscripción', approve_admin_inscription_path(inscription), class: "button", method: :post, data: { confirm: "¿Estas segura de querer aprobar esta inscripción? Enviaremos un email confirmandole la inscripción." }) 
+        dd link_to('Aprobar inscripción', approve_admin_inscription_path(inscription), class: "button", method: :post, data: { confirm: "¿Estas segura de querer aprobar esta inscripción? Enviaremos un email confirmándole la inscripción." }) 
         br
         dd link_to('Rechazar inscripción', deny_admin_inscription_path(inscription), class: "button button-danger", method: :post, data: { confirm: "¿Estas segura de querer rechazar esta inscripción? Enviaremos un email comúnicandole que su inscripción ha sido rechazada." }) 
       end

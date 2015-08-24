@@ -23,10 +23,16 @@ es:
         ttype_name: "Tipo"
         created_at: "Creado el"
         updated_at: "Actualizado el" 
+        limit: "Límite de inscritos"
+        price: "Precio"
+        starts_at: "Empieza el"
+        ends_at: "Termina el"
       inscription:
         full_name: "Nombre completo"
         first_name: "Nombre"
         last_name: "Apellido"
+        sex: "Sexo"
+        document_id: "Cédula de Identidad"
         email: "Correo electrónico"
         phone: "Teléfono"
         created_at: "Creado el"
@@ -36,6 +42,8 @@ es:
         event: "Evento"
         status: "Estado"
         status_name: "Estado"
+        born_at: "Fecha de nacimiento"
+        address: "Dirección"
   active_admin:
     scopes:
       pending: "Pendientes"

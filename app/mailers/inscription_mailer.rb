@@ -1,5 +1,7 @@
 class InscriptionMailer < ApplicationMailer
 
+  default from: Rails.application.secrets.email["default_from"]
+
   def pending inscription_id
     send_inscription_email(inscription_id, 0)
   end

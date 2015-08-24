@@ -9,9 +9,6 @@ class PageController < ApplicationController
   def audiencia
   end
 
-  def certificado
-  end
-
   def juventud
   end
 

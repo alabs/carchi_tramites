@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   get '/audiencia', to: 'page#audiencia'
-  get '/certificado', to: 'page#certificado'
   get '/juventud', to: 'page#juventud'
   get '/medio-ambiente', to: 'page#medio_ambiente'
 

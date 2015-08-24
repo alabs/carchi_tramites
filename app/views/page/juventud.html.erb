@@ -2,8 +2,8 @@
 <%= link_to "Volver al Inicio", root_path, class: "btn btn-warning pull-right" %>
 
 <h1>Actividades Casa de la Juventud</h1>
-              <p>    </p>
-              Actividades gratuitas del Carchi de Informática, Danza, etc.
+<p>    </p>
+Actividades gratuitas del Carchi de Informática, Danza, etc.
 
 <h5>Producto 3.4 - Calendario de actividades para jovenes. Casa Juventud.</h5>
 <p>Aquí puedes ver todas las Actividades realizadas por la Casa de la Juventud así como inscribirte a las actividades. Los ejemplos de actividades han sido tomados de <%= link_to "la propia web del Carchi", "http://carchi.gob.ec/juventud/", target: "_blank" %>. Una vez tu petición sea realizada recibirás un correo electrónico como acuse de recibo. Una vez lo haya revisado nuestra Casa de la Juventud te enviaremos otro correo, aceptando o denegando tu petición.</p>
@@ -11,13 +11,21 @@
 
 <br>
 
-<div class="center">
-  <div class="list-group">
+<div class="row">
   <% Event.type_activities.all.each do |event| %>
-    <%= link_to new_inscription_path(event_id: event), class: "list-group-item" do %>
-      <%= event.category.title %> - 
-      <%= event.title %>
-    <% end %>
+    <div class="col-sm-10 col-md-5">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3> <%= event.category.title %> </h3>
+          <h5> <%= event.title %> </h5>
+          <p> <%= truncate(event.description, limit: 400) %> </p>
+          <%= render partial: "inscriptions/event_metadata", locals: {event: event} %>
+          <%= link_to "Inscribirse", new_inscription_path(event_id: event), class: "btn btn-primary" %>
+          <% if admin_user_signed_in? %>
+            <%= link_to "Editar", edit_admin_event_path(event), class: "btn btn-info" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   <% end %>
-  </div>
 </div>
