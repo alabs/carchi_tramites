@@ -126,11 +126,13 @@ ActiveAdmin.register Inscription do
       end
     end
     if inscription.event.ttype_class == "plantas"
-      table_for inscription.inscriptions_plants do 
-        column "Especie", :plant do |ic_plant|
-          span ic_plant.plant.name
+      panel "Plantas solicitadas" do
+        table_for inscription.inscriptions_plants do 
+          column "Especie", :plant do |ic_plant|
+            span ic_plant.plant.name
+          end
+          column "Cantidad", :quantity
         end
-        column "Cantidad", :quantity
       end
     end
     active_admin_comments
