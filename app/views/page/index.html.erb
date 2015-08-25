@@ -19,11 +19,15 @@
               <h3>Audiencia</h3>
               <p> Producto 3.2 - Petición de audiencia con autoridades. </p>
               Petición de audiencia con autoridades (Prefecto y Viceprefecta). 
-              <br>
-              <br>
-              <%= link_to "Pedir audiencia", audiencia_path, class: "btn btn-primary pull-left" %>
-              <br>
-              <br>
+              <% ev_audie = Event.type_audience.first %>
+              <% if ev_audie %>
+                <%= ev_audie.title %>
+                <br>
+                <br>
+                <%= link_to "Realizar solicitud", new_inscription_path(event_id: ev_audie), class: "btn btn-primary pull-left" %>
+                <br>
+                <br>
+              <% end %>
             </div>
           </div>
         </div>

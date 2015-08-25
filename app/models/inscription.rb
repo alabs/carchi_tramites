@@ -3,7 +3,7 @@ class Inscription < ActiveRecord::Base
   belongs_to :event
 
   has_many :inscriptions_plants
-  accepts_nested_attributes_for :inscriptions_plants,  :reject_if => :all_blank, :allow_destroy => true
+  accepts_nested_attributes_for :inscriptions_plants
 
   #validates_id :document_id, allow_blank: false, only: [:cedula]
 

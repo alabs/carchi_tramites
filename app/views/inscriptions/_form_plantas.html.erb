@@ -1,0 +1,23 @@
+<!-- MEDIOAMBIENTE PLANTAS -->
+<fieldset>
+  <legend>Plantas a solicitar</legend>
+    <div id="inscriptions_plants">
+      <%= f.semantic_fields_for :inscriptions_plants do |inscription_plant| %>
+        <%= render 'inscriptions_plant_fields', f: inscription_plant %>
+      <% end %>
+      <%= link_to_add_association '+ agregar planta', f, :inscriptions_plants %>
+      <br>
+      <br>
+    </div>
+</fieldset>
+
+  <!-- div id="inscriptions_plants">
+    <%= f.inputs :for => :inscriptions_plants do |j| %>
+      <div class="col-md-4">
+      <%= j.input :plant_id, as: :select, collection: Plant.pluck(:name, :id).to_a %>
+      </div>
+      <div class="col-md-4">
+      <%= j.input :quantity %>
+      </div>
+    <% end %>
+    </div -->

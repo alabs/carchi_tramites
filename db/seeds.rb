@@ -45,7 +45,7 @@ events = [
     type: 2,
     description: "<p><b>Producto 3.1.- Petición de Audiencia con el Prefecto</b></p>
     <p>
-    En el siguiente formulario podrás solicitar la Emisión de certificado de estar al corriente de pago con la Prefectura. Una vez tu petición sea realizada recibirás un correo electrónico como acuse de recibo. Una vez lo haya revisado nuestro departamento Financiero te enviaremos otro correo, emitiendo un certificado en caso de estar corriente con el pago, u otro certificado en caso de no estarlo.
+    En el siguiente formulario podrás solicitar la Petición de Audiencia con el Prefecto. Una vez tu petición sea realizada recibirás un correo electrónico como acuse de recibo. Una vez lo haya revisado la secretaria te enviaremos otro correo, confirmando o denegando la petición.
       </p>
     <p>
     Por otro lado el funcionario tiene un panel de Administración donde puede ver todas las peticiones pendientes por resolver y aprobarlas o denegarlas.

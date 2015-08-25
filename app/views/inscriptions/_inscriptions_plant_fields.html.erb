@@ -1,12 +1,11 @@
-<div class="nested-fields">
+<div class="row nested-fields">
   <div class="col-md-4">
-    <%= f.input :plant_id, as: :select, collection: Plant.pluck(:name, :id).to_a %>
+    <%= f.input :plant_id, as: :select, collection: Plant.pluck(:name, :id).to_a, label: "Especie" %>
   </div>
   <div class="col-md-4">
-    <%= f.input :quantity %>
+    <%= f.input :quantity, label: "Cantidad" %>
   </div>
   <div class="col-md-2">
-    <%= link_to "- quitar planta", "#" %>
-    <%# link_to_remove_association "quitar planta", f %>
+    <%= link_to_remove_association "quitar planta", f %>
   </div>
 </div>

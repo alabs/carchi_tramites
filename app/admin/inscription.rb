@@ -4,15 +4,15 @@ ActiveAdmin.register Inscription do
 
   #menu parent: "Actividades"
 
-  scope "Todas", :all, -> { all }
+  #scope "Todas", :all, -> { all }
 
-  scope "[estado] Pendiente", :pending
-  scope "[estado] Aprobado", :approved
-  scope "[estado] Denegado", :denied
+  #scope "[estado] Pendiente", :pending
+  #scope "[estado] Aprobado", :approved
+  #scope "[estado] Denegado", :denied
 
-  # custom scope not defined on the model
-  scope("[tipo] Medio Ambiente") { |scope| scope.by_event_type(2) }
-  scope("[tipo] Juventud") { |scope| scope.by_event_type(3) }
+  ## custom scope not defined on the model
+  #scope("[tipo] Medio Ambiente") { |scope| scope.by_event_type(2) }
+  #scope("[tipo] Juventud") { |scope| scope.by_event_type(3) }
 
   filter :first_name
   filter :last_name
@@ -22,8 +22,6 @@ ActiveAdmin.register Inscription do
   filter :status, as: :select, collection: Inscription::STATUS.to_a
   filter :event_category_id, label: "Categoría", as: :select, collection: Event::TYPE.to_a
   filter :event
-
- # :ed_level, :ed_unity, :observations, :rep_document_id, :rep_full_name, :rep_sex, :rep_title, :rep_phone_home, :rep_phone_celular, :rep_parroquia, :rep_canton, :rep_provincia, :rep_address, :rep_work_name, :rep_work_address, :rep_work_phone
 
   index do
     selectable_column
@@ -106,27 +104,33 @@ ActiveAdmin.register Inscription do
         row :ed_level
         row :ed_unity
         row :observations
-        row :rep_document_id 
-        row :rep_full_name
-        row :rep_sex
-        row :rep_title
-        row :rep_phone_home
-        row :rep_phone_celular
-        row :rep_parroquia
-        row :rep_canton
-        row :rep_provincia
-        row :rep_address
-        row :rep_work_name
-        row :rep_work_address
-        row :rep_work_phone
       end
-      if inscription.event.ttype_class == "plantas"
-        row :plants do |inscription|
-          inscription.inscriptions_plants do |ic_plant|
-            ic_plant.plant.name
-            ic_plant.quantity
-          end
+    end
+    if inscription.event.ttype_class == "actividad"
+      panel "Datos del Representante" do
+        attributes_table_for inscription do
+          row :rep_document_id 
+          row :rep_full_name
+          row :rep_sex
+          row :rep_title
+          row :rep_phone_home
+          row :rep_phone_celular
+          row :rep_parroquia
+          row :rep_canton
+          row :rep_provincia
+          row :rep_address
+          row :rep_work_name
+          row :rep_work_address
+          row :rep_work_phone
         end
+      end
+    end
+    if inscription.event.ttype_class == "plantas"
+      table_for inscription.inscriptions_plants do 
+        column "Especie", :plant do |ic_plant|
+          span ic_plant.plant.name
+        end
+        column "Cantidad", :quantity
       end
     end
     active_admin_comments

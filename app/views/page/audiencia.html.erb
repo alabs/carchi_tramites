@@ -10,5 +10,6 @@
 <br>
 
 <div class="center">
-  <%= link_to "Pedir audiencia", "#", class: "btn btn-primary btn-large" %>
+  <% ev_audie = Event.type_audience.first %>
+  <%= link_to "Pedir audiencia", new_inscription_path(event_id: ev_audie), class: "btn btn-primary btn-large" %>
 </div>

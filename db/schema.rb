@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150824194039) do
+ActiveRecord::Schema.define(version: 20150825135622) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 20150824194039) do
     t.integer  "event_id",          limit: 4
     t.string   "first_name",        limit: 255
     t.string   "last_name",         limit: 255
-    t.integer  "phone",             limit: 4
+    t.integer  "phone",             limit: 8
     t.string   "email",             limit: 255
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
@@ -119,23 +119,25 @@ ActiveRecord::Schema.define(version: 20150824194039) do
     t.text     "rep_full_name",     limit: 65535
     t.integer  "rep_sex",           limit: 4
     t.string   "rep_title",         limit: 255
-    t.integer  "rep_phone_home",    limit: 4
-    t.integer  "rep_phone_celular", limit: 4
+    t.integer  "rep_phone_home",    limit: 8
+    t.integer  "rep_phone_celular", limit: 8
     t.string   "rep_parroquia",     limit: 255
     t.string   "rep_canton",        limit: 255
     t.string   "rep_provincia",     limit: 255
     t.text     "rep_address",       limit: 65535
     t.string   "rep_work_name",     limit: 255
     t.text     "rep_work_address",  limit: 65535
-    t.integer  "rep_work_phone",    limit: 4
+    t.integer  "rep_work_phone",    limit: 8
   end
 
   add_index "inscriptions", ["event_id"], name: "index_inscriptions_on_event_id", using: :btree
 
-  create_table "inscriptions_plants", id: false, force: :cascade do |t|
-    t.integer "inscription_id", limit: 4
-    t.integer "plant_id",       limit: 4
-    t.integer "quantity",       limit: 4
+  create_table "inscriptions_plants", force: :cascade do |t|
+    t.integer  "inscription_id", limit: 4
+    t.integer  "plant_id",       limit: 4
+    t.integer  "quantity",       limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "inscriptions_plants", ["inscription_id"], name: "index_inscriptions_plants_on_inscription_id", using: :btree

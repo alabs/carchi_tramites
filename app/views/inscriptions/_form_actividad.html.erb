@@ -1,0 +1,7 @@
+<!-- ACTIVIDADES DE LA CASA DE LA JUVENTUD -->
+<%= f.inputs :ed_level, :ed_unity, :observations %>
+<legend>Datos del representante legal</legend>
+<%= f.inputs :rep_document_id, :rep_full_name %>
+<%= f.input :rep_sex, as: :select, collection: Inscription::SEX.to_a %>
+<%= f.inputs :rep_title, :rep_phone_home, :rep_phone_celular, :rep_parroquia, :rep_canton, 
+  :rep_provincia, :rep_address, :rep_work_name, :rep_work_address, :rep_work_phone %>
