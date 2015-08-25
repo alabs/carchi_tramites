@@ -39,7 +39,7 @@ ActiveAdmin.register Email do
       f.input :ttype, as: :select, collection: Email::TYPE.to_a
       f.input :subject
       f.input :body_text
-      f.input :body_html
+      f.input :body_html, as: :ckeditor
     end
     f.actions
   end

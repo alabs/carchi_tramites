@@ -40,10 +40,10 @@ events = [
     <p>Por otro lado el funcionario tiene un panel de Administración donde puede ver todas las peticiones pendientes por resolver y aprobarlas o denegarlas.</p>",
   },
   { 
-    title: "Emisión de certificado de estar al corriente de pago con la Prefectura",
+    title: "Petición de Audiencia con el Prefecto",
     category: c_0,
-    type: 0,
-    description: "<p><b>Producto 3.1.- Emisión de certificado de estar al corriente de pago con la Prefectura</b></p>
+    type: 2,
+    description: "<p><b>Producto 3.1.- Petición de Audiencia con el Prefecto</b></p>
     <p>
     En el siguiente formulario podrás solicitar la Emisión de certificado de estar al corriente de pago con la Prefectura. Una vez tu petición sea realizada recibirás un correo electrónico como acuse de recibo. Una vez lo haya revisado nuestro departamento Financiero te enviaremos otro correo, emitiendo un certificado en caso de estar corriente con el pago, u otro certificado en caso de no estarlo.
       </p>
@@ -122,3 +122,8 @@ events.each do |e|
   event = Event.create(category_id: e[:category], title: e[:title], ttype: e[:type], description: e.has_key?(:description) ? e[:description] : "BLA")
   debugger unless event.valid?
 end
+
+[ "aliso", "yahuar", "quishuar", "puma maqui", "pino", "ciprés", "eucalipto" ].each do |plant|
+  Plant.create(name: plant)
+end
+

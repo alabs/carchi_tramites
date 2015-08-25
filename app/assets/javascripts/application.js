@@ -15,5 +15,6 @@
 //= require bootstrap-datepicker
 //= require turbolinks
 //= require bootstrap
+//= require cocoon
 //= require inscriptions
 //= require page

@@ -796,7 +796,7 @@ select, input[type="file"] {
   line-height: 30px;
 }
 select {
-  width: 220px;
+  width: 200px;
   border: 1px solid #cccccc;
   background-color: #ffffff;
 }
@@ -3434,110 +3434,6 @@ a.thumbnail:hover, a.thumbnail:focus {
   padding: 9px;
   color: #555555;
 }
-.label, .badge {
-  display: inline-block;
-  padding: 2px 4px;
-  font-size: 11.844px;
-  font-weight: bold;
-  line-height: 14px;
-  color: #ffffff;
-  vertical-align: baseline;
-  white-space: nowrap;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #999999;
-}
-.label {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-.badge {
-  padding-left: 9px;
-  padding-right: 9px;
-  -webkit-border-radius: 9px;
-  -moz-border-radius: 9px;
-  border-radius: 9px;
-}
-.label:empty, .badge:empty {
-  display: none;
-}
-a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
-  color: #ffffff;
-  text-decoration: none;
-  cursor: pointer;
-}
-.label-important, .badge-important {
-  background-color: #b55457;
-}
-.label-important[href], .badge-important[href] {
-  background-color: #954143;
-}
-.label-warning, .badge-warning {
-  background-color: #f89406;
-}
-.label-warning[href], .badge-warning[href] {
-  background-color: #c67605;
-}
-.label-success, .badge-success {
-  background-color: #468847;
-}
-.label-success[href], .badge-success[href] {
-  background-color: #356635;
-}
-.label-info, .badge-info {
-  background-color: #3a87ad;
-}
-.label-info[href], .badge-info[href] {
-  background-color: #2d6987;
-}
-.label-inverse, .badge-inverse {
-  background-color: #333333;
-}
-.label-inverse[href], .badge-inverse[href] {
-  background-color: #1a1a1a;
-}
-.btn .label, .btn .badge {
-  position: relative;
-  top: -1px;
-}
-.btn-mini .label, .btn-mini .badge {
-  top: 0;
-}
-@-webkit-keyframes progress-bar-stripes {
-  from {
-  background-position: 40px 0;
-}
-to {
-  background-position: 0 0;
-}
-}@-moz-keyframes progress-bar-stripes {
-  from {
-  background-position: 40px 0;
-}
-to {
-  background-position: 0 0;
-}
-}@-ms-keyframes progress-bar-stripes {
-  from {
-  background-position: 40px 0;
-}
-to {
-  background-position: 0 0;
-}
-}@-o-keyframes progress-bar-stripes {
-  from {
-  background-position: 0 0;
-}
-to {
-  background-position: 40px 0;
-}
-}@keyframes progress-bar-stripes {
-  from {
-  background-position: 40px 0;
-}
-to {
-  background-position: 0 0;
-}
 }.progress {
   overflow: hidden;
   height: 20px;
@@ -4821,7 +4717,7 @@ a.tag:hover {
   *zoom: 1;
   margin: 0 -25px;
   padding-bottom: 15px;
-  background: #fbfbfb url("../../../base/images/bg.png");
+  background: #fbfbfb url(<%= asset_path "bg.png" %>);
   border: 1px solid #dddddd;
   border-width: 1px 0;
 }
@@ -4968,7 +4864,7 @@ a.tag:hover {
   *zoom: 1;
   margin: 0 -25px;
   padding-bottom: 15px;
-  background: #fbfbfb url("../../../base/images/bg.png");
+  background: #fbfbfb url(<%= asset_path "bg.png" %>);
   border: 1px solid #dddddd;
   border-width: 1px 0;
 }
@@ -6960,7 +6856,7 @@ h1 small, h2 small, h3 small, h4 small {
 @media (min-width:768px) {
   [role=main], .main {
   padding-top: 10px;
-  background: #eeeeee url("../../../base/images/bg.png");
+  background: #eeeeee url(<%= asset_path "bg.png" %>);
 }
 }[role=main] {
   min-height: 350px;
@@ -7291,7 +7187,7 @@ h1 small, h2 small, h3 small, h4 small {
   *zoom: 1;
   min-height: 30px;
   color: #ffffff;
-  background: #237434 url("../../../base/images/bg.png");
+  background: #237434 url(<%= asset_path "bg.png" %>);
 }
 .account-masthead:before, .account-masthead:after {
   display: table;
@@ -7373,7 +7269,7 @@ h1 small, h2 small, h3 small, h4 small {
   *zoom: 1;
   min-height: 55px;
   color: #ffffff;
-  background: #2f9b45 url("../../../base/images/bg.png");
+  background: #2f9b45 url(<%= asset_path "bg.png" %>);
 }
 .masthead:before, .masthead:after {
   display: table;
@@ -7486,7 +7382,7 @@ h1 small, h2 small, h3 small, h4 small {
   *zoom: 1;
   min-height: 55px;
   color: #ffffff;
-  background: #2f9b45 url("../../../base/images/bg.png");
+  background: #2f9b45 url(<%= asset_path "bg.png" %>);
   padding: 20px 0;
 }
 .site-footer:before, .site-footer:after {
@@ -8070,7 +7966,7 @@ h1 small, h2 small, h3 small, h4 small {
   color: #009900;
 }
 body {
-  background: #2f9b45 url("../../../base/images/bg.png");
+  background: #2f9b45 url(<%= asset_path "bg.png" %>);
 }
 [hidden] {
   display: none;
@@ -8202,7 +8098,7 @@ iframe {
 }
 .ie8 [role=main], .ie7 [role=main], .ie8 .main, .ie7 .main {
   padding-top: 10px;
-  background: #eeeeee url("../../../base/images/bg.png");
+  background: #eeeeee url(<%= asset_path "bg.png" %>);
 }
 .ie8 .hero, .ie7 .hero {
   background: url("../../../base/images/background-tile.png");

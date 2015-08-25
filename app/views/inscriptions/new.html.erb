@@ -7,5 +7,5 @@
   <p><%= @event.description_html %></p>
 
   <%= render partial: "inscriptions/event_metadata", locals: {event: @event} %>
-  <%= render 'form' %>
+  <%= render 'form', locals: {inscription: @inscription} %>
 </div>

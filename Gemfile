@@ -10,7 +10,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
-gem 'turbolinks'
+gem 'turbolinks' 
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -25,6 +25,7 @@ group :development, :test do
   gem 'minitest-rails-capybara'
   gem 'minitest-reporters'
   gem 'database_cleaner'
+  gem 'letter_opener_web'
 end
 
 source 'https://rails-assets.org' do
@@ -41,4 +42,7 @@ gem 'capistrano-rails', '~> 1.1'              # deploy
 gem 'capistrano-rvm'                          # deploy
 gem 'capistrano-bundler'                      # deploy
 gem 'airbrake'                                # error tracking / errbit
+gem 'cocoon'                                  # nested models forms
+gem 'ckeditor'
+gem 'formtastic', '~> 3.0'
 #gem 'id_ecuador'                              # validates cedula Ecuador

@@ -9,6 +9,8 @@ es:
       categories: "Categorías"
       inscription: "Inscripción"
       inscriptions: "Inscripciones"
+      plant: "Planta"
+      plants: "Plantas"
     attributes:
       category:
         title: "Título"
@@ -27,6 +29,11 @@ es:
         price: "Precio"
         starts_at: "Empieza el"
         ends_at: "Termina el"
+      plant:
+        name: "Nombre"
+      inscriptions_plants:
+        quantity: "Cantidad"
+        id: "Planta"
       inscription:
         full_name: "Nombre completo"
         first_name: "Nombre"
@@ -44,6 +51,22 @@ es:
         status_name: "Estado"
         born_at: "Fecha de nacimiento"
         address: "Dirección"
+        ed_level: "Educación"
+        ed_unity: "Unidad educativa"
+        observations: "Observaciones"
+        rep_document_id: "Cédula de Identidad"
+        rep_full_name: "Nombre completo"
+        rep_sex: "Sexo"
+        rep_title: "Título"
+        rep_phone_home: "Teléfono domicilio"
+        rep_phone_celular: "Teléfono celular"
+        rep_parroquia: "Parroquia"
+        rep_canton: "Cantón"
+        rep_provincia: "Provincia"
+        rep_address: "Dirección"
+        rep_work_name: "Nombre de la empresa de trabajo"
+        rep_work_address: "Dirección de la empresa de trabajo"
+        rep_work_phone: "Telefóno de la empresa de trabajo"
   active_admin:
     scopes:
       pending: "Pendientes"

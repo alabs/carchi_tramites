@@ -5,13 +5,13 @@ ActiveAdmin.register_page "Dashboard" do
   content title: proc{ I18n.t("active_admin.dashboard") } do
     columns do
       column do
-        panel "Prefectura: Certificados" do
-          render partial: "stats_wrapper", locals: { event_type: 0, context: self }
+        panel "Casa de la Juventud: Actividades" do
+          render partial: "stats_wrapper", locals: { event_type: 1, context: self }
         end
       end
       column do
-        panel "Casa de la Juventud: Actividades" do
-          render partial: "stats_wrapper", locals: { event_type: 1, context: self }
+        panel "Prefectura: Audiencia con Prefecto" do
+          render partial: "stats_wrapper", locals: { event_type: 2, context: self }
         end
       end
       column do
@@ -23,13 +23,13 @@ ActiveAdmin.register_page "Dashboard" do
     h2 "Inscripciones pendientes"
     columns do
       column do
-        panel "Prefectura: Certificados" do
-          render partial: "inscriptions_table", locals: { event_type: 0 }
+        panel "Casa de la Juventud: Actividades" do
+          render partial: "inscriptions_table", locals: { event_type: 1 }
         end
       end
       column do
-        panel "Casa de la Juventud: Actividades" do
-          render partial: "inscriptions_table", locals: { event_type: 1 }
+        panel "Prefectura: Audiencia con Prefecto" do
+          render partial: "inscriptions_table", locals: { event_type: 2 }
         end
       end
       column do

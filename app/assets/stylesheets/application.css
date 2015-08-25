@@ -14,5 +14,6 @@
  *= require inscriptions
  *= require page
  *= require bootstrap_list_group
+ *= require formtastic
  *= require_self
  */

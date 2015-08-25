@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
   get '/audiencia', to: 'page#audiencia'
   get '/juventud', to: 'page#juventud'
   get '/medio-ambiente', to: 'page#medio_ambiente'
@@ -10,5 +11,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   root 'page#index'
+
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
 
 end

@@ -1,4 +1,5 @@
-<%= form_for(@inscription) do |f| %>
+<%= semantic_form_for(@inscription) do |f| %>
+
   <% if @inscription.errors.any? %>
     <div id="error_explanation" class="alert alert-danger">
       <h2><%= pluralize(@inscription.errors.count, "error") %> han prohibido que esta inscripción se guarde:</h2>
@@ -11,66 +12,34 @@
     </div>
   <% end %>
 
+
   <legend>Datos personales</legend>
-  <div class="form-group hide">
-    <%= f.label :event_id, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-      <%= f.text_field :event_id, value: @event.id, class: "form-control" %>
+  <%= f.input :event_id, as: :hidden, input_html: {value: @event.id} %>
+  <%= f.inputs :document_id, :first_name, :last_name, required: :required %>
+  <%= f.input :sex, as: :select, collection: Inscription::SEX.to_a %>
+  <%= f.inputs :born_at, :provincia, :canton, :parroquia, :address, :phone, :email %>
+
+  <%= f.inputs :ed_level, :ed_unity, :observations %>
+  <legend>Datos del representante legal</legend>
+  <%= f.inputs :rep_document_id, :rep_full_name %>
+  <%= f.input :rep_sex, as: :select, collection: Inscription::SEX.to_a %>
+  <%= f.inputs :rep_title, :rep_phone_home, :rep_phone_celular, :rep_parroquia, :rep_canton, 
+    :rep_provincia, :rep_address, :rep_work_name, :rep_work_address, :rep_work_phone %>
+
+  <fieldset>
+    <legend>Plantas a solicitar</legend>
+    <div id="inscriptions_plants">
+      <%= f.semantic_fields_for :inscriptions_plant do |inscription_plant| %>
+        <%= render 'inscriptions_plant_fields', f: inscription_plant %>
+        <%= link_to_add_association '+ agregar planta', f, :inscriptions_plants %>
+      <% end %>
     </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :document_id %>
-    <%= f.text_field :document_id, class: "form-control", required: true %>
-  </div>
-  <div class="form-group">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name, class: "form-control", required: true %>
-  </div>
-  <div class="form-group">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name, class: "form-control", required: true %>
-  </div>
-  <div class="form-group">
-    <%= f.label :sex %>
-    <%= f.select :sex, Inscription::SEX.to_a, class: "form-control", required: true %>
-  </div>
-  <div class="form-group">
-    <%= f.label :born_at %>
-    <%= f.date_field :born_at, class: "form-control js-datepicker", required: true %>
-  </div>
-  <div class="form-group">
-    <%= f.label :provincia %>
-    <%= f.text_field :provincia, class: "form-control", required: true %>
-  </div>
-  <div class="form-group">
-    <%= f.label :canton %>
-    <%= f.text_field :canton, class: "form-control", required: true %>
-  </div>
-  <div class="form-group">
-    <%= f.label :parroquia %>
-    <%= f.text_field :parroquia, class: "form-control", required: true %>
-  </div>
-  <div class="form-group">
-    <%= f.label :address %>
-    <%= f.text_area :address, class: "form-control", required: true %>
-  </div>
-  <div class="form-group">
-    <%= f.label :phone %>
-    <%= f.number_field :phone, class: "form-control", required: true %>
-  </div>
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.email_field :email, class: "form-control", required: true %>
-  </div>
-  <% if @event.ttype_class == "plantas" %>
-    <div class="form-group">
-      <%= f.label :motive, "Planta que solicita y numero de plantas" %>
-      <%= f.text_area :motive, class: "form-control", required: true %>
-    </div>
-  <% end %>
-  <br>
-  <div class="form-group">
-    <%= f.submit class: "btn btn-primary" %>
+  </fieldset>
+
+
+  <%= f.inputs do %>
     <%= link_to 'Cancelar', root_path, class: "btn btn-danger" %>
-  </div>
+    <%= f.action :submit, button_html: { class: "btn btn-success" } %>
+  <% end %>
+
 <% end %>

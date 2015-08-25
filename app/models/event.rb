@@ -5,13 +5,11 @@ class Event < ActiveRecord::Base
 
   validates :title, :description, :category, :ttype, presence: true
 
-  scope :type_certificates, -> { where(ttype:0) }
   scope :type_activities, -> { where(ttype:1) }
   scope :type_audience, -> { where(ttype:2) }
   scope :type_trees, -> { where(ttype:3) }
 
   TYPE = {
-    "Certificado" => 0,
     "Actividad" => 1,
     "Audiencia" => 2,
     "Plantas" => 3,

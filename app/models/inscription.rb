@@ -2,6 +2,9 @@ class Inscription < ActiveRecord::Base
 
   belongs_to :event
 
+  has_many :inscriptions_plants
+  accepts_nested_attributes_for :inscriptions_plants,  :reject_if => :all_blank, :allow_destroy => true
+
   #validates_id :document_id, allow_blank: false, only: [:cedula]
 
   validates :document_id, :sex, :born_at, :address, :parroquia, :canton, :provincia, :first_name, :last_name, :phone, :email, :event, presence: true

@@ -30,10 +30,12 @@ ActiveAdmin.register Event do
         event.description.html_safe
       end
       row :category
-      row :price
-      row :limit
-      row :ends_at
-      row :starts_at
+      if event.ttype_class == "actividad"
+        row :price
+        row :limit
+        row :ends_at
+        row :starts_at
+      end
     end
     panel "Todas las Inscripciones" do 
       if event.inscriptions.count > 0
@@ -59,7 +61,7 @@ ActiveAdmin.register Event do
   form do |f|
     f.inputs "Evento" do
       f.input :title
-      f.input :description
+      f.input :description, as: :ckeditor
       f.input :limit
       f.input :price
       f.input :starts_at, as: :datepicker
@@ -69,10 +71,6 @@ ActiveAdmin.register Event do
     end
     panel "Ayuda" do
       ul do
-        li do
-          b "Certificado"
-          span "- Emisión de certificado de estar al corriente de pago con la Prefectura"
-        end
         li do
           b "Actividad"
           span "- Calendario de actividades para jovenes (gestionada por Casa Juventud)"
