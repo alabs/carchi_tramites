@@ -11,12 +11,23 @@ es:
       inscriptions: "Inscripciones"
       plant: "Planta"
       plants: "Plantas"
+      email: "Correo electrónico"
+      emails: "Correos electrónicos"
     attributes:
       category:
         title: "Título"
         events: "Eventos"
         created_at: "Creado el"
         updated_at: "Actualizado el" 
+        admin_email: "Correo electrónico del Administrador"
+      email:
+        category: "Categoría"
+        ttype: "Tipo"
+        cc: "Correos CC (Con Copia)"
+        cco: "Correos CCO (Con Copia Oculta)"
+        subject: "Asunto"
+        body_text: "Cuerpo (en texto plano)"
+        body_html: "Cuerpo (en HTML)"
       event:
         title: "Título"
         category: "Categoría"

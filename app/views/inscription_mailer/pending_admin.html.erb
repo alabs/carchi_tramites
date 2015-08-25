@@ -1,0 +1,11 @@
+<h1>Aviso de nueva inscripción</h1>
+
+<p>
+Ha habido una nueva inscripción en <%= @inscription.event.title %>
+</p>
+
+<ul>
+  <li><b><%= @inscription.full_name %></b></li>
+  <li><b><%= @inscription.document_id %></b></li>
+  <li><b><%= link_to admin_inscription_url(@inscription), "Ir al Panel de Administración" %></b></li>
+</ul>

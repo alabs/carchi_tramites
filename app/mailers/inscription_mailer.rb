@@ -6,6 +6,11 @@ class InscriptionMailer < ApplicationMailer
     send_inscription_email(inscription_id, 0)
   end
 
+  def pending_admin inscription_id
+    @inscription = Inscription.find inscription_id
+    mail to: @inscription.event.category.admin_email.to_a, subject: "[carchi] Inscripción pendiente en #{@inscription.event.title}"
+  end
+
   def approved inscription_id
     send_inscription_email(inscription_id, 1)
   end

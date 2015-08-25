@@ -1,6 +1,6 @@
 ActiveAdmin.register Category do
 
-  permit_params :title
+  permit_params :title, :admin_email
 
   #menu parent: "Actividades"
 
@@ -8,6 +8,7 @@ ActiveAdmin.register Category do
     selectable_column
     id_column
     column :title
+    column :admin_email
     actions
   end
 
@@ -15,6 +16,7 @@ ActiveAdmin.register Category do
     attributes_table do
       row :id
       row :title
+      row :admin_email
     end
     panel "Emails" do
       table_for category.emails do
@@ -34,6 +36,14 @@ ActiveAdmin.register Category do
       end
     end
     active_admin_comments
+  end
+
+  form do |f|
+    f.inputs "Categoría" do
+      f.input :title
+      f.input :admin_email, hint: "Correo electrónico del administrador de la Categoría. Recibirá un correo electrónico al inscribirse un ciudadano nuevo. Pueden ser uno o varios. Formato: En el caso de ser varios 'foo1@example.com, foo2@example.com'. En el caso de ser una Actividad de la Casa de la Juventud con límites de inscritos, recibirá un correo electrónico al superarse."
+    end
+    f.actions
   end
 
 end

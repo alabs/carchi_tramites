@@ -139,6 +139,9 @@ ActiveAdmin.register Inscription do
   end
 
   sidebar "Acciones pendientes", only: [:show, :edit] do
+    if inscription.pending?
+      span "Revisa la inscripción, estúdiala y comúnicate con el inscrito o su responsable legal y luego Aprueba o Rechaza la inscripción."
+    end
     dl do
       dt "Estado"
       dd inscription.status_name, class: inscription.status_class
