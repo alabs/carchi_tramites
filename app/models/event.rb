@@ -27,4 +27,9 @@ class Event < ActiveRecord::Base
     self.description? ? self.description.html_safe : nil
   end
 
+  def has_reached_limit?
+    self.inscriptions.approved.size >= self.limit if self.limit
+  end
+
+
 end

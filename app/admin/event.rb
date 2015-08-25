@@ -23,6 +23,12 @@ ActiveAdmin.register Event do
   end
 
   show do
+    if event.limit and event.has_reached_limit? 
+      panel "Alerta" do 
+        status_tag "Ha llegado al límite de #{event.limit} inscritos", :error
+        status_tag "Puedes aumentar el límite de inscritos editando este evento. En caso de que haya alguna plaza vacante puedes revisar en los usuarios que tengan inscripción pendiente. ", :error
+      end
+    end
     attributes_table do
       row :id
       row :title
@@ -47,6 +53,7 @@ ActiveAdmin.register Event do
           column "Correo electrónico", :email do |inscription|
             mail_to inscription.email
           end
+          column "Fecha de creación", :created_at
           column "Estado", :status do |inscription|
             span inscription.status_name, class: inscription.status_class
           end
