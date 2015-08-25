@@ -7,5 +7,5 @@ Ha habido una nueva inscripción en <%= @inscription.event.title %>
 <ul>
   <li><b><%= @inscription.full_name %></b></li>
   <li><b><%= @inscription.document_id %></b></li>
-  <li><b><%= link_to admin_inscription_url(@inscription), "Ir al Panel de Administración" %></b></li>
+  <li><b><%= link_to "Ir al Panel de Administración", admin_inscription_url(@inscription) %></b></li>
 </ul>

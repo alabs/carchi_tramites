@@ -4,4 +4,4 @@ Ha habido una nueva inscripción en <%= @inscription.event.title %>
 
 <%= @inscription.full_name %>
 <%= @inscription.document_id %>
-<%= link_to admin_inscription_url(@inscription), "Ir al Panel de Administración" %>
+<%= link_to "Ir al Panel de Administración", admin_inscription_url(@inscription) %>

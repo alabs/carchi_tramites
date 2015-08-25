@@ -3,12 +3,13 @@ class InscriptionMailer < ApplicationMailer
   default from: Rails.application.secrets.email["default_from"]
 
   def pending inscription_id
+    InscriptionMailer.pending_admin(inscription_id).deliver_now
     send_inscription_email(inscription_id, 0)
   end
 
   def pending_admin inscription_id
     @inscription = Inscription.find inscription_id
-    mail to: @inscription.event.category.admin_email.to_a, subject: "[carchi] Inscripción pendiente en #{@inscription.event.title}"
+    mail to: @inscription.event.category.admin_email.split(','), subject: "[carchi] Inscripción pendiente en #{@inscription.event.title}"
   end
 
   def approved inscription_id

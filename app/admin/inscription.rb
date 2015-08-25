@@ -1,16 +1,12 @@
 ActiveAdmin.register Inscription do
 
-  permit_params :event_id, :first_name, :last_name, :email, :phone, :motive, :document_id, :sex, :born_at, :address, :parroquia, :canton, :provincia
+  permit_params :event_id, :first_name, :last_name, :email, :phone, :motive, :document_id, :sex, :born_at, :address, :parroquia, :canton, :provincia, :admin_observation, :ed_level, :ed_unity, :observations, :rep_document_id, :rep_full_name, :rep_sex, :rep_title, :rep_phone_home, :rep_phone_celular, :rep_parroquia, :rep_canton, :rep_provincia, :rep_address, :rep_work_name, :rep_work_address, :rep_work_phone
 
   #menu parent: "Actividades"
-
   #scope "Todas", :all, -> { all }
-
   #scope "[estado] Pendiente", :pending
   #scope "[estado] Aprobado", :approved
   #scope "[estado] Denegado", :denied
-
-  ## custom scope not defined on the model
   #scope("[tipo] Medio Ambiente") { |scope| scope.by_event_type(2) }
   #scope("[tipo] Juventud") { |scope| scope.by_event_type(3) }
 
@@ -72,6 +68,7 @@ ActiveAdmin.register Inscription do
         end
       end
       if f.object.event and f.object.event.ttype_class == "plantas"
+        # TODO: plantas with has_many 
         f.input :motive, label: "Planta que solicita y numero de plantas"
       end
     end
@@ -105,6 +102,7 @@ ActiveAdmin.register Inscription do
         row :ed_unity
         row :observations
       end
+      row :admin_observation
     end
     if inscription.event.ttype_class == "actividad"
       panel "Datos del Representante" do
@@ -150,7 +148,7 @@ ActiveAdmin.register Inscription do
         dt "Acciones"
         dd link_to('Aprobar inscripción', approve_admin_inscription_path(inscription), class: "button", method: :post, data: { confirm: "¿Estas segura de querer aprobar esta inscripción? Enviaremos un email confirmándole la inscripción." }) 
         br
-        dd link_to('Rechazar inscripción', deny_admin_inscription_path(inscription), class: "button button-danger", method: :post, data: { confirm: "¿Estas segura de querer rechazar esta inscripción? Enviaremos un email comúnicandole que su inscripción ha sido rechazada." }) 
+        dd link_to('Rechazar inscripción', observations_admin_inscription_path(inscription), class: "button button-danger", method: :post, data: { confirm: "¿Estas segura de querer rechazar esta inscripción? Enviaremos un email comúnicandole que su inscripción ha sido rechazada." }) 
       end
     end
   end
@@ -163,8 +161,14 @@ ActiveAdmin.register Inscription do
     redirect_to action: :index
   end
 
+  member_action :observations, :method => :post do
+    @inscription = Inscription.find(params[:id])
+  end
+
   member_action :deny, :method => :post do
     inscription = Inscription.find(params[:id])
+    inscription.admin_observation = params[:inscription][:admin_observation]
+    inscription.save
     inscription.deny!
     InscriptionMailer.denied(inscription.id).deliver_now
     flash[:notice] = "Hemos enviado un mail al usuario #{inscription.full_name} diciendole que ha sido rechazado."

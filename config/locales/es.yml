@@ -78,6 +78,7 @@ es:
         rep_work_name: "Nombre de la empresa de trabajo"
         rep_work_address: "Dirección de la empresa de trabajo"
         rep_work_phone: "Telefóno de la empresa de trabajo"
+        admin_observation: "Observaciones para el rechazo"
   active_admin:
     scopes:
       pending: "Pendientes"
