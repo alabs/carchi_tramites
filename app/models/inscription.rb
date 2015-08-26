@@ -44,6 +44,15 @@ class Inscription < ActiveRecord::Base
     Inscription::STATUS.invert[self.status]
   end
 
+  def status_calendar_class
+    case status
+      when 0 then "status-pending"
+      when 1 then "status-ok"
+      when 2 then "status-ko"
+      else        "status-pending"
+    end
+  end
+
   def status_class
     case status
       when 0 then "alert alert-warning"

@@ -50,11 +50,32 @@ body {
   color: #FFF 
 }
 
-.fc-event {
-  border: 1px solid #237434;
-  background-color: #237434;
+.fc-event.status-pending {
+  color: #000;
+  border: 1px solid #f1c40f !important;
+  background-color: #f1c40f !important;
 }
 
+.fc-event.status-ok {
+  border: 1px solid #237434 !important;
+  background-color: #237434 !important;
+}
 
+.fc-event.status-ko {
+  border: 1px solid #c0392b !important;
+  background-color: #c0392b !important;
+}
 
+.fc-state-default.fc-corner-left {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
 
+.fc-state-default.fc-corner-right {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.fc-basicWeek-button {
+  border-radius: 0px;
+}
