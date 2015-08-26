@@ -76,4 +76,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Para el envio de correo mediante localhost
+  config.action_mailer.smtp_settings = {
+      enable_starttls_auto: false
+  }
 end

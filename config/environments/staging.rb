@@ -77,14 +77,8 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  # FIXME: fix to sending mails on staging with self signed SSL cert
-  #        fix error OpenSSL::SSL::SSLError: hostname localhost does not match the server certificate
+  # Para el envio de correo mediante localhost
   config.action_mailer.smtp_settings = {
-    :address => "localhost",
-    :port => 25,
-    :authentication => "plain",
-    :enable_starttls_auto => true,
-    :openssl_verify_mode  => 'none'
+      enable_starttls_auto: false
   }
-
 end
