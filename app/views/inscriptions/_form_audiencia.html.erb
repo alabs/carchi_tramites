@@ -1,3 +1,7 @@
-<!-- PREFECTURA AUDIENCIA -->
+  <!-- PREFECTURA AUDIENCIA -->
+<fieldset>
+  <legend>Horarios para petición de Audiencia con el Prefecto</legend>
 
-TODO
+  <%= f.input :appointed_at, as: :select, collection: Slot.all_hours %>
+
+</fieldset>

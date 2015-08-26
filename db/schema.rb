@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150825185756) do
+ActiveRecord::Schema.define(version: 20150825214007) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -130,6 +130,7 @@ ActiveRecord::Schema.define(version: 20150825185756) do
     t.text     "rep_work_address",  limit: 65535
     t.integer  "rep_work_phone",    limit: 8
     t.text     "admin_observation", limit: 65535
+    t.datetime "appointed_at"
   end
 
   add_index "inscriptions", ["event_id"], name: "index_inscriptions_on_event_id", using: :btree
@@ -149,6 +150,15 @@ ActiveRecord::Schema.define(version: 20150825185756) do
     t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "slots", force: :cascade do |t|
+    t.integer  "dow",         limit: 4
+    t.integer  "starts_hour", limit: 4
+    t.integer  "ends_hour",   limit: 4
+    t.integer  "time",        limit: 4
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   add_foreign_key "emails", "categories"

@@ -102,6 +102,9 @@ ActiveAdmin.register Inscription do
         row :ed_unity
         row :observations
       end
+      if inscription.event.ttype_class == "audiencia"
+        row :appointed_at
+      end
       row :admin_observation
     end
     if inscription.event.ttype_class == "actividad"

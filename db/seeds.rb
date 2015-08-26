@@ -127,3 +127,6 @@ end
   Plant.create(name: plant)
 end
 
+Slot.create(dow: 1, starts_hour: "0800", ends_hour: "1600", time: "30")
+Slot.create(dow: 3, starts_hour: "0800", ends_hour: "1600", time: "30")
+

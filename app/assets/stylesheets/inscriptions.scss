@@ -1,3 +1,63 @@
 // Place all the styles related to the Inscriptions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#new_inscription legend {
+  margin-bottom: 20px;
+}
+
+#inscription_born_at_input legend {
+  margin-bottom: 0px;
+  border-width: 0;
+  color: #444;
+}
+
+.dl-horizontal dt {
+  width: 60px;
+}
+
+.dl-horizontal dd {
+  margin-left: 80px;
+}
+
+.formtastic .stringish input, .formtastic .text textarea, .formtastic select {
+  width: 40%;
+  margin-left: 1em;
+}
+
+.formtastic .input .label, #inscription_born_at_input legend {
+  text-align: right;
+}
+
+#inscription_born_at_input select {
+  width: 100%;
+}
+
+.formtastic .btn {
+  font-weight: 700;
+  padding-bottom: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 4px;
+}
+
+.formtastic .fragments .label label {
+  margin-left: 2.65em;
+}
+
+.formtastic .nested-fields {
+  .input {
+    margin: 0px;
+    padding: 0px;
+  }
+  .col-md-4 {
+    text-align: center;
+  }
+  li {
+    list-style-type: none;
+  }
+}
+
+.formtastic .nested-fields.title {
+  margin-bottom: 10px;
+}

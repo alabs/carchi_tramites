@@ -1,0 +1,28 @@
+<script>
+
+  $(document).ready(function() {
+    $('#js-calendar').fullCalendar({
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,basicWeek,basicDay'
+      },
+      lang: 'es',
+      events: [
+        {
+          title: 'Meeting',
+          start: '2015-02-12T10:30:00',
+          end: '2015-02-12T12:30:00'
+        },
+        {
+          title: 'Click for Google',
+          url: 'http://google.com/',
+          start: '2015-02-28'
+        }
+      ]
+    });
+  });
+
+</script>
+
+<div id='js-calendar'></div>

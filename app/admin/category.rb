@@ -2,6 +2,8 @@ ActiveAdmin.register Category do
 
   permit_params :title, :admin_email
 
+  before_filter :skip_sidebar!, :only => :index
+
   #menu parent: "Actividades"
 
   index do

@@ -26,9 +26,11 @@
     <%= render partial: "form_plantas", locals: {f: f} %>
   <% end %>
 
-  <%= f.inputs do %>
+  <%= f.actions do %>
     <%= link_to 'Cancelar', root_path, class: "btn btn-danger" %>
     <%= f.action :submit, button_html: { class: "btn btn-success" } %>
   <% end %>
+
+<br>
 
 <% end %>
