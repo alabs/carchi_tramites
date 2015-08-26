@@ -50,17 +50,10 @@ class Slot < ActiveRecord::Base
     starts_sec = self.starts_hour/100.0*60*60
     ends_sec = self.ends_hour/100.0*60*60
     t = day_slot + starts_sec.seconds
+    dates = Inscription.where("DATE(appointed_at) = ?", day_slot).pluck(:appointed_at)
     while t < day_slot + ends_sec.seconds
-      hours << [ t.strftime("%H:%M"), t ] 
+      hours << [ t.strftime("%H:%M"), t ] unless dates.include? t
       t += 30.minutes
-    end
-    hours
-  end
-
-  def self.all_hours
-    hours = []
-    Slot.all.each do |slot|
-      hours += slot.all_hours
     end
     hours
   end

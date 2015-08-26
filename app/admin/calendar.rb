@@ -1,4 +1,4 @@
-ActiveAdmin.register_page "Calendar" do
+ActiveAdmin.register_page "Calendario" do
 
   menu parent: "Departamento: Prefectura"
 
