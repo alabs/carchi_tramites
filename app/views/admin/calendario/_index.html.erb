@@ -13,10 +13,11 @@ $(document).ready(function() {
     events: [
       <% Event.type_audience.first.inscriptions.each do |ins| %> 
         {
-          title: '<%= ins.full_name %> - <%= ins.motive %> ',
+          title: '<%= ins.full_name %> - <%= ins.status_name %> - <%= ins.motive %>',
           start: '<%= ins.appointed_at.strftime("%FT%T") %>',
           end: '<%= (ins.appointed_at + 30.minutes).strftime("%FT%T") %>',
-          url: '<%= admin_inscription_path(ins) %>'
+          url: '<%= admin_inscription_path(ins) %>',
+          className: '<%= ins.status_calendar_class %>',
         },
       <% end %>
     ]
