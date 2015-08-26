@@ -1,7 +1,44 @@
-  <!-- PREFECTURA AUDIENCIA -->
+<!-- PREFECTURA AUDIENCIA -->
 <fieldset>
-  <legend>Horarios para petición de Audiencia con el Prefecto</legend>
+  <legend>Petición de Audiencia con el Prefecto</legend>
 
-  <%= f.input :appointed_at, as: :select, collection: Slot.all_hours %>
+  <%= f.input :motive %>
+
+  <%# f.input :appointed_at, as: :select, collection: Slot.all_hours %>
+
+  <div class="panel panel-default audiencia">
+    <div class="panel-heading">
+      <h3 class="panel-title">Horarios</h3>
+    </div>
+    <div class="panel-body">
+      <!-- tabs left -->
+      <div class="tabbable">
+
+        <ul class="nav nav-pills nav-stacked col-md-4">
+          <% Slot.all.each do |slot| %>
+            <li><a href="#<%= slot.next_day_slot_name %>" data-toggle="tab"><%= l slot.next_day_slot, format: :long %></a></li>
+          <% end %>
+          <% Slot.all.each do |slot| %>
+            <li><a href="#<%= slot.nextweek_slot_name %>" data-toggle="tab"><%= l slot.nextweek_slot, format: :long %></a></li>
+          <% end %>
+        </ul>
+
+        <div class="tab-content col-md-7">
+          <% Slot.all.each do |slot| %>
+            <div class="tab-pane" id="<%= slot.next_day_slot_name %>">
+              <%= f.input :appointed_at, as: :select, include_blank: false, collection: slot.all_hours(slot.next_day_slot), input_html: { class: "list-group" } %>
+            </div>
+          <% end %>
+
+          <% Slot.all.each do |slot| %>
+            <div class="tab-pane" id="<%= slot.nextweek_slot_name %>">
+              <%= f.input :appointed_at, as: :select, include_blank: false, collection: slot.all_hours(slot.nextweek_slot), input_html: { class: "list-group" } %>
+            </div>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
 </fieldset>

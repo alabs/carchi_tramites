@@ -12,22 +12,46 @@ class Slot < ActiveRecord::Base
     "Domingo" => 6,
   }
 
+  def format_time time 
+    ("%04d" % time).insert(2, ':') 
+  end
+
+  def format_starts_hour
+    format_time self.starts_hour
+  end
+
+  def format_ends_hour
+    format_time self.ends_hour
+  end
+
   def dow_name
     Slot::DOW.invert[self.dow]
   end
 
   def next_day_slot
-    DateTime.now.next_week.next_day(self.dow)
+    date = Date.today+2.days
+    date += 1 + ((self.dow-date.wday+2.days) % 7)
   end
 
-  def all_hours
+  def next_day_slot_name
+    self.next_day_slot.strftime("date_%d%m_%H%M")
+  end
+
+  def nextweek_slot
+    self.next_day_slot + 7.days
+  end
+
+  def nextweek_slot_name
+    self.nextweek_slot.strftime("date_%d%m_%H%M")
+  end
+
+  def all_hours day_slot
     hours = []
     starts_sec = self.starts_hour/100.0*60*60
     ends_sec = self.ends_hour/100.0*60*60
-    nds = self.next_day_slot
-    t = nds + starts_sec.seconds
-    while t < nds + ends_sec.seconds
-      hours << [ I18n.l(t, format: :long), t ] 
+    t = day_slot + starts_sec.seconds
+    while t < day_slot + ends_sec.seconds
+      hours << [ t.strftime("%H:%M"), t ] 
       t += 30.minutes
     end
     hours

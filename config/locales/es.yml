@@ -1,8 +1,8 @@
 es:
   activerecord:
     models:
-      user: "Usuario"
-      users: "Usuarios"
+      admin_user: "Usuario"
+      admin_users: "Usuarios"
       event: "Evento"
       events: "Eventos"
       category: "Categoría"
@@ -13,6 +13,9 @@ es:
       plants: "Plantas"
       email: "Correo electrónico"
       emails: "Correos electrónicos"
+      slot: "Horario"
+      slots: "Horarios"
+      calendar: "Calendario"
     attributes:
       category:
         title: "Título"
@@ -42,6 +45,14 @@ es:
         ends_at: "Termina el"
       plant:
         name: "Nombre"
+      slot:
+        dow: "Día de la semana"
+        dow_name: "Día de la semana"
+        starts_hour: "Hora de inicio"
+        ends_hour: "Hora de fin"
+        format_starts_hour: "Hora de inicio"
+        format_ends_hour: "Hora de fin"
+        time: "Duración"
       inscriptions_plants:
         quantity: "Cantidad"
         id: "Planta"
@@ -79,15 +90,22 @@ es:
         rep_work_address: "Dirección de la empresa de trabajo"
         rep_work_phone: "Telefóno de la empresa de trabajo"
         admin_observation: "Observaciones para el rechazo"
+        motive: "Motivo de la Audiencia"
   active_admin:
+    access_denied: 
+      message: "No tienes permiso para acceder a esta sección"
     scopes:
       pending: "Pendientes"
       approved: "Aprobados"
       denied: "Rechazados"
+  devise:
+    failure:
+      admin_user:
+        not_found_in_database: "No se ha encontrado este usuario. Comprueba el correo electrónico."
   inscription_mailer:
     new:
-      subject: "[carchi-juventud] Has sido inscrito a la actividad"
+      subject: "[carchi] Has sido inscrito a la actividad"
     approved:
-      subject: "[carchi-juventud] Has sido aprobado para la actividad"
+      subject: "[carchi] Has sido aprobado para la actividad"
     denied:
-      subject: "[carchi-juventud] Tu solicitud ha sido rechazada"
+      subject: "[carchi] Tu solicitud ha sido rechazada"

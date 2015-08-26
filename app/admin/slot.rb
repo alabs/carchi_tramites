@@ -1,6 +1,25 @@
 ActiveAdmin.register Slot do
 
+  menu parent: "Departamento: Prefectura"
+
+  permit_params :dow, :starts_hour, :ends_hour, :time
+
   before_filter :skip_sidebar!, :only => :index
+
+  index do 
+    panel "Ayuda" do
+      "Calendario con citas para el Prefecto"
+    end
+    selectable_column
+    id_column
+    column :dow_name
+    column :format_starts_hour
+    column :format_ends_hour
+    column :time do |slot|
+      "#{slot.time} minutos"
+    end
+    actions
+  end
 
   form do |f|
     f.inputs "Inscripción" do
@@ -16,8 +35,8 @@ ActiveAdmin.register Slot do
     attributes_table do
       row :id
       row :dow_name
-      row :starts_hour
-      row :ends_hour
+      row :format_starts_hour
+      row :format_ends_hour
     end
     active_admin_comments
   end

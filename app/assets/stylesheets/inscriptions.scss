@@ -61,3 +61,21 @@
 .formtastic .nested-fields.title {
   margin-bottom: 10px;
 }
+
+.juventud .col-md-5 {
+  height: 225px;
+}
+
+.audiencia .list-group-item {
+  width: 20%;
+  float: left;
+}
+
+.formtastic #inscription_appointed_at_input .label {
+  display: none;
+}
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+  background-color: #2F9B45 !important;
+  border-color: #2F9B45 !important;
+}

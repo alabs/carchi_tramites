@@ -20,8 +20,16 @@ $panelHeaderBck: #237434;
 @import "active_skin";
 @import "fullcalendar";
 
-#header h1 img {
+body {
+  font-size: 100%;
+}
+
+#header h1 img, #footer {
   display: none;
+}
+
+#header ul.tabs > li {
+  font-size: 14px;
 }
 
 .hide {

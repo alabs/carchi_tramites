@@ -13,8 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-datepicker
-//= require turbolinks
+// require turbolinks
 //= require bootstrap
+//= require listgroup
 //= require cocoon
 //= require inscriptions
 //= require page

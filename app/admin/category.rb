@@ -4,7 +4,7 @@ ActiveAdmin.register Category do
 
   before_filter :skip_sidebar!, :only => :index
 
-  #menu parent: "Actividades"
+  menu parent: "Peticiones"
 
   index do
     selectable_column

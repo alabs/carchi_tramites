@@ -1,5 +1,11 @@
 ActiveAdmin.register_page "Calendar" do
+
+  menu parent: "Departamento: Prefectura"
+
   content do 
+    panel "Ayuda" do
+      "Calendario con citas para el Prefecto"
+    end
     panel "Calendario" do
       columns do 
         column do
@@ -8,5 +14,5 @@ ActiveAdmin.register_page "Calendar" do
       end
     end
   end
-end
 
+end

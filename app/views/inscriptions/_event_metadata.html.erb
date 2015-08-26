@@ -1,15 +1,16 @@
-
-<dl class="dl-horizontal">
-  <% if event.starts_at? and event.ends_at? %>
-    <dt>Fechas</dt>
-  <dd> desde el <%= l event.starts_at, format: :short %> hasta el <%= l event.ends_at, format: :short %>  </dd>
+<% if  event.starts_at? or event.ends_at? or event.limit? or event.price? %>
+  <dl class="dl-horizontal">
+    <% if event.starts_at? and event.ends_at? %>
+      <dt>Fechas</dt>
+    <dd> desde el <%= l event.starts_at, format: :short %> hasta el <%= l event.ends_at, format: :short %>  </dd>
+  <% end %>
+    <% if event.limit? %>
+      <dt>Límite</dt>
+    <dd><%= event.limit %></dd>
+  <% end %>
+    <% if event.price? %>
+      <dt>Precio</dt>
+    <dd><%= number_to_currency event.price %></dd>
+  <% end %>
+  </dl>
 <% end %>
-  <% if event.limit? %>
-    <dt>Límite</dt>
-  <dd><%= event.limit %></dd>
-<% end %>
-  <% if event.price? %>
-    <dt>Precio</dt>
-  <dd><%= number_to_currency event.price %></dd>
-<% end %>
-</dl>
