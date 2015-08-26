@@ -11,7 +11,7 @@
   <%= f.input :event_id, as: :hidden, input_html: {value: @event.id} %>
   <%= f.inputs :document_id, :first_name, :last_name, required: :required %>
   <%= f.input :sex, as: :select, collection: Inscription::SEX.to_a %>
-  <%= f.input :born_at, starts_year: 1900 %>
+  <%= f.input :born_at, start_year: 1900, end_year: Date.today.year-3 %>
   <%= f.inputs :provincia, :canton, :parroquia, :address, :phone, :email %>
 
   <% if @event.ttype_class == "audiencia" %>

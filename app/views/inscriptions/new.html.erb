@@ -4,6 +4,14 @@
 <div class="span11">
   <h1><%= @event.category.title %></h1>
   <h2><%= @event.title %></h2>
+
+  <% if @event.has_reached_limit? %>
+    <div class="alert alert-danger">
+      <b>¡Atención!</b>
+      Este curso ha llegado al límite de inscritos aceptados, por lo que ya no hay más plazas disponibles. Puedes inscribirte y te contactaremos si hay alguna plaza disponible.
+    </div>
+  <% end %>
+
   <p><%= @event.description_html %></p>
 
   <%= render partial: "inscriptions/event_metadata", locals: {event: @event} %>

@@ -81,6 +81,10 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
       enable_starttls_auto: false
   }
+<<<<<<< HEAD
+=======
 
   config.action_mailer.default_url_options = { :host => 'tramites.alabs.org' }
+
+>>>>>>> 481f1b2acb5747b5442cc88f82f43b1ff3cb74df
 end
