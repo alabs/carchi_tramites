@@ -77,6 +77,14 @@ ActiveAdmin.register Inscription do
   end
 
   show do 
+    if inscription.event.ttype_class == "audiencia"
+      panel "Datos de la cita" do
+        attributes_table_for inscription do
+          row :motive
+          row :appointed_at 
+        end
+      end
+    end
     attributes_table do
       row :id
       row :event

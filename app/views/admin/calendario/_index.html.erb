@@ -1,0 +1,27 @@
+<script>
+$(document).ready(function() {
+  $('#js-calendar').fullCalendar({
+    header: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'month,basicWeek,basicDay'
+    },
+    lang: 'es',
+    weekends: false,
+    height: 650,
+    timeFormat: 'H:mm',
+    events: [
+      <% Event.type_audience.first.inscriptions.each do |ins| %> 
+        {
+          title: '<%= ins.full_name %> - <%= ins.motive %> ',
+          start: '<%= ins.appointed_at.strftime("%FT%T") %>',
+          end: '<%= (ins.appointed_at + 30.minutes).strftime("%FT%T") %>',
+          url: '<%= admin_inscription_path(ins) %>'
+        },
+      <% end %>
+    ]
+  });
+});
+</script>
+
+<div id='js-calendar'></div>
