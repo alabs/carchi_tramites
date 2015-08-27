@@ -1,12 +1,18 @@
 require "test_helper"
 
 class EventsMailerTest < ActionMailer::TestCase
+
+  def setup
+    @category = FactoryGirl.create(:category)
+    @event = FactoryGirl.create(:event, category: @category)
+  end
+
   def test_limit_reached
-    mail = EventsMailer.limit_reached
-    assert_equal "Limit reached", mail.subject
-    assert_equal ["to@example.org"], mail.to
+    mail = EventsMailer.limit_reached @event.id
+    subject = "[carchi] Limite de inscritos en curso Miércoles: 17:00 a 19:00 - Informática Básica a la Ciudadanía"
+    assert_equal subject, mail.subject
+    assert_equal ["admin@example.org"], mail.to
     assert_equal ["from@example.com"], mail.from
-    assert_match "Hi", mail.body.encoded
   end
 
 end

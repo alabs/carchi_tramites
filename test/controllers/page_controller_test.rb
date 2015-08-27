@@ -1,13 +1,9 @@
 require "test_helper"
 
 class PageControllerTest < ActionController::TestCase
+
   def test_juventud
     get :juventud
-    assert_response :success
-  end
-
-  def test_certificado
-    get :certificado
     assert_response :success
   end
 
