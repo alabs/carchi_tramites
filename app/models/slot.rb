@@ -1,6 +1,6 @@
 class Slot < ActiveRecord::Base
 
-  validates :dow, presence: true
+  validates :dow, :starts_hour, :ends_hour, :time, presence: true
 
   DOW = {
     "Lunes" => 0,

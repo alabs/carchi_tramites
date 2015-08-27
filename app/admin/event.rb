@@ -1,8 +1,8 @@
 ActiveAdmin.register Event do
 
-  permit_params :title, :description, :category_id, :ttype, :limit, :starts_at, :ends_at, :price
+  menu parent: "Administración"
 
-  menu parent: "Peticiones"
+  permit_params :title, :description, :category_id, :ttype, :limit, :starts_at, :ends_at, :price
 
   filter :title
   filter :description

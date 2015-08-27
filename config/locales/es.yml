@@ -16,7 +16,12 @@ es:
       slot: "Horario"
       slots: "Horarios"
       calendar: "Calendario"
+      calendars: "Calendarios"
     attributes:
+      admin_user:
+        email: "Correo electrónico"
+        roles_array: "Permisos del Usuario"
+        roles: "Permisos del Usuario"
       category:
         title: "Título"
         events: "Eventos"

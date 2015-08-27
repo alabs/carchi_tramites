@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  font-family: "Roboto",sans-serif;
+}
+
+abbr {
+  display: none;
+}
+
 #new_inscription legend {
   margin-bottom: 20px;
 }
@@ -10,6 +18,10 @@
   margin-bottom: 0px;
   border-width: 0;
   color: #444;
+}
+
+#inscription_born_at_input select {
+  width: 100%;
 }
 
 .dl-horizontal dt {
@@ -27,10 +39,6 @@
 
 .formtastic .input .label, #inscription_born_at_input legend {
   text-align: right;
-}
-
-#inscription_born_at_input select {
-  width: 100%;
 }
 
 .formtastic .btn {

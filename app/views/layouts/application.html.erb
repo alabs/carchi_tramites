@@ -9,6 +9,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
@@ -33,6 +34,8 @@
       </div>
     </div>
   <% end %>
+
+  <%= render partial: "footer" %>
 
 </body>
 </html>

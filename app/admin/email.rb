@@ -1,8 +1,8 @@
 ActiveAdmin.register Email do
 
-  permit_params :category_id, :ttype, :subject, :body_text, :body_html, :ttype
+  menu parent: "Administración"
 
-  menu parent: "Peticiones"
+  permit_params :category_id, :ttype, :subject, :body_text, :body_html, :ttype
 
   filter :subject
   filter :body_text
