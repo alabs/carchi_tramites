@@ -1,10 +1,10 @@
 ActiveAdmin.register Category do
 
+  menu parent: "Administración"
+
   permit_params :title, :admin_email
 
   before_filter :skip_sidebar!, :only => :index
-
-  menu parent: "Peticiones"
 
   index do
     selectable_column

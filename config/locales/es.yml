@@ -16,7 +16,12 @@ es:
       slot: "Horario"
       slots: "Horarios"
       calendar: "Calendario"
+      calendars: "Calendarios"
     attributes:
+      admin_user:
+        email: "Correo electrónico"
+        roles_array: "Permisos del Usuario"
+        roles: "Permisos del Usuario"
       category:
         title: "Título"
         events: "Eventos"
@@ -92,6 +97,8 @@ es:
         admin_observation: "Observaciones para el rechazo"
         motive: "Motivo de la Audiencia"
         appointed_at: "Fecha de la Cita"
+        plant_location: "Ubicación de las Plantas"
+        plant_representation: "En representación de"
   active_admin:
     access_denied: 
       message: "No tienes permiso para acceder a esta sección"
