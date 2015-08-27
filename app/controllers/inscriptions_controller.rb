@@ -26,7 +26,7 @@ class InscriptionsController < ApplicationController
       :ed_level, :ed_unity, :observations, :rep_document_id, :rep_full_name, :rep_sex, 
       :rep_title, :rep_phone_home, :rep_phone_celular, :rep_parroquia, :rep_canton, 
       :rep_provincia, :rep_address, :rep_work_name, :rep_work_address, :rep_work_phone, 
-      :motive, :appointed_at, inscriptions_plants_attributes: 
+      :motive, :appointed_at, :plant_location, :plant_representation, inscriptions_plants_attributes: 
       [:id, :plant_id, :inscription_id, :quantity, :_destroy])
   end
 

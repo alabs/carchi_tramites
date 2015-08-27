@@ -92,6 +92,8 @@ es:
         admin_observation: "Observaciones para el rechazo"
         motive: "Motivo de la Audiencia"
         appointed_at: "Fecha de la Cita"
+        plant_location: "Ubicación de las Plantas"
+        plant_representation: "En representación de"
   active_admin:
     access_denied: 
       message: "No tienes permiso para acceder a esta sección"
