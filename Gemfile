@@ -45,4 +45,6 @@ gem 'airbrake'                                # error tracking / errbit
 gem 'cocoon'                                  # nested models forms
 gem 'ckeditor'
 gem 'formtastic', '~> 3.0'
+gem 'cancancan', '~> 1.10'
+gem 'flag_shih_tzu'
 #gem 'id_ecuador'                              # validates cedula Ecuador
