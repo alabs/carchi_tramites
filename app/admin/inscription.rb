@@ -41,9 +41,9 @@ ActiveAdmin.register Inscription do
       f.input :sex, as: :select, collection: Inscription::SEX.to_a
       f.input :born_at, as: :datepicker
       f.input :address, input_html: {rows: 2}
-      f.input :parroquia
-      f.input :canton
-      f.input :provincia
+      f.input :provincia, as: :select, collection: get_locations(:provincias, "ins")
+      f.input :canton, as: :select, collection: get_locations(:cantones, "ins")
+      f.input :parroquia, as: :select, collection: get_locations(:parroquias, "ins")
       f.input :phone
       f.input :email
       if f.object.event and f.object.event.ttype_class == "actividad"
@@ -57,9 +57,9 @@ ActiveAdmin.register Inscription do
           f.input :rep_title
           f.input :rep_phone_home
           f.input :rep_phone_celular
-          f.input :rep_parroquia
-          f.input :rep_canton
-          f.input :rep_provincia
+          f.input :rep_provincia, get_locations(:provincias, "rep")
+          f.input :rep_canton, get_locations(:cantones, "rep")
+          f.input :rep_parroquia, get_locations(:parroquias, "rep")
           f.input :rep_address
           f.input :rep_work_name
           f.input :rep_work_address
