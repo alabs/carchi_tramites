@@ -23,3 +23,15 @@ $ ->
   cascadeSelect cantonSelect, parroquiaSelect
   cascadeSelect repprovSelect, repcantonSelect
   cascadeSelect repcantonSelect, repparroquiaSelect
+
+  if $('#inscription_provincia').val() == ""
+    $('#inscription_provincia').find('option').removeAttr('selected')
+    $('#inscription_provincia').find('option[value="c_insprovincia_4"]').prop("selected", true)
+    $('#inscription_provincia').change()
+
+    $('#inscription_canton').find('option').removeAttr('selected')
+    $('#inscription_canton').find('option[value="c_inscanton_4_1"]').prop("selected", true)
+    $('#inscription_canton').change()
+
+    $('#inscription_parroquia').find('option').removeAttr('selected')
+    $('#inscription_parroquia').find('option[value="c_insparroquia_4_1_50"]').prop("selected", true)
