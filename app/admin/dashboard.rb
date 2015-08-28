@@ -45,6 +45,8 @@ ActiveAdmin.register_page "Dashboard" do
             end
           end
         end
+      end
+      columns do
         if current_admin_user.is? :audiencia or current_admin_user.is? :admin
           column do
             panel "Prefectura: Audiencia con Prefecto" do
@@ -52,6 +54,8 @@ ActiveAdmin.register_page "Dashboard" do
             end
           end
         end
+      end
+      columns do
         if current_admin_user.is? :plantas or current_admin_user.is? :admin
           column do
             panel "Medio Ambiente: reforestación de plantas" do

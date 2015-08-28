@@ -2,12 +2,18 @@
   <table>
     <thead>
       <th>Nombre completo</th>
+      <th>Teléfono</th>
+      <th>Correo electrónico</th>
+      <th>Fecha de inscripción</th>
       <th>Actividad</th>
     </thead>
     <tbody>
       <% Inscription.by_event_type(event_type).pending.each do |inscription| %>
         <tr>
           <td><%= link_to(inscription.full_name, admin_inscription_path(inscription)) %> </td>
+          <td><%= inscription.phone %> </td>
+          <td><%= mail_to(inscription.email) %> </td>
+          <td><%= l inscription.created_at, format: :short %> </td>
           <td><%= link_to(inscription.event.title, admin_event_path(inscription.event)) %></td>
         </tr>
       <% end %>
@@ -16,3 +22,10 @@
 <% else %>
   No hay peticiones pendientes de procesar
 <% end %>
+
+<ul>
+  <li><%= link_to "Ver todas las peticiones", admin_inscriptions_path %></li>
+  <li><%= link_to "Ver peticiones pendientes", admin_inscriptions_path("q[status_eq]" => 0) %></li>
+  <li><%= link_to "Ver peticiones aprobadas", admin_inscriptions_path("q[status_eq]" => 1) %></li>
+  <li><%= link_to "Ver peticiones rechazadas", admin_inscriptions_path("q[status_eq]" => 2) %></li>
+</ul>
