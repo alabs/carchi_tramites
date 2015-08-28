@@ -1,0 +1,225 @@
+1,1,Cuenca
+1,2,Girón
+1,3,Gualaceo
+1,4,Nabón
+1,5,Paute
+1,6,Pucara
+1,7,San Fernando
+1,8,Santa Isabel
+1,9,Sigsig
+1,10,Oña
+1,11,Chordeleg
+1,12,El Pan
+1,13,Sevilla De Oro
+1,14,Guachapala
+1,15,Camilo Ponce Enríquez
+2,1,Guaranda
+2,2,Chillanes
+2,3,Chimbo
+2,4,Echeandía
+2,5,San Miguel
+2,6,Caluma 
+2,7,Las Naves
+3,1,Azogues
+3,2,Biblián
+3,3,Cañar
+3,4,La Troncal
+3,5,El Tambo 
+3,6,Déleg
+3,7,Suscal
+4,1,Tulcán
+4,2,Bolívar
+4,3,Espejo
+4,4,Mira
+4,5,Montúfar
+4,6,San Pedro De Huaca
+5,1,Latacunga
+5,2,La Maná
+5,3,Pangua
+5,4,Pujili
+5,5,Salcedo
+5,6,Saquisilí
+6,1,Riobamba
+6,2,Alausi
+6,3,Colta
+6,4,Chambo
+6,5,Chunchi
+6,6,Guamote
+6,7,Guano
+6,8,Pallatanga
+6,9,Penipe
+6,10,Cumandá
+O7,1,Machala
+7,2,Arenillas
+7,3,Atahualpa
+7,4,Balsas
+7,5,Chilla
+7,6,El Guabo
+7,7,Huaquillas
+7,8,Marcabelí
+7,9,Pasaje
+7,10,Piñas
+7,11,Portovelo
+7,12,Santa Rosa
+7,13,Zaruma
+7,14,Las Lajas
+8,1,Esmeraldas
+8,2,Eloy Alfaro
+8,3,Muisne
+8,4,Quinindé
+8,5,San Lorenzo
+8,6,Atacames
+8,7,Rioverde
+8,8,La Concordia
+9,1,Guayaquil
+9,2,Alfredo Baquerizo Moreno (Juján)
+9,3,Balao
+9,4,Balzar
+9,5,Colimes
+9,6,Daule
+9,7,Durán
+9,8,El Empalme
+9,9,El Triunfo
+9,10,Milagro
+9,11,Naranjal
+9,12,Naranjito
+9,13,Palestina
+9,14,Pedro Carbo
+9,15,Salinas
+9,16,Samborondón
+9,17,Santa Elena
+9,18,Santa Lucía
+9,19,Salitre (Urbina Jado)
+9,20,San Jacinto De Yaguachi
+9,21,Playas
+9,22,Simón Bolívar
+9,23,Coronel Marcelino Maridueña
+9,24,Lomas De Sargentillo
+9,25,Nobol
+9,26,La Libertad
+9,27,General Antonio Elizalde 
+9,28,Isidro Ayora 
+10,3,Cotacachi
+10,4,Otavalo
+10,5,Pimampiro
+10,6,San Miguel De Urcuquí
+11,1,Loja
+11,2,Calvas
+11,3,Catamayo
+11,4,Celica
+11,5,Chaguarpamba
+11,6,Espíndola
+11,7,Gonzanamá
+11,8,Macará
+11,9,Paltas
+11,10,Puyango
+11,11,Saraguro
+11,12,Sozoranga
+11,13,Zapotillo
+11,14,Pindal
+11,15,Quilanga
+11,16,Olmedo
+12,1,Babahoyo
+12,2,Baba
+12,3,Montalvo
+12,4,Puebloviejo
+12,5,Quevedo
+12,6,Urdaneta
+12,7,Ventanas
+12,8,Vínces
+12,9,Palenque
+12,10,Buena Fé
+12,11,Valencia
+12,12,Mocache
+12,13,Quinsaloma
+13,1,Portoviejo
+13,2,Bolívar
+13,3,Chone
+13,4,El Carmen
+13,5,Flavio Alfaro
+13,6,Jipijapa
+13,7,Junín
+13,8,Manta
+13,9,Montecristi   
+13,10,Paján
+13,11,Pichincha
+13,12,Rocafuerte
+13,13,Santa Ana
+13,14,Sucre
+13,15,Tosagua
+13,16,24 De Mayo
+13,17,Pedernales
+13,18,Olmedo
+13,19,Puerto López
+13,20,Jama
+13,21,Jaramijó
+13,22,San Vicente
+14,1,Morona
+14,2,Gualaquiza
+14,3,Limón Indanza
+14,4,Palora
+14,5,Santiago
+14,6,Sucúa
+14,7,Huamboya
+14,8,San Juan Bosco 
+14,9,Taisha 
+14,10,Logroño 
+14,11,Pablo Sexto
+15,1,Tena
+15,2, Aguarico
+15,3,Archidona
+15,4,El Chaco
+15,5, La Joya De Los Sachas
+15,6, Orellana
+15,7,Quijos
+15,8, Loreto
+15,9,Carlos Julio Arosemena Tola
+16,1,Pastaza
+16,2,Mera
+16,3,Santa Clara
+16,4,Arajuno
+17,1,Quito
+17,2,Cayambe
+17,3,Mejia
+17,4,Pedro Moncayo
+17,5,Rumiñahui
+17,6,Santo Domingo
+17,7,San Miguel De Los Bancos
+17,8,Pedro Vicente Maldonado
+17,9,Puerto Quito
+18,1,Ambato
+18,2, Baños De Agua Santa
+18,3,Cevallos
+18,4,Mocha
+18,5,Patate
+18,6,Quero
+18,7,San Pedro De Pelileo
+18,8,Santiago De Píllaro
+18,9,Tisaleo
+19,1,Zamora
+19,2,Chinchipe
+19,3,Nangaritza
+19,4,Yacuambi
+19,5,Yantzaza (Yanzatza)
+19,6,El Pangui
+19,7,Centinela Del Cóndor
+19,8,Palanda
+19,9,Paquisha 
+20,1,San Cristóbal
+20,2,Isabela
+20,3,Santa Cruz
+21,1,Lago Agrio
+21,2,Gonzalo Pizarro
+21,3,Putumayo
+21,4,Shushufindi
+21,5,Sucumbíos
+21,6,Cascales
+21,7,Cuyabeno
+22,1,Orellana
+22,2,Aguarico
+22,3,La Joya De Los Sachas
+22,4,Loreto
+23,1,Santo Domingo
+24,1,Santa Elena
+24,2,La Libertad
+24,3,Salinas

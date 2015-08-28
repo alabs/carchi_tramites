@@ -1,0 +1,1472 @@
+1,1,50,Cuenca
+1,1,1,Bellavista
+1,1,9,Monay
+1,1,2,Cañaribamba
+1,1,10,San Blas
+1,1,3,El Batán
+1,1,11,San Sebastián
+1,1,4,El Sagrario
+1,1,12,Sucre
+1,1,5,El Vecino
+1,1,13,Totoracocha 
+1,1,6,Gil Ramírez Dávalos
+1,1,14,Yanuncay
+1,1,7,Huaynacápac
+1,1,15,Hermano Miguel
+1,1,8,Machángara
+1,1,51,Baños
+1,1,62,Ricaurte
+1,1,52,Cumbe
+1,1,63,San Joaquín
+1,1,53,Chaucha
+1,1,64,Santa Ana
+1,1,54,Checa (Jidcay) 
+1,1,65,Sayausí
+1,1,55,Chiquintad
+1,1,66,Sidcay
+1,1,56,Llacao
+1,1,67,Sinincay
+1,1,57,Molleturo
+1,1,68,Tarqui
+1,1,58,Nulti
+1,1,69,Turi
+1,1,59,Octavio Cordero Palacios (Santa Rosa) 
+1,1,70,Valle
+1,1,60,Paccha
+1,1,71,Victoria Del Portete (Irquis)
+1,1,61,Quingeo
+1,2,50,Girón
+1,2,51,Asunción
+1,2,52,San Gerardo
+1,3,50,Gualaceo
+1,3,51,Chordeleg
+1,3,56,Remigio Crespo Toral (Gúlag)
+1,3,52,Daniel Córdova Toral (El Oriente) 
+1,3,57,San Juan
+1,3,53,Jadán
+1,3,58,Zhidmad
+1,3,54,Mariano Moreno
+1,3,59,Luis Cordero Vega
+1,3,55,Principal
+1,3,60,Simón Bolívar (Cab. En Gañanzol)
+1,4,50,Nabón
+1,4,51,Cochapata
+1,4,53,Las Nieves (Chaya)
+1,4,52,El Progreso (Cab.En Zhota) 
+1,4,54,Oña
+1,4,55,La Paz
+1,5,50,Paute
+1,5,51,Amaluza
+1,5,57,Palmas
+1,5,52,Bulán (José Víctor Izquierdo) 
+1,5,58,Pan
+1,5,53,Chicán (Guillermo Ortega) 
+1,5,59,San Cristóbal (Carlos Ordóñez Lazo) 
+1,5,54,El Cabo  
+1,5,60,Sevilla De Oro
+1,5,55,Guachapala
+1,5,61,Tomebamba
+1,5,56,Guarainag
+1,5,62,Dug Dug
+1,6,50,Pucará
+1,6,51,Camilo Ponce Enríquez (Cab. En Río 7 De Mollepongo) 
+1,6,52,San Rafael De Sharug
+1,7,50,San Fernando
+1,7,51,Chumblín
+1,8,50,Santa Isabel (Chaguarurco)
+1,8,51,Abdón Calderón  (La Unión) 
+1,8,53,Zhaglli (Shaglli)
+1,8,52,El Carmen De Pijilí
+1,8,54,San Salvador De Cañaribamba
+1,9,50,Sigsig
+1,9,51,Cuchil (Cutchil) 
+1,9,54,Ludo
+1,9,52,Gima
+1,9,55,San Bartolomé
+1,9,53,Guel
+1,9,56,San José De Raranga
+1,10,50,San Felipe De Oña Cabecera Cantonal
+1,10,51,Susudel
+1,11,50,Chordeleg
+1,11,51,Principal
+1,11,53,Luis Galarza Orellana (Cab.En Delegsol) 
+1,11,52,La Unión
+1,11,54,San Martín De Puzhio
+1,12,50,El Pan
+1,12,51,Amaluza 
+1,12,53,San Vicente
+1,12,52,Palmas
+1,13,50,Sevilla De Oro
+1,13,51,Amaluza
+1,13,52,Palmas
+1,14,50,Guachapala
+1,15,50,Camilo Ponce Enríquez
+1,15,51,El Carmen De Pijilí
+2,1,50,Guaranda
+2,1,1,Ángel Polibio Cháves
+2,1,3,Guanujo
+2,1,2,Gabriel Ignacio Veintimilla
+2,1,51,Facundo Vela
+2,1,56,San Lorenzo
+2,1,52, Guanujo
+2,1,57,San Simón (Yacoto)
+2,1,53,Julio E. Moreno (Catanahuán Grande)
+2,1,58,Santa Fé (Santa Fé)
+2,1,54,Las Naves
+2,1,59,Simiátug
+2,1,55,Salinas
+2,1,60,San Luis De Pambil
+2,2,50,Chillanes
+2,2,51,San José Del Tambo (Tambopamba)
+2,3,50,San José De Chimbo
+2,3,51,Asunción (Asancoto) 
+2,3,54,San Sebastián
+2,3,52,Caluma
+2,3,55,Telimbela
+2,3,53,Magdalena (Chapacoto)
+2,4,50,Echeandía
+2,5,50,San Miguel
+2,5,51,Balsapamba
+2,5,54,San Pablo  (San Pablo De Atenas)
+2,5,52,Bilován
+2,5,55,Santiago
+2,5,53,Régulo De Mora
+2,5,56,San Vicente
+2,6,50,Caluma
+2,7,50,Las Naves
+2,7,1,Las Mercedes
+2,7,2,Las Naves
+3,1,50,Azogues
+3,1,1,Aurelio Bayas Martínez
+3,1,3,Borrero
+3,1,2,Azogues
+3,1,4,San Francisco
+3,1,51,Cojitambo
+3,1,56,Pindilig
+3,1,52,Déleg
+3,1,57,Rivera
+3,1,53,Guapán
+3,1,58,San Miguel
+3,1,54,Javier Loyola (Chuquipata) 
+3,1,59,Solano
+3,1,55,Luis Cordero
+3,1,60,Taday
+3,2,50,Biblián
+3,2,51,Nazón (Cab. En Pampa De Domínguez)
+3,2,53,Turupamba
+3,2,52,San Francisco De Sageo
+3,2,54,Jerusalén
+3,3,50,Cañar
+3,3,51,Chontamarca
+3,3,58,San Antonio
+3,3,52,Chorocopte
+3,3,59,Suscal
+3,3,53,General Morales (Socarte) 
+3,3,60,Tambo
+3,3,54,Gualleturo
+3,3,61,Zhud
+3,3,55,Honorato Vásquez (Tambo Viejo) 
+3,3,62,Ventura
+3,3,56,Ingapirca
+3,3,63,Ducur
+3,3,57,Juncal
+3,4,50,La Troncal
+3,4,51,Manuel J. Calle
+3,4,52,Pancho Negro
+3,5,50,El Tambo
+3,6,50,Déleg
+3,6,51,Solano
+3,7,50,Suscal
+4,1,50,Tulcán
+4,1,1,González Suárez
+4,1,2,Tulcán
+4,1,51,El Carmelo (El Pun) 
+4,1,57,Tufiño
+4,1,52,Huaca
+4,1,58,Urbina (Taya)
+4,1,53,Julio Andrade (Orejuela) 
+4,1,59,El Chical
+4,1,54,Maldonado
+4,1,60,Mariscal Sucre
+4,1,55,Pioter
+4,1,61,Santa Martha De Cuba
+4,1,56,Tobar Donoso (La Bocana De Camumbí) 
+4,2,50,Bolívar
+4,2,51,García Moreno
+4,2,54,San Vicente De Pusir
+4,2,52,Los Andes
+4,2,55,San Rafael
+4,2,53,Monte Olivo
+4,3,50,El Angel
+4,3,1,El Ángel
+4,3,2,27 De Septiembre
+4,3,51,El Goaltal
+4,3,53,San Isidro
+4,3,52,La Libertad (Alizo)
+4,4,50,Mira (Chontahuasi)
+4,4,51,Concepción
+4,4,53,Juan Montalvo (San Ignacio De Quil)
+4,4,52,Jijón Y Caamaño (Cab. En Río Blanco)
+4,5,50,San Gabriel
+4,5,1,González Suárez
+4,5,2,San José
+4,5,51,Cristóbal Colón
+4,5,54,La Paz
+4,5,52,Chitán De Navarrete
+4,5,55,Piartal
+4,5,53,Fernández Salvador
+4,6,50,Huaca
+4,6,51,Mariscal Sucre
+5,1,50,Latacunga
+5,1,1,Eloy Alfaro  (San Felipe) 
+5,1,4,La Matriz
+5,1,2,Ignacio Flores (Parque Flores) 
+5,1,5,San Buenaventura
+5,1,3,Juan Montalvo (San Sebastián)
+5,1,51,Alaques (Aláquez) 
+5,1,58,Poaló
+5,1,52,Belisario Quevedo (Guanailín)
+5,1,59,San Juan De Pastocalle
+5,1,53,Guaitacama (Guaytacama) 
+5,1,60,Sigchos
+5,1,54,Joseguango Bajo
+5,1,61,Tanicuchí
+5,1,55,Las Pampas
+5,1,62,Toacaso
+5,1,56,Mulaló
+5,1,63,Palo Quemado
+5,1,57,11 De Noviembre (Ilinchisi)
+5,2,50,La Maná
+5,2,1,El Carmen
+5,2,3,El Triunfo
+5,2,2,La Maná 
+5,2,51,Guasaganda (Cab.En Guasaganda 
+5,2,52,Pucayacu
+5,3,50,El Corazón
+5,3,51,Moraspungo
+5,3,53,Ramón Campaña
+5,3,52,Pinllopata
+5,4,50,Pujilí
+5,4,51,Angamarca
+5,4,55,La Victoria
+5,4,52,Chucchilán (Chugchilán) 
+5,4,56,Pilaló
+5,4,53,Guangaje
+5,4,57,Tingo
+5,4,54,Isinlibí (Isinliví) 
+5,4,58,Zumbahua
+5,5,50,San Miguel
+5,5,51,Antonio José Holguín  (Santa Lucía)
+5,5,54,Mulliquindil (Santa Ana)
+5,5,52,Cusubamba
+5,5,55,Pansaleo
+5,5,53,Mulalillo
+5,6,50,Saquisilí
+5,6,51,Canchagua
+5,6,53,Cochapamba
+5,6,52,Chantilín
+5,7,50,Sigchos
+5,7,51,Chugchillán
+5,7,53,Las Pampas
+5,7,52,Isinliví
+5,7,54,Palo Quemado
+6,1,50,Riobamba
+6,1,1,Lizarzaburu
+6,1,4,Veloz
+6,1,2,Maldonado
+6,1,5,Yaruquíes
+6,1,3,Velasco
+6,1,51,Cacha (Cab. En Machángara) 
+6,1,57,Pungalá
+6,1,52,Calpi
+6,1,58,Punín
+6,1,53,Cubijíes
+6,1,59,Quimiag
+6,1,54,Flores
+6,1,60,San Juan
+6,1,55,Licán
+6,1,61,San Luis
+6,1,56,Licto
+6,2,50,Alausí
+6,2,51,Achupallas
+6,2,56,Pistishí (Nariz Del Diablo)
+6,2,52,Cumandá
+6,2,57,Pumallacta
+6,2,53,Guasuntos
+6,2,58,Sevilla
+6,2,54,Huigra
+6,2,59,Sibambe
+6,2,55,Multitud
+6,2,60,Tixán
+6,3,50,Villa La Unión (Cajabamba)
+6,3,1,Cajabamba
+6,3,2,Sicalpa
+6,3,51,Cañi
+6,3,53,Juan De Velasco (Pangor)
+6,3,52,Columbe
+6,3,54,Santiago De Quito (Cab. En San Antonio De Quito)
+6,4,50,Chambo
+6,5,50,Chunchi
+6,5,51,Capzol
+6,5,53,Gonzol
+6,5,52,Compud
+6,5,54,Llagos
+6,6,50,Guamote
+6,6,51,Cebadas
+6,6,52,Palmira
+6,7,50,Guano
+6,7,1,El Rosario
+6,7,2,La Matriz
+6,7,51,Guanando
+6,7,56,San Isidro De Patulú
+6,7,52,Ilapo
+6,7,57,San José Del Chazo
+6,7,53,La Providencia
+6,7,58,Santa Fé De Galán
+6,7,54,San Andrés
+6,7,59,Valparaíso
+6,7,55,San Gerardo De Pacaicaguán
+6,8,50,Pallatanga
+6,9,50,Penipe
+6,9,51,El Altar
+6,9,54,San Antonio De Bayushig
+6,9,52,Matus
+6,9,55,La Candelaria
+6,9,53,Puela
+6,9,56,Bilbao (Cab.En Quilluyacu)
+6,10,50,Cumandá
+7,1,50,Machala
+7,1,1,La Providencia
+7,1,4,Nueve De Mayo
+7,1,2,Machala
+7,1,5,El Cambio
+7,1,3,Puerto Bolívar
+7,1,51,El Cambio
+7,1,52,El Retiro
+7,2,50,Arenillas
+7,2,51,Chacras
+7,2,54,Palmales
+7,2,52, La Libertad
+7,2,55,Carcabón
+7,2,53,Las Lajas (Cab. En La Victoria) 
+7,3,50,Paccha
+7,3,51,Ayapamba
+7,3,54,San José
+7,3,52,Cordoncillo
+7,3,55,San Juan De Cerro Azul
+7,3,53,Milagro
+7,4,50,Balsas
+7,4,51,Bellamaría
+7,5,50,Chilla
+7,6,50,El Guabo
+7,6,51,Barbones (Sucre) 
+7,6,53,Tendales (Cab.En Puerto Tendales)
+7,6,52,La Iberia
+7,6,54,Río Bonito
+7,7,50,Huaquillas
+7,7,1,Ecuador
+7,7,4,Milton Reyes
+7,7,2,El Paraíso
+7,7,5,Unión Lojana
+7,7,3,Hualtaco
+7,8,50,Marcabelí
+7,8,51,El Ingenio
+7,9,50,Pasaje
+7,9,1,Bolívar
+7,9,3,Ochoa León (Matriz)
+7,9,2,Loma De Franco
+7,9,4,Tres Cerritos
+7,9,51,Buenavista
+7,9,54,Progreso
+7,9,52,Casacay
+7,9,55,Uzhcurrumi
+7,9,53,La Peaña
+7,9,56,Cañaquemada 
+7,10,50,Piñas
+7,10,1,La Matriz
+7,10,3,Piñas Grande
+7,10,2,La Susaya
+7,10,51,Capiro (Cab. En La Capilla De Capiro)
+7,10,54,Piedras
+7,10,52,La Bocana
+7,10,55,San Roque (Ambrosio Maldonado)
+7,10,53,Moromoro (Cab. En El Vado)
+7,10,56,Saracay
+7,11,50,Portovelo
+7,11,51,Curtincapa
+7,11,53,Salatí
+7,11,52,Morales
+7,12,50,Santa Rosa
+7,12,1,Santa Rosa
+7,12,4,Jumón (Satélite)
+7,12,2,Puerto Jelí
+7,12,5,Nuevo Santa Rosa
+7,12,3,Balneario Jambelí (Satélite)
+7,12,51,Bellavista
+7,12,55,Torata
+7,12,52,Jambelí
+7,12,56,Victoria
+7,12,53,La Avanzada
+7,12,57,Bellamaría
+7,12,54,San Antonio
+7,13,50,Zaruma
+7,13,51,Abañín
+7,13,56,Malvas
+7,13,52,Arcapamba
+7,13,57,Muluncay Grande
+7,13,53,Guanazán
+7,13,58,Sinsao
+7,13,54,Guizhaguiña
+7,13,59,Salvias
+7,13,55,Huertas
+7,14,50,La Victoria
+7,14,1,La Victoria
+7,14,3,Valle Hermoso
+7,14,2,Platanillos
+7,14,51,La Libertad
+7,14,53,San Isidro
+7,14,52,El Paraíso 
+8,1,50,Esmeraldas
+8,1,1,Bartolomé Ruiz (César Franco Carrión) 
+8,1,4,Luis Tello  (Las Palmas)
+8,1,2,5 De Agosto
+8,1,5,Simón Plata Torres
+8,1,3,Esmeraldas
+8,1,51,Atacames
+8,1,60,Montalvo (Cab. En Horqueta)
+8,1,52,Camarones (Cab. En San Vicente) 
+8,1,61,Río Verde
+8,1,53,Crnel. Carlos Concha Torres (Cab.En Huele)
+8,1,62,Rocafuerte
+8,1,54,Chinca
+8,1,63,San Mateo
+8,1,55,Chontaduro
+8,1,64,Súa (Cab. En La Bocana)
+8,1,56,Chumundé
+8,1,65,Tabiazo
+8,1,57,Lagarto
+8,1,66,Tachina
+8,1,58,La Unión
+8,1,67,Tonchigüe
+8,1,59,Majua
+8,1,68,Vuelta Larga
+8,2,50,Valdez (Limones)
+8,2,51,Anchayacu
+8,2,58,San Francisco De Onzole
+8,2,52,Atahualpa (Cab. En Camarones) 
+8,2,59,Santo Domingo De Onzole
+8,2,53,Borbón
+8,2,60,Selva Alegre
+8,2,54,La Tola
+8,2,61,Telembí
+8,2,55,Luis Vargas Torres (Cab. En Playa De Oro)
+8,2,62,Colón Eloy Del María
+8,2,56,Maldonado
+8,2,63,San José De Cayapas
+8,2,57,Pampanal De Bolívar     
+8,2,64,Timbiré
+8,2,65,Santa Lucía De Las Peñas
+8,3,50,Muisne
+8,3,51,Bolívar
+8,3,55,Salima
+8,3,52,Daule
+8,3,56,San Francisco
+8,3,53,Galera
+8,3,57,San Gregorio
+8,3,54,Quingue (Olmedo Perdomo Franco) 
+8,3,58,San José De Chamanga (Cab.En Chamanga)
+8,4,50,Rosa Zárate (Quinindé)
+8,4,51,Cube
+8,4,54,Viche
+8,4,52,Chura (Chancama) (Cab. En El Yerbero)
+8,4,55,La Unión
+8,4,53,Malimpia
+8,5,50,San Lorenzo
+8,5,51,Alto Tambo (Cab. En Guadual) 
+8,5,57,Mataje (Cab. En Santander)
+8,5,52,Ancón (Pichangal) (Cab. En Palma Real) 
+8,5,58,San Javier De Cachaví (Cab. En San Javier) 
+8,5,53,Calderón
+8,5,59,Santa Rita
+8,5,54,Carondelet
+8,5,60,Tambillo
+8,5,55,5 De Junio (Cab. En Uimbi) 
+8,5,61,Tululbí (Cab. En Ricaurte)
+8,5,56,Concepción
+8,5,62,Urbina
+8,6,50,Atacames
+8,6,51,La Unión
+8,6,53,Tonchigüe
+8,6,52,Súa  (Cab. En La Bocana) 
+8,6,54,Tonsupa
+8,7,50,Rioverde
+8,7,51,Chontaduro
+8,7,54,Montalvo (Cab. En Horqueta) 
+8,7,52,Chumundé
+8,7,55,Rocafuerte
+8,7,53,Lagarto
+8,8,50,La Concordia
+8,8,51,Monterrey
+8,8,53,Plan Piloto
+8,8,52,La Villegas
+9,1,50,Guayaquil
+9,1,1,Ayacucho
+9,1,9,Roca
+9,1,2,Bolívar  (Sagrario) 
+9,1,10,Rocafuerte
+9,1,3,Carbo (Concepción) 
+9,1,11,Sucre
+9,1,4,Febres Cordero
+9,1,12,Tarqui
+9,1,5,García Moreno
+9,1,13,Urdaneta
+9,1,6,Letamendi
+9,1,14,Ximena
+9,1,7,Nueve De Octubre
+9,1,15,Pascuales
+9,1,8,Olmedo  (San Alejo) 
+9,1,51,Chongón
+9,1,55,Playas (Gral. Villamil)
+9,1,52,Juan Gómez Rendón (Progreso) 
+9,1,56,Posorja
+9,1,53,Morro
+9,1,57,Puná
+9,1,54,Pascuales
+9,1,58,Tenguel
+9,2,50,Alfredo Baquerizo Moreno (Juján)
+9,3,50,Balao
+9,4,50,Balzar
+9,5,50,Colimes
+9,5,51,San Jacinto
+9,6,50,Daule
+9,6,1,Daule
+9,6,5,Magro
+9,6,2,La Aurora (Satélite)
+9,6,6,Padre Juan Bautista Aguirre
+9,6,3,Banife
+9,6,7,Santa Clara
+9,6,4,Emiliano Caicedo Marcos
+9,6,8,Vicente Piedrahita
+9,6,51,Isidro Ayora (Soledad) 
+9,6,55,Lomas De Sargentillo
+9,6,52,Juan Bautista Aguirre (Los Tintos) 
+9,6,56,Los Lojas (Enrique Baquerizo Moreno)
+9,6,53,Laurel
+9,6,57,Piedrahita (Nobol)
+9,6,54,Limonal
+9,7,50,Eloy Alfaro (Durán)
+9,7,1,Eloy Alfaro (Durán)
+9,7,2,El Recreo
+9,8,50,Velasco Ibarra (El Empalme)
+9,8,51,Guayas (Pueblo Nuevo) 
+9,8,52,El Rosario
+9,9,50,El Triunfo
+9,10,50,Milagro
+9,10,51,Chobo
+9,10,53,Mariscal Sucre (Huaques)
+9,10,52,General Elizalde (Bucay) 
+9,10,54,Roberto Astudillo (Cab. En Cruce De Venecia) 
+9,11,50,Naranjal
+9,11,51,Jesús María
+9,11,53,Santa Rosa De Flandes
+9,11,52,San Carlos
+9,11,54,Taura
+9,12,50,Naranjito
+9,13,50,Palestina
+9,14,50,Pedro Carbo
+9,14,51,Valle De La Virgen 
+9,14,52,Sabanilla
+9,16,50,Samborondón
+9,16,1,Samborondón
+9,16,2,La Puntilla (Satélite)
+9,16,51,Tarifa
+9,18,50,Santa Lucía
+9,19,50,El Salitre (Las Ramas)
+9,19,1,Bocana
+9,19,4,Paraíso
+9,19,2,Candilejos
+9,19,5,San Mateo
+9,19,3,Central
+9,19,51,Gral. Vernaza (Dos Esteros) 
+9,19,53,Junquillal
+9,19,52,La Victoria (Ñauza)
+9,20,50,San Jacinto De Yaguachi
+9,20,51,Crnel. Lorenzo De Garaicoa (Pedregal) 
+9,20,54,Simón Bolívar
+9,20,52,Crnel. Marcelino Maridueña (San Carlos)
+9,20,55,Yaguachi Viejo (Cone)
+9,20,53,Gral. Pedro J. Montero (Boliche) 
+9,20,56,Virgen De Fátima
+9,21,50,General Villamil (Playas)
+9,22,50,Simón Bolívar
+9,22,51,Crnel.Lorenzo De Garaicoa (Pedregal)
+9,23,50,Coronel Marcelino Maridueña (San Carlos)
+9,24,50,Lomas De Sargentillo
+9,24,51,Isidro Ayora (Soledad)
+9,25,50,Narcisa De Jesús (Nobol)
+9,27,50,General Antonio Elizalde (Bucay)
+9,28,50,Isidro Ayora
+10,1,50,San Miguel De Ibarra
+10,1,1,Caranqui
+10,1,4,San Francisco
+10,1,2,Guayaquil De Alpachaca
+10,1,5,La Dolorosa Del Priorato
+10,1,3,Sagrario
+10,1,51,Ambuquí
+10,1,55,Lita
+10,1,52,Angochagua
+10,1,56,Salinas
+10,1,53,Carolina
+10,1,57,San Antonio
+10,1,54,La Esperanza
+10,2,50,Atuntaqui
+10,2,1,Andrade Marín  (Lourdes) 
+10,2,2,Atuntaqui
+10,2,51,Imbaya (San Luis De Cobuendo) 
+10,2,53,San José De Chaltura
+10,2,52,San Francisco De Natabuela
+10,2,54,San Roque
+10,3,50,Cotacachi
+10,3,1,Sagrario
+10,3,2,San Francisco
+10,3,51,Apuela
+10,3,56,Quiroga
+10,3,52,García Moreno  (Llurimagua) 
+10,3,57,6 De Julio De Cuellaje (Cab. En Cuellaje)
+10,3,53,Imantag
+10,3,58,Vacas Galindo (El Churo) (Cab.En San Miguel Alto)
+10,3,54,Peñaherrera
+10,3,55,Plaza Gutiérrez  (Calvario) 
+10,4,50,Otavalo
+10,4,1,Jordán
+10,4,2,San Luis
+10,4,51,Dr. Miguel Egas Cabezas (Peguche) 
+10,4,56,San Juan De Ilumán
+10,4,52,Eugenio Espejo (Calpaquí) 
+10,4,57,San Pablo
+10,4,53,González Suárez
+10,4,58,San Rafael
+10,4,54,Pataquí
+10,4,59,Selva Alegre (Cab.En San Miguel De Pamplona)
+10,4,55,San José De Quichinche 
+10,5,50,Pimampiro
+10,5,51,Chugá
+10,5,53,San Francisco De Sigsipamba
+10,5,52,Mariano Acosta
+10,6,50,Urcuquí Cabecera Cantonal
+10,6,51,Cahuasquí
+10,6,54,San Blas
+10,6,52,La Merced De Buenos Aires
+10,6,55,Tumbabiro
+10,6,53,Pablo Arenas
+11,1,50,Loja
+11,1,1,El Sagrario
+11,1,3,Sucre
+11,1,2,San Sebastián
+11,1,4,Valle
+11,1,51,Chantaco
+11,1,58,San Pedro De Vilcabamba
+11,1,52,Chuquiribamba
+11,1,59,Santiago
+11,1,53,El Cisne
+11,1,60,Taquil (Miguel Riofrío)
+11,1,54,Gualel
+11,1,61,Vilcabamba  (Victoria)
+11,1,55,Jimbilla
+11,1,62,Yangana (Arsenio Castillo)
+11,1,56,Malacatos (Valladolid) 
+11,1,63,Quinara
+11,1,57,San Lucas
+11,2,50,Cariamanga
+11,2,1,Cariamanga
+11,2,3,San Vicente
+11,2,2,Chile
+11,2,51,Colaisaca
+11,2,53,Utuana
+11,2,52,El Lucero
+11,2,54,Sanguillín
+11,3,50,Catamayo (La Toma)
+11,3,1,Catamayo
+11,3,2,San José
+11,3,51,El Tambo
+11,3,53,San Pedro De La Bendita
+11,3,52,Guayquichuma
+11,3,54,Zambi
+11,4,50,Celica
+11,4,51,Cruzpamba (Cab. En Carlos Bustamante)
+11,4,55,Pozul (San Juan De Pozul)
+11,4,52,Chaquinal
+11,4,56,Sabanilla
+11,4,53,12 De Diciembre (Cab. En Achiotes)
+11,4,57,Tnte. Maximiliano Rodríguez Loaiza 
+11,4,54,Pindal (Federico Páez)
+11,5,50,Chaguarpamba
+11,5,51,Buenavista
+11,5,53,Santa Rufina
+11,5,52,El Rosario
+11,5,54,Amarillos
+11,6,50,Amaluza
+11,6,51,Bellavista
+11,6,54,27 De Abril (Cab. En La Naranja) 
+11,6,52,Jimbura
+11,6,55,El Ingenio
+11,6,53,Santa Teresita
+11,6,56,El Airo
+11,7,50,Gonzanamá
+11,7,51,Changaimina (La Libertad) 
+11,7,55,Quilanga (La Paz)
+11,7,52,Fundochamba
+11,7,56,Sacapalca
+11,7,53,Nambacola
+11,7,57,San Antonio De Las Aradas (Cab. En Las Aradas)
+11,7,54,Purunuma (Eguiguren) 
+11,8,50,Macará
+11,8,1,General Eloy Alfaro (San Sebastián) 
+11,8,2,Macará  (Manuel Enrique Rengel Suquilanda)
+11,8,51,Larama
+11,8,53,Sabiango (La Capilla)
+11,8,52,La Victoria
+11,9,50,Catacocha
+11,9,1,Catacocha
+11,9,2,Lourdes
+11,9,51,Cangonamá
+11,9,56,Orianga
+11,9,52,Guachanamá
+11,9,57,San Antonio
+11,9,53,La Tingue
+11,9,58,Casanga
+11,9,54,Lauro Guerrero
+11,9,59,Yamana
+11,9,55,Olmedo (Santa Bárbara)
+11,10,50,Alamor
+11,10,51,Ciano
+11,10,54,Mercadillo
+11,10,52,El Arenal
+11,10,55,Vicentino
+11,10,53,El Limo (Mariana De Jesús)
+11,11,50,Saraguro
+11,11,51,El Paraíso De Celén
+11,11,56,San Pablo De Tenta
+11,11,52,El Tablón  
+11,11,57,San Sebastián De Yúluc
+11,11,53,Lluzhapa
+11,11,58,Selva Alegre
+11,11,54,Manú
+11,11,59,Urdaneta (Paquishapa)
+11,11,55,San Antonio De Qumbe (Cumbe)
+11,11,60,Sumaypamba
+11,12,50,Sozoranga
+11,12,51,Nueva Fátima
+11,12,52,Tacamoros
+11,13,50,Zapotillo
+11,13,51,Mangahurco
+11,13,54,Paletillas
+11,13,52,Garzareal
+11,13,55,Bolaspamba
+11,13,53,Limones
+11,13,56,Cazaderos
+11,14,50,Pindal
+11,14,51,Chaquinal
+11,14,53,Milagros
+11,14,52,12 De Diciembre (Cab.En Achiotes)
+11,15,50,Quilanga
+11,15,51,Fundochamba
+11,15,52,San Antonio De Las Aradas (Cab. En Las Aradas)
+11,16,50,Olmedo
+11,16,51,La Tingue
+12,1,50,Babahoyo
+12,1,1,Clemente Baquerizo
+12,1,3,Barreiro
+12,1,2,Dr. Camilo Ponce 
+12,1,4,El Salto
+12,1,51,Barreiro (Santa Rita) 
+12,1,54,Pimocha
+12,1,52,Caracol
+12,1,55,La Unión
+12,1,53,Febres Cordero (Las Juntas) 
+12,2,50,Baba
+12,2,51,Guare
+12,2,52,Isla De Bejucal
+12,3,50,Montalvo
+12,3,51,La Esmeralda
+12,4,50,Puebloviejo
+12,4,51,Puerto Pechiche
+12,4,52,San Juan
+12,5,50,Quevedo
+12,5,1,Quevedo
+12,5,6,San Cristóbal
+12,5,2,San Camilo
+12,5,7,Siete De Octubre
+12,5,3,San José
+12,5,8,24 De Mayo
+12,5,4,Guayacán
+12,5,9,Venus Del Río Quevedo
+12,5,5,Nicolás Infante Díaz
+12,5,10,Viva Alfaro
+12,5,51,Buena Fé
+12,5,54,Valencia
+12,5,52,Mocache
+12,5,55,La Esperanza
+12,5,53,San Carlos
+12,6,50,Catarama
+12,6,51,Ricaurte
+12,7,50,Ventanas
+12,7,1,10 De Noviembre
+12,7,51,Quinsaloma
+12,7,53,Chacarita
+12,7,52,Zapotal
+12,7,54,Los Ángeles
+12,8,50,Vinces
+12,8,51,Antonio Sotomayor (Cab. En Playas De Vinces) 
+12,8,52,Palenque
+12,9,50,Palenque
+12,10,50,San Jacinto De Buena Fé
+12,10,1,San Jacinto De Buena Fé
+12,10,3,11 De Octubre
+12,10,2,7 De Agosto
+12,10,51,Patricia Pilar
+12,11,50,Valencia
+12,12,50,Mocache
+12,13,50,Quinsaloma
+13,1,50,Portoviejo
+13,1,1,Portoviejo
+13,1,6,Andrés De Vera
+13,1,2,12 De Marzo
+13,1,7,Francisco Pacheco
+13,1,3,Colón
+13,1,8,18 De Octubre
+13,1,4,Picoazá
+13,1,9,Simón Bolívar
+13,1,5,San Pablo
+13,1,51,Abdón Calderón (San Francisco)
+13,1,55,Riochico (Río Chico)
+13,1,52,Alhajuela (Bajo Grande) 
+13,1,56,San Plácido
+13,1,53,Crucita
+13,1,57,Chirijos
+13,1,54,Pueblo Nuevo
+13,2,50,Calceta
+13,2,51,Membrillo
+13,2,52,Quiroga
+13,3,50,Chone
+13,3,1,Chone
+13,3,2,Santa Rita
+13,3,51,Boyacá
+13,3,55,Eloy Alfaro
+13,3,52,Canuto
+13,3,56,Ricaurte
+13,3,53,Convento
+13,3,57,San Antonio
+13,3,54,Chibunga
+13,4,50,El Carmen
+13,4,1,El Carmen
+13,4,2,4 De Diciembre
+13,4,51,Wilfrido Loor Moreira (Maicito)
+13,4,52,San Pedro De Suma
+13,5,50,Flavio Alfaro
+13,5,51,San Francisco De Novillo (Cab. En  
+13,5,52,Zapallo
+13,6,50,Jipijapa
+13,6,1,Dr. Miguel Morán Lucio 
+13,6,3,San Lorenzo De Jipijapa
+13,6,2,Manuel Inocencio Parrales Y Guale
+13,6,51,América
+13,6,56,Membrillal
+13,6,52,El Anegado (Cab. En Eloy Alfaro)
+13,6,57,Pedro Pablo Gómez
+13,6,53,Julcuy
+13,6,58,Puerto De Cayo
+13,6,54,La Unión
+13,6,59,Puerto López
+13,6,55,Machalilla
+13,7,50,Junín
+13,8,50,Manta
+13,8,1,Los Esteros
+13,8,4,Tarqui
+13,8,2,Manta
+13,8,5,Eloy Alfaro
+13,8,3,San Mateo
+13,8,51,San Lorenzo
+13,8,52,Santa Marianita (Boca De Pacoche)
+13,9,50,Montecristi
+13,9,1,Anibal San Andrés
+13,9,4,General Eloy Alfaro
+13,9,2,Montecristi
+13,9,5,Leonidas Proaño
+13,9,3,El Colorado
+13,9,51,Jaramijó
+13,9,52,La Pila
+13,10,50,Paján
+13,10,51,Campozano (La Palma De Paján)
+13,10,53,Guale
+13,10,52,Cascol
+13,10,54,Lascano
+13,11,50,Pichincha
+13,11,51,Barraganete 
+13,11,52,San Sebastián
+13,12,50,Rocafuerte
+13,13,50,Santa Ana De Vuelta Larga
+13,13,1,Santa Ana
+13,13,2,Lodana
+13,13,51,Ayacucho
+13,13,54,Olmedo
+13,13,52,Honorato Vásquez (Cab. En Vásquez)
+13,13,55,San Pablo (Cab. En Pueblo Nuevo)
+13,13,53,La Unión
+13,14,50,Bahía De Caráquez
+13,14,1,Bahía De Caráquez
+13,14,2,Leonidas Plaza Gutiérrez
+13,14,51, Canoa
+13,14,55,Jama
+13,14,52,Cojimíes
+13,14,56,Pedernales
+13,14,53,Charapotó
+13,14,57,San Isidro
+13,14,54,10 De Agosto
+13,14,58,San Vicente
+13,15,50,Tosagua
+13,15,51,Bachillero
+13,15,52,Angel Pedro Giler (La Estancilla)
+13,16,50,Sucre
+13,16,51,Bellavista
+13,16,53,Arq. Sixto Durán Ballén
+13,16,52,Noboa
+13,17,50,Pedernales
+13,17,51,Cojimíes
+13,17,53,Atahualpa
+13,17,52,10 De Agosto
+13,18,50,Olmedo
+13,19,50,Puerto López
+13,19,51,Machalilla
+13,19,52,Salango
+13,20,50,Jama
+13,21,50,Jaramijó
+13,22,50,San Vicente
+13,22,51,Canoa
+14,1,50,Macas
+14,1,51,Alshi (Cab. En 9 De Octubre) 
+14,1,58,Sinaí
+14,1,52,Chiguaza
+14,1,59,Taisha
+14,1,53,General Proaño
+14,1,60,Zuña (Zúñac)
+14,1,54,Huasaga (Cab.En Wampuik) 
+14,1,61,Tuutinentza
+14,1,55,Macuma
+14,1,62,Cuchaentza
+14,1,56,San Isidro
+14,1,63,San José De Morona
+14,1,57,Sevilla Don Bosco
+14,1,64,Río Blanco
+14,2,50,Gualaquiza
+14,2,1,Gualaquiza
+14,2,2,Mercedes Molina
+14,2,51,Amazonas (Rosario De Cuyes) 
+14,2,55,El Rosario
+14,2,52,Bermejos
+14,2,56,Nueva Tarqui
+14,2,53,Bomboiza
+14,2,57,San Miguel De Cuyes
+14,2,54,Chigüinda
+14,2,58,El Ideal
+14,3,50,General Leonidas Plaza Gutiérrez (Limón)
+14,3,51,Indanza
+14,3,55,San Juan Bosco
+14,3,52,Pan De Azúcar
+14,3,56,San Miguel De Conchay
+14,3,53,San Antonio (Cab. En San Antonio Centro)
+14,3,57,Santa Susana De Chiviaza (Cab. En Chiviaza)
+14,3,54,San Carlos De Limón (San Carlos Del 
+14,3,58,Yunganza (Cab. En El Rosario)
+14,4,50,Palora (Metzera)
+14,4,51,Arapicos
+14,4,53,Huamboya
+14,4,52,Cumandá (Cab. En Colonia Agrícola Sevilla Del Oro)
+14,4,54,Sangay (Cab. En Nayamanaca)
+14,4,55,16 De Agosto
+14,5,50,Santiago De Méndez
+14,5,51,Copal
+14,5,55,Santiago
+14,5,52,Chupianza
+14,5,56,Tayuza
+14,5,53,Patuca
+14,5,57,San Francisco De Chinimbimi
+14,5,54,San Luis De El Acho (Cab. En El Acho) 
+14,6,50,Sucúa
+14,6,51,Asunción
+14,6,54,Yaupi
+14,6,52,Huambi
+14,6,55,Santa Marianita De Jesús
+14,6,53,Logroño
+14,7,50,Huamboya
+14,7,51,Chiguaza
+14,7,52,Pablo Sexto
+14,8,50,San Juan Bosco
+14,8,51,Pan De Azúcar
+14,8,53,San Jacinto De Wakambeis 
+14,8,52,San Carlos De Limón  
+14,8,54,Santiago De Pananza
+14,9,50,Taisha
+14,9,51,Huasaga (Cab. En Wampuik) 
+14,9,53,Tuutinentza 
+14,9,52,Macuma  
+14,9,54,Pumpuentsa
+14,10,50,Logroño
+14,10,51,Yaupi
+14,10,52,Shimpis
+14,11,50,Pablo Sexto
+14,12,50,Santiago
+14,12,51,San José De Morona
+15,1,50,Tena
+15,1,51,Ahuano
+15,1,55,Puerto Misahualli
+15,1,52,Carlos Julio Arosemena Tola (Zatza-Yacu) 
+15,1,56,Puerto Napo
+15,1,53,Chontapunta
+15,1,57,Tálag
+15,1,54,Pano
+15,1,58,San Juan De Muyuna
+15,3,50,Archidona
+15,3,51,Avila
+15,3,54,San Pablo De Ushpayacu
+15,3,52,Cotundo
+15,3,55,Puerto Murialdo
+15,3,53,Loreto
+15,3,56,Hatun Sumaku
+15,4,50,El Chaco
+15,4,51,Gonzalo Díaz De Pineda (El Bombón) 
+15,4,54,Santa Rosa
+15,4,52,Linares
+15,4,55,Sardinas
+15,4,53,Oyacachi
+15,7,50,Baeza
+15,7,51,Cosanga
+15,7,54,San Francisco De Borja (Virgilio Dávila)
+15,7,52,Cuyuja
+15,7,55,San José Del Payamino
+15,7,53,Papallacta
+15,7,56,Sumaco
+15,9,50,Carlos Julio Arosemena Tola
+16,1,50,Puyo
+16,1,51,Arajuno
+16,1,59,Río Tigre
+16,1,52,Canelos
+16,1,60,Santa Clara
+16,1,53,Curaray
+16,1,61,Sarayacu
+16,1,54,Diez  De Agosto
+16,1,62,Simón Bolívar  (Cab. En Mushullacta)
+16,1,55,Fátima
+16,1,63,Tarqui
+16,1,56,Montalvo (Andoas) 
+16,1,64,Teniente Hugo Ortiz
+16,1,57,Pomona
+16,1,65,Veracruz  (Cab. En Indillama)
+16,1,58,Río Corrientes 
+16,1,66,El Triunfo
+16,2,50,Mera
+16,2,51,Madre Tierra
+16,2,52,Shell
+16,3,50,Santa Clara
+16,3,51,San José
+16,4,50,Arajuno
+16,4,51,Curaray
+17,1,50,Quito Distrito Metropolitano
+17,1,1,Belisario Quevedo
+17,1,17,La Concepción
+17,1,2,Carcelén
+17,1,18,La Ecuatoriana
+17,1,3,Centro Histórico
+17,1,19,La Ferroviaria
+17,1,4,Cochapamba
+17,1,20,La Libertad
+17,1,5,Comité Del Pueblo
+17,1,21,La Magdalena
+17,1,6,Cotocollao
+17,1,22,La Mena
+17,1,7,Chilibulo
+17,1,23,Mariscal Sucre
+17,1,8,Chillogallo
+17,1,24,Ponceano
+17,1,9,Chimbacalle
+17,1,25,Puengasí
+17,1,10,El Condado
+17,1,26,Quitumbe
+17,1,11,Guamaní
+17,1,27,Rumipamba
+17,1,12,Iñaquito
+17,1,28,San Bartolo
+17,1,13,Itchimbia
+17,1,29,San Isidro Del Inca
+17,1,14,Jipijapa
+17,1,30,San Juan
+17,1,15,Kennedy
+17,1,31,Solanda
+17,1,16,La Argelia
+17,1,32,Turubamba
+17,1,51,Alangasí
+17,1,70,Nayón
+17,1,52,Amaguaña
+17,1,71,Nono
+17,1,53,Atahualpa (Habaspamba) 
+17,1,72,Pacto
+17,1,54,Calacalí
+17,1,73,Pedro Vicente Maldonado
+17,1,55,Calderón (Carapungo) 
+17,1,74,Perucho
+17,1,56,Conocoto
+17,1,75,Pifo
+17,1,57,Cumbayá
+17,1,76,Píntag
+17,1,58,Chavezpamba
+17,1,77,Pomasqui
+17,1,59,Checa (Chilpa) 
+17,1,78,Puéllaro
+17,1,60,El Quinche
+17,1,79,Puembo
+17,1,61,Gualea
+17,1,80,San Antonio
+17,1,62,Guangopolo
+17,1,81,San José De Minas
+17,1,63,Guayllabamba
+17,1,82,San Miguel De Los Bancos
+17,1,64,La Merced
+17,1,83,Tababela
+17,1,65,Llano Chico
+17,1,84,Tumbaco
+17,1,66,Lloa
+17,1,85,Yaruquí
+17,1,67,Mindo
+17,1,86,Zámbiza
+17,1,68,Nanegal
+17,1,87,Puerto Quito
+17,1,69,Nanegalito
+17,1,8,Chillogallo
+17,1,26,Quitumbe
+17,1,11,Guamaní
+17,1,32,Turubamba
+17,1,18,La Ecuatoriana
+17,1,7,Chilibulo
+17,1,21,La Magdalena
+17,1,9,Chimbacalle
+17,1,22,La Mena
+17,1,16,La Argelia
+17,1,28,San Bartolo
+17,1,19,La Ferroviaria
+17,1,31,Solanda
+17,1,66,Lloa
+17,1,3,Centro Histórico
+17,1,25,Puengasí
+17,1,13,Itchimbía
+17,1,30,San Juan
+17,1,20,La Libertad
+17,1,1,Belisario Quevedo
+17,1,17,La Concepción
+17,1,4,Cochapamba
+17,1,23,Mariscal Sucre
+17,1,12,Iñaquito
+17,1,27,Rumipamba
+17,1,14,Jipijapa
+17,1,29,San Isidro Del Inca
+17,1,15,Kennedy
+17,1,70,Nayón
+17,1,86,Zambiza
+17,1,2,Carcelén
+17,1,10,El Condado
+17,1,5,Comité Del Pueblo
+17,1,24,Ponceano
+17,1,6,Cotocollao
+17,1,54,Calacalí
+17,1,77,Pomasqui
+17,1,71,Nono
+17,1,80,San Antonio
+17,1,61,Gualea
+17,1,69,Nanegalito
+17,1,68,Nanegal
+17,1,72,Pacto
+17,1,53,Atahualpa
+17,1,78,Puéllaro
+17,1,58,Chavezpamba
+17,1,81,San José De Minas
+17,1,74,Perucho
+17,1,55,Calderón
+17,1,65,Llano Chico
+17,1,57,Cumbayá
+17,1,84,Tumbaco
+17,1,51,Alangasí
+17,1,62,Guangopolo
+17,1,52,Amaguaña
+17,1,64,La Merced
+17,1,56,Conocoto
+17,1,76,Píntag
+17,1,59,Checa
+17,1,79,Puembo
+17,1,60,El Quinche
+17,1,83,Tababela
+17,1,63,Guayllabamba
+17,1,85,Yaruquí
+17,1,75,Pifo
+17,2,50,Cayambe
+17,2,1,Ayora
+17,2,3,Juan Montalvo
+17,2,2,Cayambe
+17,2,51,Ascázubi
+17,2,54,Otón
+17,2,52,Cangahua 
+17,2,55,Santa Rosa De Cuzubamba
+17,2,53,Olmedo (Pesillo)
+17,2,56,San Jose De Ayora
+17,3,50,Machachi
+17,3,51,Alóag
+17,3,55,Manuel Cornejo Astorga (Tandapi)
+17,3,52,Aloasí
+17,3,56,Tambillo
+17,3,53,Cutuglahua
+17,3,57,Uyumbicho
+17,3,54,El Chaupi
+17,4,50,Tabacundo
+17,4,51,La Esperanza
+17,4,53,Tocachi
+17,4,52,Malchinguí
+17,4,54,Tupigachi
+17,5,50,Sangolqui
+17,5,1,Sangolquí
+17,5,3,San Rafael
+17,5,2,San Pedro De Taboada
+17,5,51,Cotogchoa
+17,5,52,Rumipamba
+17,7,50,San Miguel De Los Bancos 
+17,7,51,Mindo
+17,7,53,Puerto Quito
+17,7,52,Pedro Vicente Maldonado
+17,8,50,Pedro Vicente Maldonado
+17,9,50,Puerto Quito
+18,1,50,Ambato
+18,1,1,Atocha – Ficoa
+18,1,6,La Península
+18,1,2,Celiano Monge
+18,1,7,Matriz
+18,1,3,Huachi Chico
+18,1,8,Pishilata
+18,1,4,Huachi Loreto
+18,1,9,San Francisco
+18,1,5,La Merced
+18,1,51,Ambatillo
+18,1,60,Picaigua
+18,1,52,Atahualpa (Chisalata) 
+18,1,61,Pilagüín (Pilahüín)
+18,1,53,Augusto N. Martínez (Mundugleo)
+18,1,62,Quisapincha (Quizapincha)
+18,1,54,Constantino Fernández (Cab. En Cullitahua)
+18,1,63,San Bartolomé De Pinllog
+18,1,55,Huachi Grande
+18,1,64,San Fernando (Pasa San Fernando)
+18,1,56,Izamba
+18,1,65,Santa Rosa
+18,1,57,Juan Benigno Vela
+18,1,66,Totoras
+18,1,58,Montalvo
+18,1,67,Cunchibamba
+18,1,59,Pasa
+18,1,68,Unamuncho
+18,2,50,Baños De Agua Santa
+18,2,51,Lligua
+18,2,53,Río Verde
+18,2,52,Río Negro
+18,2,54,Ulba
+18,3,50,Cevallos
+18,4,50,Mocha
+18,4,51,Pinguilí
+18,5,50,Patate
+18,5,51,El Triunfo
+18,5,53,Sucre (Cab. En Sucre-Patate Urcu)
+18,5,52,Los Andes (Cab. En Poatug) 
+18,6,50,Quero
+18,6,51,Rumipamba
+18,6,52,Yanayacu - Mochapata (Cab. En Yanayacu) 
+18,7,50,Pelileo
+18,7,1,Pelileo
+18,7,2,Pelileo Grande
+18,7,51,Benítez (Pachanlica) 
+18,7,55,El Rosario (Rumichaca)
+18,7,52,Bolívar
+18,7,56,García Moreno (Chumaqui)
+18,7,53,Cotaló
+18,7,57,Guambaló (Huambaló)
+18,7,54,Chiquicha (Cab. En Chiquicha Grande)
+18,7,58,Salasaca
+18,8,50,Píllaro
+18,8,1,Ciudad Nueva
+18,8,2,Píllaro
+18,8,51,Baquerizo Moreno
+18,8,55,San Andrés
+18,8,52,Emilio María Terán (Rumipamba)
+18,8,56,San José De Poaló
+18,8,53,Marcos Espinel (Chacata) 
+18,8,57,San Miguelito
+18,8,54,Presidente Urbina (Chagrapamba -Patzucul)
+18,9,50,Tisaleo
+18,9,51,Quinchicoto
+19,1,50,Zamora
+19,1,1,El Limón
+19,1,2,Zamora
+19,1,51,Cumbaratza
+19,1,55,Sabanilla
+19,1,52,Guadalupe
+19,1,56,Timbara
+19,1,53,Imbana (La Victoria De Imbana)
+19,1,57,Zumbi
+19,1,54,Paquisha
+19,1,58,San Carlos De Las Minas
+19,2,50,Zumba
+19,2,51,Chito
+19,2,56,Pucapamba
+19,2,52,El Chorro
+19,2,57,San Francisco Del Vergel
+19,2,53,El Porvenir Del Carmen
+19,2,58,Valladolid
+19,2,54,La Chonta
+19,2,59,San Andrés
+19,2,55,Palanda
+19,3,50,Guayzimi
+19,3,51,Zurmi
+19,3,52,Nuevo Paraíso
+19,4,50,28 De Mayo (San José De Yacuambi)
+19,4,51,La Paz
+19,4,52,Tutupali
+19,5,50,Yantzaza (Yanzatza)
+19,5,51,Chicaña
+19,5,53,Los Encuentros
+19,5,52,El Pangui
+19,6,50,El Pangui
+19,6,51,El Guisme 
+19,6,53,Tundayme
+19,6,52,Pachicutza
+19,7,50,Zumbi
+19,7,51,Paquisha 
+19,7,53,Panguintza
+19,7,52,Triunfo-Dorado
+19,8,50,Palanda
+19,8,51,El Porvenir Del Carmen
+19,8,53,Valladolid
+19,8,52,San Francisco Del Vergel
+19,8,54,La Canela
+19,9,50,Paquisha
+19,9,51,Bellavista
+19,9,52,Nuevo Quito
+20,1,50,Puerto Baquerizo Moreno
+20,1,51,El Progreso
+20,1,52,Isla Santa María (Floreana) (Cab. En  Pto. Velasco Ibarra)
+20,2,50,Puerto Villamil
+20,2,51,Tomás De Berlanga (Santo Tomás)
+20,3,50,Puerto Ayora
+20,3,51,Bellavista
+20,3,52,Santa Rosa (Incluye La Isla Baltra)
+21,1,50,Nueva Loja
+21,1,51,Cuyabeno
+21,1,56,Pacayacu
+21,1,52,Dureno
+21,1,57,Jambelí
+21,1,53,General Farfán
+21,1,58,Santa Cecilia
+21,1,54,Tarapoa
+21,1,59,Aguas Negras
+21,1,55,El Eno
+21,1,60,10 De Agosto
+21,2,50,Lumbaquí
+21,2,51,El Reventador   
+21,2,54,Puerto Libre
+21,2,52,Gonzalo Pizarro 
+21,2,55,Santa Rosa De Sucumbíos
+21,2,53,Lumbaquí
+21,3,50,Puerto El Carmen Del Putumayo
+21,3,51,Palma Roja
+21,3,53,Puerto Rodríguez
+21,3,52,Puerto Bolívar (Puerto Montúfar)
+21,3,54,Santa Elena
+21,4,50,Shushufindi
+21,4,51,Limoncocha
+21,4,54,San Pedro De Los Cofanes
+21,4,52,Pañacocha
+21,4,55,Siete De Julio
+21,4,53,San Roque (Cab. En San Vicente)
+21,5,50,La Bonita
+21,5,51,El Playón De San Francisco
+21,5,53,Rosa Florida
+21,5,52,La Sofía
+21,5,54,Santa Bárbara
+21,6,50,El Dorado De Cascales
+21,6,51,Santa Rosa De Sucumbíos
+21,6,52,Sevilla
+21,7,50,Tarapoa 
+21,7,51,Cuyabeno
+21,7,52,Aguas Negras
+22,1,50,Puerto Francisco De Orellana (El Coca)
+22,1,51,Dayuma
+22,1,58,La Belleza
+22,1,52,Taracoa (Nueva Esperanza: Yuca)
+22,1,59,Nuevo Paraíso (Cab. En Unión 
+22,1,53,Alejandro Labaka
+22,1,54,El Dorado
+22,1,60,San José De Guayusa
+22,1,55,El Edén
+22,1,61,San Luis De Armenia
+22,1,56,García Moreno
+22,1,57,Inés Arango (Cab. En Western)
+22,2,50,Nuevo Rocafuerte
+22,2,1,Tipitini
+22,2,51,Capitán Augusto Rivadeneyra
+22,2,54,Tiputini
+22,2,52,Cononaco
+22,2,55,Yasuní
+22,2,53,Santa María De Huiririma
+22,3,50,La Joya De Los Sachas
+22,3,51,Enokanqui
+22,3,55,Lago San Pedro
+22,3,52,Pompeya
+22,3,56,Rumipamba
+22,3,53,San Carlos
+22,3,57,Tres De Noviembre
+22,3,54,San Sebastián Del Coca
+22,3,58,Unión Milagreña
+22,4,50,Loreto
+22,4,51,Avila (Cab. En Huiruno) 
+22,4,54,San José De Dahuano
+22,4,52,Puerto Murialdo
+22,4,55,San Vicente De Huaticocha
+22,4,53,San José De Payamino
+23,1,50,Santo Domingo De Los Colorados
+23,1,1,Abraham Calazacón
+23,1,5,Río Verde
+23,1,2,Bombolí
+23,1,6,Santo Domingo De Los Colorados
+23,1,3,Chiguilpe
+23,1,7,Zaracay
+23,1,4,Río Toachi
+23,1,51,Alluriquín
+23,1,55,Valle Hermoso
+23,1,52,Puerto Limón
+23,1,56,El Esfuerzo
+23,1,53,Luz De América 
+23,1,57,Santa María Del Toachi
+23,1,54,San Jacinto Del Búa
+24,1,50,Santa Elena
+24,1,1,Ballenita
+24,1,2,Santa Elena
+24,1,51,Atahualpa
+24,1,54,Manglaralto
+24,1,52,Colonche
+24,1,55,Simón Bolívar (Julio Moreno)
+24,1,53,Chanduy
+24,1,56,San José De Ancón
+24,2,50,La Libertad
+24,3,50,Salinas
+24,3,1,Carlos Espinoza Larrea
+24,3,3,Vicente  Rocafuerte
+24,3,2,Gral. Alberto Enríquez Gallo
+24,3,4,Santa Rosa
+24,3,51,Anconcito
+24,3,52,José Luis Tamayo (Muey)
+90,1,51,Las Golondrinas
+90,3,51,Manga Del Cura
+90,4,51,El Piedrero

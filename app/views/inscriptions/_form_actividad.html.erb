@@ -3,5 +3,13 @@
 <legend>Datos del representante legal</legend>
 <%= f.inputs :rep_document_id, :rep_full_name %>
 <%= f.input :rep_sex, as: :select, collection: Inscription::SEX.to_a %>
-<%= f.inputs :rep_title, :rep_phone_home, :rep_phone_celular, :rep_parroquia, :rep_canton, 
-  :rep_provincia, :rep_address, :rep_work_name, :rep_work_address, :rep_work_phone %>
+<%= f.inputs :rep_title, :rep_phone_home, :rep_phone_celular %>
+
+<!-- LOCATION starts -->
+<%= f.input :rep_provincia, get_locations(:provincias, "rep") %>
+<%= f.input :rep_canton, get_locations(:cantones, "rep") %>
+<%= f.input :rep_parroquia, get_locations(:parroquias, "rep") %>
+<%= f.input :rep_address %>
+<!-- LOCATION ends -->
+  
+<%= f.inputs :rep_work_name, :rep_work_address, :rep_work_phone %>

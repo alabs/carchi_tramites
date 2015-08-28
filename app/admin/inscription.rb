@@ -96,10 +96,10 @@ ActiveAdmin.register Inscription do
       row :document_id
       row :sex
       row :born_at
+      row :provincia_name
+      row :canton_name
+      row :parroquia_name
       row :address
-      row :parroquia
-      row :canton
-      row :provincia
       row :phone
       row :email do |inscription|
         mail_to inscription.email
