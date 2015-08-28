@@ -50,7 +50,8 @@ abbr {
 }
 
 .formtastic .fragments .label label {
-  margin-left: 2.65em;
+  width: 26%;
+  text-align: right; 
 }
 
 .formtastic .nested-fields {
@@ -68,6 +69,10 @@ abbr {
 
 .formtastic .nested-fields.title {
   margin-bottom: 10px;
+}
+
+.formtastic ol, .formtastic ul, .formtastic li {
+  list-style-type: none;
 }
 
 .juventud .col-md-5 {

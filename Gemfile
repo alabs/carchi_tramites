@@ -47,4 +47,5 @@ gem 'ckeditor'
 gem 'formtastic', '~> 3.0'
 gem 'cancancan', '~> 1.10'
 gem 'flag_shih_tzu'
+gem 'friendly_id'
 #gem 'id_ecuador'                              # validates cedula Ecuador

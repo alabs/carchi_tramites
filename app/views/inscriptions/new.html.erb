@@ -1,5 +1,9 @@
 <%= content_for :title, @event.title %>
-<%= link_to "Volver al Inicio", root_path, class: "btn btn-warning pull-right" %>
+<% if @event.ttype_name == "Actividad" %>
+  <%= link_to "Volver al listado de cursos", juventud_path, class: "btn btn-warning pull-right" %>
+<% else %>
+  <%= link_to "Volver al Inicio", root_path, class: "btn btn-warning pull-right" %>
+<% end %>
 
 <div class="span11">
   <h1><%= @event.category.title %></h1>

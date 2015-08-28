@@ -12,7 +12,15 @@
   <%= f.inputs :document_id, :first_name, :last_name, required: true %>
   <%= f.input :sex, as: :select, collection: Inscription::SEX.to_a %>
   <%= f.input :born_at, start_year: 1900, end_year: Date.today.year-3 %>
-  <%= f.inputs :provincia, :canton, :parroquia, :address, :phone, :email %>
+
+  <!-- LOCATION starts -->
+  <%= f.input :provincia, get_locations(:provincias, "ins") %>
+  <%= f.input :canton, get_locations(:cantones, "ins") %>
+  <%= f.input :parroquia, get_locations(:parroquias, "ins") %>
+  <%= f.input :address %>
+  <!-- LOCATION ends -->
+
+  <%= f.inputs :phone, :email %>
 
   <% if @event.ttype_class == "audiencia" %>
     <%= render partial: "form_audiencia", locals: {f: f} %>
@@ -31,6 +39,6 @@
     <%= f.action :submit, button_html: { class: "btn btn-success" } %>
   <% end %>
 
-<br>
+  <br>
 
 <% end %>

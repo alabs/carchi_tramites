@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get '/juventud', to: 'page#juventud'
   get '/medio-ambiente', to: 'page#medio_ambiente'
 
-  resources :inscriptions, path: 'solicitar', only: [:new, :create]
+  get 'solicitar/:event_id', to: 'inscriptions#new', as: "new_inscription"
+  resources :inscriptions, path: 'solicitar', only: [:create]
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
