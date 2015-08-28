@@ -37,8 +37,8 @@ ActiveAdmin.register_page "Dashboard" do
         end
       end
       h2 "Inscripciones pendientes"
-      columns do
-        if current_admin_user.is? :actividad or current_admin_user.is? :admin
+      if current_admin_user.is? :actividad or current_admin_user.is? :admin
+        columns do
           column do
             panel "Casa de la Juventud: Actividades" do
               render partial: "inscriptions_table", locals: { event_type: 1 }
@@ -46,8 +46,8 @@ ActiveAdmin.register_page "Dashboard" do
           end
         end
       end
-      columns do
-        if current_admin_user.is? :audiencia or current_admin_user.is? :admin
+      if current_admin_user.is? :audiencia or current_admin_user.is? :admin
+        columns do
           column do
             panel "Prefectura: Audiencia con Prefecto" do
               render partial: "inscriptions_table", locals: { event_type: 2 }
@@ -55,8 +55,8 @@ ActiveAdmin.register_page "Dashboard" do
           end
         end
       end
-      columns do
-        if current_admin_user.is? :plantas or current_admin_user.is? :admin
+      if current_admin_user.is? :plantas or current_admin_user.is? :admin
+        columns do
           column do
             panel "Medio Ambiente: reforestación de plantas" do
               render partial: "inscriptions_table", locals: { event_type: 3 }
