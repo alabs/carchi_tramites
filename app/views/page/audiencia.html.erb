@@ -3,13 +3,13 @@
 
 <h1>Audiencia</h1>
 
-<h5>Producto 3.2.- Petición de audiencia con autoridades</h5>
-<p>En el siguiente formulario podrás solicitar la Petición de audiencia con las autoridades (Prefecto y Viceprefecta). Una vez tu petición sea realizada recibirás un correo electrónico con la Cita. Esta puede modificarse o anularse, recibiendo un correo electrónico en cada caso.</p>
+<h5>Solicitud de audiencia con autoridades</h5>
+<p>En el siguiente formulario puede solicitar audiencia con las autoridades (Prefecto y Viceprefecta). Una vez su petición sea realizada recibirá un correo electrónico con la cita. Esta puede modificarse o anularse, recibiendo un correo electrónico en cada caso.</p>
 <p>Por otro lado el funcionario (tanto el Prefecto como su Secretaria) tiene un panel de Administración donde puede ver todas las citas, modificarlas, anularlas, poner descansos, sincronizar con otros Calendarios, etc.</p>
 
 <br>
 
 <div class="center">
   <% ev_audie = Event.type_audience.first %>
-  <%= link_to "Pedir audiencia", new_inscription_path(event_id: ev_audie), class: "btn btn-primary btn-large" %>
+  <%= link_to "Solicitar audiencia", new_inscription_path(event_id: ev_audie), class: "btn btn-primary btn-large" %>
 </div>
