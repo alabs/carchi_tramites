@@ -1,14 +1,14 @@
 class InscriptionsController < ApplicationController
     
   def new
-    @event = Event.find(params[:event_id] || 1)
+    @event = Event.friendly.find(params[:event_id] || 1)
     @inscription = Inscription.new
     @inscription.inscriptions_plants.build
   end  
     
   def create
     @inscription = Inscription.new(inscription_params)
-    @event = Event.find(inscription_params[:event_id])
+    @event = Event.friendly.find(inscription_params[:event_id])
     if @inscription.save
       InscriptionMailer.pending(@inscription.id).deliver_now
       flash[:notice] = "Revisaremos tu inscripción y te avisaremos el resultado dentro de unos días."
