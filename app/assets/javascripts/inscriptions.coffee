@@ -7,7 +7,7 @@ cascadeSelect = (parent, child) ->
   child.data 'options', childOptions
   parent.change ->
     childOptions.remove()
-    child.append(child.data('options').filter('.sub_' + @value)).change()
+    child.append(child.data('options').filter('.sub_' + this.value)).change()
   childOptions.not('.static, .sub_' + parent.val()).remove()
 
 $ ->
@@ -35,3 +35,15 @@ $ ->
 
     $('#inscription_parroquia').find('option').removeAttr('selected')
     $('#inscription_parroquia').find('option[value="c_insparroquia_4_1_50"]').prop("selected", true)
+
+  if $('#inscription_rep_provincia').val() == ""
+    $('#inscription_rep_provincia').find('option').removeAttr('selected')
+    $('#inscription_rep_provincia').find('option[value="c_repprovincia_4"]').prop("selected", true)
+    $('#inscription_rep_provincia').change()
+
+    $('#inscription_rep_canton').find('option').removeAttr('selected')
+    $('#inscription_rep_canton').find('option[value="c_repcanton_4_1"]').prop("selected", true)
+    $('#inscription_rep_canton').change()
+
+    $('#inscription_rep_parroquia').find('option').removeAttr('selected')
+    $('#inscription_rep_parroquia').find('option[value="c_repparroquia_4_1_50"]').prop("selected", true)

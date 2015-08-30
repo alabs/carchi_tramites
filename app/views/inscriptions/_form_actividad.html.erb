@@ -6,9 +6,9 @@
 <%= f.inputs :rep_title, :rep_phone_home, :rep_phone_celular %>
 
 <!-- LOCATION starts -->
-<%= f.input :rep_provincia, get_locations(:provincias, "rep") %>
-<%= f.input :rep_canton, get_locations(:cantones, "rep") %>
-<%= f.input :rep_parroquia, get_locations(:parroquias, "rep") %>
+<%= f.input :rep_provincia, as: :select, collection: get_locations(:provincias, "rep") %>
+<%= f.input :rep_canton, as: :select, collection: get_locations(:cantones, "rep") %>
+<%= f.input :rep_parroquia, as: :select, collection: get_locations(:parroquias, "rep") %>
 <%= f.input :rep_address %>
 <!-- LOCATION ends -->
   
