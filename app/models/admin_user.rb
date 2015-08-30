@@ -37,9 +37,9 @@ class AdminUser < ActiveRecord::Base
 
   # http://arp242.net/weblog/making_flag_shih_tzu_work_well_with_formtastic.html
   def roles_array
-    roles.to_s(2).split('').reverse
+    self.roles.to_s(2).split('').reverse
     .map.with_index { |bit, i| 2 ** i if bit == '1' }
-    .compact
+    .compact if self.roles
   end
 
 end

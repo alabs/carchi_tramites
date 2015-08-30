@@ -19,9 +19,16 @@ es:
       calendars: "Calendarios"
     attributes:
       admin_user:
+        password: "Contraseña"
+        password_confirmation: "Contraseña (repetir)"
         email: "Correo electrónico"
         roles_array: "Permisos del Usuario"
         roles: "Permisos del Usuario"
+        roles_def:
+          actividad: "Sólo acceso a inscritos de Actividades de la Casa de la Juventud"
+          plantas: "Sólo acceso a inscritos de Plantas de Medio Ambiente"
+          audiencia: "Sólo acceso a inscritos de Audiencia con el Prefecto"
+          admin: "Administrador total de la plataforma"
       category:
         title: "Título"
         events: "Eventos"
