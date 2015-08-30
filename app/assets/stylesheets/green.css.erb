@@ -7468,7 +7468,7 @@ h1 small, h2 small, h3 small, h4 small {
   width: 68px;
   height: 21px;
   margin-top: 2px;
-  background: url("../../../base/images/ckan-logo-footer.png") no-repeat top left;
+  background: url(<%= asset_path "logo-footer.jpg" %>) no-repeat top left;
   text-indent: -900em;
 }
 .lang-select {
@@ -8424,7 +8424,7 @@ body {
 /* Footer */
 
 footer{
-  background-image:url("/img/logo-footer.jpg");
+  background-image: url(<%= asset_path "logo-footer.jpg" %>);
   background-position:50% 25%;
   background-repeat:no-repeat;
   background-color:white;
