@@ -54,8 +54,8 @@ ActiveAdmin.register AdminUser do
       end
       f.input :roles_array, as: :check_boxes, collection: flag_to_collection(AdminUser, 'roles')
     end
-    f.inputs "Contraseña" do
-      unless f.object.new_record?
+    unless f.object.new_record?
+      f.inputs "Contraseña" do
         span "En caso de olvido de contraseña, el reseteo debe hacerlo el mismo usuario con este enlace:"
         span link_to("He olvidado mi contraseña", new_admin_user_password_path)
       end
