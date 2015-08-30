@@ -7170,7 +7170,7 @@ h1 small, h2 small, h3 small, h4 small {
   *zoom: 1;
   min-height: 30px;
   color: #ffffff;
-  background: #237434 url(<%= asset_path "bg.png" %>);
+  background: #B20000 url(<%= asset_path "bg.png" %>);
 }
 .account-masthead:before, .account-masthead:after {
   display: table;
@@ -8305,12 +8305,18 @@ body {
 }
 
 .hero-second {
-  background: #EEE url("/img/background.png") repeat scroll 0% 0%;
-  font-size: 16px;
+  background: #EEE url(<%= asset_path "background.png" %>) repeat scroll 0% 0%;
+  font-size: 18px;
+  line-height: 20px;
+  background-size: cover;
   position: relative;
   background-attachment: fixed;
   background-position: center top;
   background-size: cover;
+}
+
+.hero-second .container {
+  padding: 50px 0px;
 }
 
 .homepage .hero > .container {

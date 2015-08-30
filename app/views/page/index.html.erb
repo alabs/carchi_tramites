@@ -10,37 +10,44 @@
       </div>
   </div>
 
+  <div class="hero hero-second">
+      <div class="container">
+        <div class="box">
+          <div class="inner">
+            Accede a distintos <b>trámites de la Prefectura de Carchi</b>, Ecuador. Puedes pedir una <b>Audiencia</b> con el Prefecto, una petición de Reforestación de Plantas Autóctonas a <b>Medio Ambiente</b> o inscribirte a una de las <b>Actividades</b> o cursos que realiza la Casa de la Juventud.
+          </div>
+        </div>
+      </div>
+  </div>
+
   <div role="main" class="hero-first">
     <div class="container">
       <div class="row row1">
         <div class="span4 col3">
-          <div class="box">
-            <div class="inner">
-              <h3>Audiencia</h3>
-              <p> Solicitud de audiencia con autoridades. </p>
-              Petición de audiencia con autoridades (Prefecto y Viceprefecta). 
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Audiencia</h3>
+            </div>
+            <div class="panel-body"> Solicitud de audiencia con autoridades.  Petición de audiencia con autoridades (Prefecto y Viceprefecta).  </div>
+            <div class="panel-footer">
               <% ev_audie = Event.type_audience.first %>
               <% if ev_audie %>
-                <%= ev_audie.title %>
-                <br>
-                <br>
                 <%= link_to "Realizar solicitud", new_inscription_path(event_id: ev_audie), class: "btn btn-primary pull-left" %>
-                <br>
-                <br>
+                  <br>
+                  <br>
               <% end %>
             </div>
           </div>
         </div>
         <div class="span4 col3">
-          <div class="box">
-            <div class="inner">
-              <h3>Medio Ambiente</h3>
-              <p> Solicitud a la dirección de Medio Ambiente de plantas autoctonas para reforestación </p>
-              <% ev_trees = Event.type_trees.first %>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Medio Ambiente</h3>
+            </div>
+            <div class="panel-body"> Solicitud a la dirección del departamento de Medio Ambiente de plantas autoctonas para reforestación. </div>
+            <% ev_trees = Event.type_trees.first %>
+            <div class="panel-footer">
               <% if ev_trees %>
-                <%= ev_trees.title %>
-                <br>
-                <br>
                 <%= link_to "Realizar solicitud", new_inscription_path(event_id: ev_trees), class: "btn btn-primary pull-left" %>
                 <br>
                 <br>
@@ -49,13 +56,15 @@
           </div>
         </div>
         <div class="span4 col3">
-          <div class="box">
-            <div class="inner">
-              <h3>Casa de la Juventud</h3>
-              <p>  Cursos Casa Juventud.  </p>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Casa de la Juventud</h3>
+            </div>
+            <div class="panel-body">
+              Cursos Casa Juventud.
               Actividades gratuitas del Carchi de Informática, Danza, etc.
-              <br>
-              <br>
+            </div>
+            <div class="panel-footer">
               <%= link_to "Ver actividades", juventud_path, class: "btn btn-primary pull-left" %>
               <br>
               <br>
