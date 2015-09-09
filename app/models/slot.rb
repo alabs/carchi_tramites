@@ -29,12 +29,12 @@ class Slot < ActiveRecord::Base
   end
 
   def next_day_slot
-    date = Date.today+2.days
-    date += 1 + ((self.dow-date.wday+2.days) % 7)
+    date = Date.today
+    date += 1 + ((self.dow-date.wday) % 7)
   end
 
   def next_day_slot_name
-    self.next_day_slot.strftime("date_%d%m_%H%M")
+    self.next_day_slot.strftime("date_%d%m")
   end
 
   def nextweek_slot
@@ -42,7 +42,7 @@ class Slot < ActiveRecord::Base
   end
 
   def nextweek_slot_name
-    self.nextweek_slot.strftime("date_%d%m_%H%M")
+    self.nextweek_slot.strftime("date_%d%m")
   end
 
   def all_hours day_slot
