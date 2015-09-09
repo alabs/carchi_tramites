@@ -7,11 +7,16 @@ class InscriptionsController < ApplicationController
   end  
     
   def create
+    if inscription_params[:appointed_at]
+      @appointed_at_hour = inscription_params[:appointed_at]
+      @appointed_at_day = Date.parse(inscription_params[:appointed_at]).strftime("date_%d%m")
+    end
     @inscription = Inscription.new(inscription_params)
     @event = Event.friendly.find(inscription_params[:event_id])
     if @inscription.save
       InscriptionMailer.pending(@inscription.id).deliver_now
-      flash[:notice] = "Revisaremos tu inscripción y te avisaremos el resultado dentro de unos días."
+      # TODO: if price
+      flash[:notice] = "Revisaremos tu inscripción y te avisaremos el resultado en breve."
       redirect_to root_url
     else  
       render :action => 'new'
