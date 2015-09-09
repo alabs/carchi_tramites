@@ -28,7 +28,7 @@
             <div class="panel-heading">
               <h3 class="panel-title">Audiencia</h3>
             </div>
-            <div class="panel-body"> Solicitud de audiencia con autoridades.  Petición de audiencia con autoridades (Prefecto y Viceprefecta).  </div>
+            <div class="panel-body"> Solicitud de audiencia con la autoridad de la Prefectura del Carchi.  </div>
             <div class="panel-footer">
               <% ev_audie = Event.type_audience.first %>
               <% if ev_audie %>
@@ -61,8 +61,7 @@
               <h3 class="panel-title">Casa de la Juventud</h3>
             </div>
             <div class="panel-body">
-              Cursos Casa Juventud.
-              Actividades gratuitas del Carchi de Informática, Danza, etc.
+              Solicitud de inscripción en actividades y cursos de la Casa de la Juventud y Cultura.
             </div>
             <div class="panel-footer">
               <%= link_to "Ver actividades", juventud_path, class: "btn btn-primary pull-left" %>
