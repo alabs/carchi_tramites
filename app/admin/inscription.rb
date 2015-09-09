@@ -21,12 +21,15 @@ ActiveAdmin.register Inscription do
 
   index do
     selectable_column
-    id_column
-    column :full_name
-    column :category do |inscription|
-      div inscription.event.category.title
+    column :full_name do |inscription|
+      link_to inscription.full_name, admin_inscription_path(inscription)
     end
-    column :event
+    if current_admin_user.is?(:actividad) or current_admin_user.is?(:admin)
+      column :category do |inscription|
+        div inscription.event.category.title
+      end
+      column :event
+    end
     column :status do |inscription|
       div inscription.status_name, class: inscription.status_class
     end
@@ -162,23 +165,29 @@ ActiveAdmin.register Inscription do
       # FIXME: be more beauty, refactory TTYPES/Category relation
       if inscription.pending?
         dt "Acciones"
-        dd link_to('Aprobar inscripción', approve_admin_inscription_path(inscription), class: "button", method: :post, data: { confirm: "¿Estas segura de querer aprobar esta inscripción? Enviaremos un email confirmándole la inscripción." }) 
+        dd link_to('Aprobar inscripción', observations_approve_admin_inscription_path(inscription), class: "button", method: :post, data: { confirm: "¿Estas segura de querer aprobar esta inscripción? Enviaremos un email confirmándole la inscripción." }) 
         br
-        dd link_to('Rechazar inscripción', observations_admin_inscription_path(inscription), class: "button button-danger", method: :post, data: { confirm: "¿Estas segura de querer rechazar esta inscripción? Enviaremos un email comúnicandole que su inscripción ha sido rechazada." }) 
+        dd link_to('Rechazar inscripción', observations_deny_admin_inscription_path(inscription), class: "button button-danger", method: :post, data: { confirm: "¿Estas segura de querer rechazar esta inscripción? Enviaremos un email comúnicandole que su inscripción ha sido rechazada." }) 
       end
     end
   end
 
+  member_action :observations_approve, :method => :post do
+    @inscription = Inscription.find(params[:id])
+  end
+
+  member_action :observations_deny, :method => :post do
+    @inscription = Inscription.find(params[:id])
+  end
+
   member_action :approve, :method => :post do
     inscription = Inscription.find(params[:id])
+    inscription.admin_observation = params[:inscription][:admin_observation]
+    inscription.save
     inscription.approve!
     InscriptionMailer.approved(inscription.id).deliver_now
     flash[:notice] = "Hemos enviado un mail al usuario #{inscription.full_name} diciendole que ha sido aprobado."
     redirect_to action: :index
-  end
-
-  member_action :observations, :method => :post do
-    @inscription = Inscription.find(params[:id])
   end
 
   member_action :deny, :method => :post do

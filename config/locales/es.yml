@@ -101,12 +101,14 @@ es:
         rep_work_name: "Nombre de la empresa de trabajo"
         rep_work_address: "Dirección de la empresa de trabajo"
         rep_work_phone: "Teléfono de la empresa de trabajo"
-        admin_observation: "Observaciones para el rechazo"
+        admin_observation: "Observaciones"
         motive: "Motivo de la Audiencia"
         appointed_at: "Fecha de la Cita"
         plant_location: "Ubicación de las Plantas"
         plant_representation: "En representación de"
   active_admin:
+    observations_approve: "Aprobar: Observaciones"
+    observations_deny: "Rechazar: Observaciones"
     access_denied: 
       message: "No tienes permiso para acceder a esta sección"
     scopes:
@@ -124,3 +126,5 @@ es:
       subject: "[carchi] Has sido aprobado para la actividad"
     denied:
       subject: "[carchi] Tu solicitud ha sido rechazada"
+  alerts:
+    notice: "Aviso"

@@ -1,7 +1,46 @@
 Aviso de nueva inscripción
 
-Ha habido una nueva inscripción en <%= @inscription.event.title %>
+Ha habido una nueva inscripción en <%= @inscription.event.category.title %> - <%= @inscription.event.title %>
 
-<%= @inscription.full_name %>
-<%= @inscription.document_id %>
+Nombre:              <%= @inscription.first_name %>
+Apellido:            <%= @inscription.last_name %>
+Teléfono:            <%= @inscription.phone %>
+Email:               <%= @inscription.email %>
+Cédula:              <%= @inscription.document_id %>
+Sexo:                <%= @inscription.sex_name %>
+Fecha de nacimiento: <%= l @inscription.born_at %>
+Cantón:              <%= @inscription.canton_name %>
+Parroquia:           <%= @inscription.parroquia_name %>
+Dirección:           <%= @inscription.address %>
+<% if @inscription.event.ttype_class == "actividad" %>
+Nivel educativo:  <%= @inscription.ed_level %>
+Unidad educativa: <%= @inscription.ed_unity %>
+Observaciones:    <%= @inscription.observations %>
+
+Datos del representante: 
+***********************
+Cédula:                 <%= @inscription.rep_document_id %>
+Nombre completo:        <%= @inscription.rep_full_name %>
+Sexo:                   <%= @inscription.rep_sex_name %>
+Título:                 <%= @inscription.rep_title %>
+Teléfono (casa):        <%= @inscription.rep_phone_home %>
+Teléfono (celular):     <%= @inscription.rep_phone_celular %>
+Cantón:                 <%= @inscription.rep_canton_name %>
+Parroquia:              <%= @inscription.rep_parroquia_name %>
+Dirección:              <%= @inscription.rep_address %>
+Nombre del trabajo:     <%= @inscription.rep_work_name %>
+Dirección del trabajo:  <%= @inscription.rep_work_address %>
+Teléfono del trabajo:   <%= @inscription.rep_work_phone %>
+<% end %>
+<% if @inscription.event.ttype_class == "audiencia" %>
+Motivo de la audiencia: <%= @inscription.motive %>
+Fecha de la audiencia:  <%= @inscription.appointed_at %>
+<% end %>
+<% if @inscription.event.ttype_class == "plantas" %>
+Ubicación de las plantas: <%= @inscription.plant_location %>
+En representación de:     <%= @inscription.plant_representation %>
+<% end %>
+
+****************************************************************
+
 <%= link_to "Ir al Panel de Administración", admin_inscription_url(@inscription) %>

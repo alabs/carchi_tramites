@@ -1,1 +1,6 @@
 <%= @email.body_text %>
+
+<% if @inscription.admin_observation %>
+  Observaciones:
+  <%= @inscription.admin_observation %>
+<% end %>

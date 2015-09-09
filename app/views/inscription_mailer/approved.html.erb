@@ -1,1 +1,6 @@
 <%= @email.body_html.html_safe %>
+
+<% if @inscription.admin_observation %>
+  <p>Observaciones:</p>
+  <p><%= @inscription.admin_observation %></p>
+<% end %>
