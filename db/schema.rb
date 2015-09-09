@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150827222801) do
+ActiveRecord::Schema.define(version: 20150905005156) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(version: 20150827222801) do
     t.datetime "updated_at"
   end
 
-  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
-  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
-  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
+  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
+  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace"
+  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(version: 20150827222801) do
     t.integer  "roles",                  limit: 4
   end
 
-  add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
-  add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+  add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
+  add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
   create_table "categories", force: :cascade do |t|
     t.string   "title",       limit: 255
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20150827222801) do
     t.datetime "updated_at",                null: false
   end
 
-  add_index "emails", ["category_id"], name: "index_emails_on_category_id", using: :btree
+  add_index "emails", ["category_id"], name: "index_emails_on_category_id"
 
   create_table "events", force: :cascade do |t|
     t.string   "title",       limit: 255
@@ -80,8 +80,8 @@ ActiveRecord::Schema.define(version: 20150827222801) do
     t.string   "slug",        limit: 255
   end
 
-  add_index "events", ["category_id"], name: "index_events_on_category_id", using: :btree
-  add_index "events", ["slug"], name: "index_events_on_slug", unique: true, using: :btree
+  add_index "events", ["category_id"], name: "index_events_on_category_id"
+  add_index "events", ["slug"], name: "index_events_on_slug", unique: true
 
   create_table "inscriptions", force: :cascade do |t|
     t.integer  "event_id",             limit: 4
@@ -122,7 +122,7 @@ ActiveRecord::Schema.define(version: 20150827222801) do
     t.text     "plant_representation", limit: 65535
   end
 
-  add_index "inscriptions", ["event_id"], name: "index_inscriptions_on_event_id", using: :btree
+  add_index "inscriptions", ["event_id"], name: "index_inscriptions_on_event_id"
 
   create_table "inscriptions_plants", force: :cascade do |t|
     t.integer  "inscription_id", limit: 4
@@ -132,13 +132,14 @@ ActiveRecord::Schema.define(version: 20150827222801) do
     t.datetime "updated_at"
   end
 
-  add_index "inscriptions_plants", ["inscription_id"], name: "index_inscriptions_plants_on_inscription_id", using: :btree
-  add_index "inscriptions_plants", ["plant_id"], name: "index_inscriptions_plants_on_plant_id", using: :btree
+  add_index "inscriptions_plants", ["inscription_id"], name: "index_inscriptions_plants_on_inscription_id"
+  add_index "inscriptions_plants", ["plant_id"], name: "index_inscriptions_plants_on_plant_id"
 
   create_table "plants", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.boolean  "active"
   end
 
   create_table "slots", force: :cascade do |t|
@@ -150,9 +151,4 @@ ActiveRecord::Schema.define(version: 20150827222801) do
     t.datetime "updated_at",            null: false
   end
 
-  add_foreign_key "emails", "categories"
-  add_foreign_key "events", "categories"
-  add_foreign_key "inscriptions", "events"
-  add_foreign_key "inscriptions_plants", "inscriptions"
-  add_foreign_key "inscriptions_plants", "plants"
 end
