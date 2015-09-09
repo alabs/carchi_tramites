@@ -14,7 +14,8 @@
   <%= f.input :born_at, start_year: 1900, end_year: Date.today.year-3 %>
 
   <!-- LOCATION starts -->
-  <%= f.input :provincia, as: :select, collection: get_locations(:provincias, "ins") %>
+  <%# f.input :provincia, as: :select, collection: get_locations(:provincias, "ins"), input_html: {disabled: true} %>
+  <%= f.input :provincia, as: :select, collection: get_locations(:provincias, "ins"), class: "disabled" %>
   <%= f.input :canton, as: :select, collection: get_locations(:cantones, "ins") %>
   <%= f.input :parroquia, as: :select, collection: get_locations(:parroquias, "ins") %>
   <%= f.input :address %>
