@@ -35,10 +35,11 @@
     <%= render partial: "form_plantas", locals: {f: f} %>
   <% end %>
 
-  <%= f.actions do %>
-    <%= link_to 'Cancelar', root_path, class: "btn btn-danger" %>
-    <%= f.action :submit, button_html: { class: "btn btn-success" } %>
-  <% end %>
+  <div class="well">
+    <%= f.actions do %>
+      <%= f.action :submit, label: "Dar de alta inscripción", button_html: { class: "btn btn-success btn-large" } %>
+    <% end %>
+  </div>
 
   <br>
 
