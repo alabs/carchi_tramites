@@ -15,8 +15,9 @@ ActiveAdmin.register Inscription do
   filter :phone
   filter :sex, as: :select, collection: Inscription::SEX.to_a
   filter :status, as: :select, collection: Inscription::STATUS.to_a
-  filter :event_category_id, label: "Categoría", as: :select, collection: Event::TYPE.to_a
-  filter :event
+  filter :event_category_id, label: "Categoría", as: :select, collection: Event::TYPE.to_a, if:  proc { current_admin_user.is?(:admin) }
+  filter :event, if:  proc { current_admin_user.is?(:admin) }
+  filter :inscriptions_plants_plant_name, as: :select, collection: Plant.all, if: proc { current_admin_user.is?(:plantas) or current_admin_user.is?(:admin) }
 
   index do
     selectable_column
