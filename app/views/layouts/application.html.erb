@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= yield :title %> | Atención al Ciudadano el Carchi, Ecuador</title>
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
-</head>
-<body>
-
-  <%= render partial: "header" %>
-
-  <% if @no_layout %>
-    <%= flash_messages %>
-    <%= yield %>
-  <% else %>
-    <div role="main">
-      <div id="content" class="container">
-        <div class="container">
-          <div class="row wrapper no-nav">
-            <article class="module">
-              <div class="module-content">
-                <%= flash_messages %>
-                <%= yield %>
-              </div>
-            </article>
+  <head>
+    <title><%= yield :title %> | Atención Ciudadana el Carchi, Ecuador</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <%= render partial: "header" %>
+    <% if @no_layout %>
+      <% flash.each do |key, value| %>
+        <%= render partial: "application/modal", locals: {key: key, value: value} %>
+      <% end %>
+      <%= yield %>
+    <% else %>
+      <div role="main">
+        <div id="content" class="container">
+          <div class="container">
+            <div class="row wrapper no-nav">
+              <article class="module">
+                <div class="module-content">
+                  <% flash.each do |key, value| %>
+                    <%= render partial: "application/modal", locals: {key: key, value: value} %>
+                  <% end %>
+                  <%= yield %>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  <% end %>
-
-  <%= render partial: "footer" %>
-
-</body>
+    <% end %>
+    <%= render partial: "footer" %>
+  </body>
 </html>

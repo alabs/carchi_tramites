@@ -10,6 +10,15 @@ abbr {
   display: none;
 }
 
+input[type='number'] {
+  -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
 #new_inscription legend {
   margin-bottom: 20px;
 }
@@ -41,12 +50,21 @@ abbr {
   text-align: right;
 }
 
+.formtastic .buttons, .formtastic .actions {
+  padding-left: 0;
+}
+
 .formtastic .btn {
   font-weight: 700;
   padding-bottom: 4px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 4px;
+}
+
+.formtastic .btn-nested {
+  margin-top: 2em;
+  margin-left: 8em;
 }
 
 .formtastic .fragments .label label {
