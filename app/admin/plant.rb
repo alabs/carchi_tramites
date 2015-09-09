@@ -1,8 +1,8 @@
 ActiveAdmin.register Plant do
 
-  menu parent: "Departamento: Medio Ambiente"
+  menu parent: "Departamento: Gestión Ambiental"
 
-  permit_params :name
+  permit_params :name, :active
 
   before_filter :skip_sidebar!, :only => :index
 

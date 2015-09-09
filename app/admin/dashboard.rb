@@ -30,7 +30,7 @@ ActiveAdmin.register_page "Dashboard" do
         end
         if current_admin_user.is? :plantas or current_admin_user.is? :admin
           column do
-            panel "Medio Ambiente: reforestación de plantas" do
+            panel "Gestión Ambiental: reforestación de plantas" do
               render partial: "stats_wrapper", locals: { event_type: 3, context: self }
             end
           end
@@ -58,7 +58,7 @@ ActiveAdmin.register_page "Dashboard" do
       if current_admin_user.is? :plantas or current_admin_user.is? :admin
         columns do
           column do
-            panel "Medio Ambiente: reforestación de plantas" do
+            panel "Gestión Ambiental: reforestación de plantas" do
               render partial: "inscriptions_table", locals: { event_type: 3 }
             end
           end

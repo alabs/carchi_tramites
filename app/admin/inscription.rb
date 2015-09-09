@@ -6,7 +6,7 @@ ActiveAdmin.register Inscription do
   #scope "[estado] Pendiente", :pending
   #scope "[estado] Aprobado", :approved
   #scope "[estado] Denegado", :denied
-  #scope("[tipo] Medio Ambiente") { |scope| scope.by_event_type(2) }
+  #scope("[tipo] Gestión Ambiental") { |scope| scope.by_event_type(2) }
   #scope("[tipo] Juventud") { |scope| scope.by_event_type(3) }
 
   filter :first_name

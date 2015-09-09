@@ -26,7 +26,7 @@ es:
         roles: "Permisos del Usuario"
         roles_def:
           actividad: "Sólo acceso a inscritos de Actividades de la Casa de la Juventud"
-          plantas: "Sólo acceso a inscritos de Plantas de Medio Ambiente"
+          plantas: "Sólo acceso a inscritos de Plantas de Gestión Ambiental"
           audiencia: "Sólo acceso a inscritos de Audiencia con el Prefecto"
           admin: "Administrador total de la plataforma"
       category:
