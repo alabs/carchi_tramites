@@ -2,26 +2,73 @@
 
 <div class="homepage">
   <div class="hero hero-first">
-      <div class="container">
-        <h1>Atención Ciudadana <span>El Carchi</span></h1>
-        <p>
-          Bienvenido al lugar donde podrá realizar todos los trámites con la Prefectura del Carchi, Ecuador. 
-        </p>
-      </div>
+    <div class="container">
+      <h1>Atención Ciudadana <span>El Carchi</span></h1>
+      <p>
+      Bienvenido al lugar donde podrá realizar todos los trámites con la Prefectura del Carchi, Ecuador. Accede a distintos <b>trámites de la Prefectura de Carchi</b>, Ecuador. Puedes pedir una <b>Audiencia</b> con el Prefecto, una petición de Reforestación de Plantas Autóctonas a <b>Gestión Ambiental</b> o inscribirte a una de las <b>Actividades</b> o cursos que realiza la Casa de la Juventud.
+      </p>
+    </div>
   </div>
 
   <div class="hero hero-second">
-      <div class="container">
-        <div class="box">
-          <div class="inner">
-            Accede a distintos <b>trámites de la Prefectura de Carchi</b>, Ecuador. Puedes pedir una <b>Audiencia</b> con el Prefecto, una petición de Reforestación de Plantas Autóctonas a <b>Gestión Ambiental</b> o inscribirte a una de las <b>Actividades</b> o cursos que realiza la Casa de la Juventud.
-          </div>
+    <div class="container">
+      <div class="row text-center">
+        <div class="box offset1 col-md-2">
+          <span class="fa-stack fa-4x">
+            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+            <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading">Atención teléfonica</h4>
+          <p class="text-muted">
+          Teléfono: <a href="tel:593 (06) 2980-302">593 (06) 2980-302</a>
+          <br>
+          Pbx: 593 (06) 2980-302 ext 138
+          <br>
+          <a href="http://carchi.gob.ec/images/ley_transparencia/2013/bdirectorio_completo.pdf" target="_blank"> Ver Directorio Telefónico</a>
+          </p>
+        </div>
+        <div class="box offset1 col-md-2">
+          <span class="fa-stack fa-4x">
+            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+            <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading">Atención presencial</h4>
+          <p class="text-muted">
+          Dirección: Calle 10 de Agosto entre Sucre y Olmedo, Tulcán, Carchi, Ecuador.
+          <br>
+          <a href="https://www.google.com.ec/maps/place/Prefectura+del+Carchi/@0.814199,-77.715854,17z/data=!3m1!4b1!4m2!3m1!1s0x8e2968cc11f8ca55:0xdd06fa90e558b502?hl=es" target="_blank"> Ver Mapa</a>
+          </p>
+        </div>
+        <div class="box offset1 col-md-2">
+          <span class="fa-stack fa-4x">
+            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+            <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading">Atención por Internet</h4>
+          <p class="text-muted">
+
+          Mail: <%= mail_to "info@carchi.gob.ec" %>
+
+        <br>
+        <!-- a href="#chat" onclick="toggleChat()">Chatea con nosotros</a -->
+
+        <!--Start of Tawk.to Status Code-->
+        <script type="text/javascript">
+Tawk_API.onStatusChange = function (status){if(status === 'online'){document.getElementById('status').innerHTML = '<a href="#" class="btn btn-primary" onclick="toggleChat()">En línea - Click para chatear</a>';}else if(status === 'away'){document.getElementById('status').innerHTML = 'Ahora mismo no nos encontramos en línea';}else if(status === 'offline'){document.getElementById('status').innerHTML = 'Ahora mismo no nos encontramos en línea';}};
+        </script>
+        <!--End of Tawk.to Status Code -->
+        <div id="status"></div>
+
+
+          </p>
         </div>
       </div>
+    </div>
   </div>
 
   <div role="main" class="hero-first">
     <div class="container">
+        <h2 class="page-heading">Trámites por Internet</h2>
       <div class="row row1">
         <div class="span4 col3">
           <div class="panel panel-default">
@@ -33,8 +80,8 @@
               <% ev_audie = Event.type_audience.first %>
               <% if ev_audie %>
                 <%= link_to "Realizar solicitud", new_inscription_path(event_id: ev_audie), class: "btn btn-primary pull-left" %>
-                  <br>
-                  <br>
+                <br>
+                <br>
               <% end %>
             </div>
           </div>
