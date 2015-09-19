@@ -14,9 +14,21 @@ FactoryGirl.define do
     sex 0
     born_at DateTime.now-18.years
     address "C/Inventada 123"
-    parroquia "Parrish"
-    canton "Catish"
+    parroquia "Tulcán"
+    canton "Carchi"
     provincia "Carchi"
+    rep_document_id "1234567"
+    rep_full_name "Jorge Macanudo Sr."
+    rep_title "Padre"
+    rep_sex 1
+    rep_phone_home "12421414"
+    rep_phone_celular "12421414"
+    rep_parroquia "Tulcán"
+    rep_canton "Carchi"
+    rep_provincia "Carchi"
+    rep_work_name "Fabrica"
+    rep_work_address "Fabrica"
+    rep_work_phone "12421414"
   end
 
 end

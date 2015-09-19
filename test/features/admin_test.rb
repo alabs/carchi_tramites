@@ -16,7 +16,7 @@ feature "Admin" do
     click_link "Inicio"
     page.wont_have_content "Prefectura: Audiencia con Prefecto"
     page.wont_have_content "Casa de la Juventud: Actividades"
-    page.must_have_content "Medio Ambiente: reforestación de plantas"
+    page.must_have_content "Gestión Ambiental: reforestación de plantas"
     page.must_have_content "Inicio"
     page.must_have_content "todos"
     page.must_have_content "7 días"
@@ -27,7 +27,7 @@ feature "Admin" do
     user.save
     click_link "Inicio"
     page.must_have_content "Prefectura: Audiencia con Prefecto"
-    page.wont_have_content "Medio Ambiente: reforestación de plantas"
+    page.wont_have_content "Gestión Ambiental: reforestación de plantas"
     page.wont_have_content "Casa de la Juventud: Actividades"
 
     user.audiencia = false
@@ -35,7 +35,7 @@ feature "Admin" do
     user.save
     click_link "Inicio"
     page.wont_have_content "Prefectura: Audiencia con Prefecto"
-    page.wont_have_content "Medio Ambiente: reforestación de plantas"
+    page.wont_have_content "Gestión Ambiental: reforestación de plantas"
     page.must_have_content "Casa de la Juventud: Actividades"
 
     user.actividad = false
@@ -43,7 +43,7 @@ feature "Admin" do
     user.save
     click_link "Inicio"
     page.must_have_content "Prefectura: Audiencia con Prefecto"
-    page.must_have_content "Medio Ambiente: reforestación de plantas"
+    page.must_have_content "Gestión Ambiental: reforestación de plantas"
     page.must_have_content "Casa de la Juventud: Actividades"
 
   end

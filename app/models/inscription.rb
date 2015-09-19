@@ -5,7 +5,9 @@ class Inscription < ActiveRecord::Base
   accepts_nested_attributes_for :inscriptions_plants
 
   #validates_id :document_id, allow_blank: false, only: [:cedula]
-  validates :document_id, :sex, :born_at, :address, :parroquia, :canton, :provincia, :first_name, :last_name, :phone, :email, :event, presence: true
+  validates :document_id, :sex, :born_at, :address, :parroquia, :canton, :provincia, :first_name, :last_name, :phone, :event, presence: true
+
+  #validates :email, presence: true, unless: self.event.plantas?
 
   scope :pending,  -> { where(status: 0) }
   scope :approved, -> { where(status: 1) }
@@ -38,6 +40,10 @@ class Inscription < ActiveRecord::Base
 
   def sex_name
     Inscription::SEX.invert[self.sex]
+  end
+
+  def rep_sex_name
+    Inscription::SEX.invert[self.rep_sex]
   end
 
   def status_name
@@ -78,23 +84,23 @@ class Inscription < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
 
-  def provincia_name
+  def get_provincia_name field
     # c_provincia_4
-    if self.provincia.starts_with? "c_"
-      provincia_id = self.provincia.split('_')[2]
+    if field.starts_with? "c_"
+      provincia_id = field.split('_')[2]
       type = :provincias
       result = File.open("db/geo/ecuador_#{type}.csv").read().split(/\n/)
       result = result.grep(/^#{provincia_id}\,/).first.split(',')[1]
       result
     else
-      self.provincia
+      field
     end
   end
 
-  def canton_name 
+  def get_canton_name field
     # c_canton_4_3
-    if self.canton.starts_with? "c_"
-      obj = self.canton.split('_')
+    if field.starts_with? "c_"
+      obj = field.split('_')
       provincia_id = obj[2]
       canton_id = obj[3]
       type = :cantones
@@ -102,13 +108,13 @@ class Inscription < ActiveRecord::Base
       result = result.grep(/^#{provincia_id}\,#{canton_id}\,/).first.split(',')[2]
       result
     else
-      self.canton
+      field
     end
   end
 
-  def parroquia_name
+  def get_parroquia_name field
     # c_parroquia_4_1_50
-    if self.parroquia.starts_with? "c_"
+    if field.starts_with? "c_"
       obj = self.parroquia.split('_')
       provincia_id = obj[2]
       canton_id = obj[3]
@@ -118,8 +124,32 @@ class Inscription < ActiveRecord::Base
       result = result.grep(/^#{provincia_id}\,#{canton_id}\,#{parroquia_id}\,/).first.split(',')[3]
       result
     else
-      self.parroquia
+      field
     end
+  end
+
+  def provincia_name
+    get_provincia_name self.provincia
+  end
+
+  def rep_provincia_name
+    get_provincia_name self.rep_provincia
+  end
+
+  def canton_name 
+    get_canton_name self.canton
+  end
+
+  def rep_canton_name 
+    get_canton_name self.rep_canton
+  end
+
+  def parroquia_name
+    get_parroquia_name self.parroquia
+  end
+
+  def rep_parroquia_name
+    get_parroquia_name self.rep_parroquia
   end
 
 end
