@@ -79,7 +79,7 @@ Tawk_API.onStatusChange = function (status){if(status === 'online'){document.get
             <div class="panel-footer">
               <% ev_audie = Event.type_audience.first %>
               <% if ev_audie %>
-                <%= link_to "Realizar solicitud", new_inscription_path(event_id: ev_audie), class: "btn btn-primary pull-left" %>
+                <%= link_to "Realizar solicitud", new_inscription_path(event_id: ev_audie), class: "btn btn-primary" %>
                 <br>
                 <br>
               <% end %>
@@ -95,7 +95,7 @@ Tawk_API.onStatusChange = function (status){if(status === 'online'){document.get
             <% ev_trees = Event.type_trees.first %>
             <div class="panel-footer">
               <% if ev_trees %>
-                <%= link_to "Realizar solicitud", new_inscription_path(event_id: ev_trees), class: "btn btn-primary pull-left" %>
+                <%= link_to "Realizar solicitud", new_inscription_path(event_id: ev_trees), class: "btn btn-primary" %>
                 <br>
                 <br>
               <% end %>
@@ -111,7 +111,7 @@ Tawk_API.onStatusChange = function (status){if(status === 'online'){document.get
               Solicitud de inscripción en actividades y cursos de la Casa de la Juventud y Cultura.
             </div>
             <div class="panel-footer">
-              <%= link_to "Ver actividades", juventud_path, class: "btn btn-primary pull-left" %>
+              <%= link_to "Ver actividades", juventud_path, class: "btn btn-primary" %>
               <br>
               <br>
             </div>
