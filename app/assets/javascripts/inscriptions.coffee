@@ -78,6 +78,6 @@ locationCascadeSelectWrapper = () ->
 $ ->
   showAppointedAt()
   locationCascadeSelectWrapper()
-  $('.js-modal').modal('show') # for
-
+  if $('.js-modal').length > 0
+    $('.js-modal').modal('show')
 
