@@ -75,9 +75,9 @@ ActiveAdmin.register Event do
   form do |f|
     f.inputs "Evento" do
       f.input :title
-      unless f.object.new_record?
-        f.input :slug, hint: "URL que utilizará. No obligatorio, se genera automáticamente con el título. Una vez que se haya compartido y empezado a utilizar públicamente NO cambiar ya que generaría 'páginas no encontradas'."
-      end
+      #unless f.object.new_record?
+      #  f.input :slug, hint: "URL que utilizará. No obligatorio, se genera automáticamente con el título. Una vez que se haya compartido y empezado a utilizar públicamente NO cambiar ya que generaría 'páginas no encontradas'."
+      #end
       f.input :description, as: :ckeditor
       f.input :ttype, as: :select, collection: Event::TYPE.to_a, hint: "Tipo de evento.<br><b>Actividad</b>: Actividades de la Casa de la Juventud.<br><b>Audiencia</b>: Petición de Audiencia con el Prefecto.<br><b>Plantas</b>: Petición de Reforestación de Plantas (Gestión Ambiental)."
       f.input :category, as: :select, collection: Category.all, label_html: { class: "js-event-category hide" }, hint: "Categoría del evento. En caso de ser Actividades de la Casa de la Juventud se pondrá su tipo de curso ('Informática', 'Danza Contemporánea', 'Danza Tradicional y Música Andina Ecuatoriana', etc), para la Petición de Reforestación de Plantas Autóctonas será 'Gestión Ambiental' y para la Petición de Audiencia con el Prefecto será 'Prefectura'."
