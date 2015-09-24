@@ -77,12 +77,9 @@ Tawk_API.onStatusChange = function (status){if(status === 'online'){document.get
             </div>
             <div class="panel-body"> Solicitud de audiencia con la autoridad de la Prefectura del Carchi.  </div>
             <div class="panel-footer">
-              <% ev_audie = Event.type_audience.first %>
-              <% if ev_audie %>
-                <%= link_to "Realizar solicitud", new_inscription_path(event_id: ev_audie), class: "btn btn-primary" %>
-                <br>
-                <br>
-              <% end %>
+              <%= link_to "Realizar solicitud", audiencia_path, class: "btn btn-primary" %>
+              <br>
+              <br>
             </div>
           </div>
         </div>
@@ -92,13 +89,10 @@ Tawk_API.onStatusChange = function (status){if(status === 'online'){document.get
               <h3 class="panel-title">Gestión Ambiental</h3>
             </div>
             <div class="panel-body"> Solicitud para adquisición de plantas nativas y exóticas a la Dirección de Gestión Ambiental para proyecto de reforestación. </div>
-            <% ev_trees = Event.type_trees.first %>
             <div class="panel-footer">
-              <% if ev_trees %>
-                <%= link_to "Realizar solicitud", new_inscription_path(event_id: ev_trees), class: "btn btn-primary" %>
-                <br>
-                <br>
-              <% end %>
+              <%= link_to "Realizar solicitud", medio_ambiente_path, class: "btn btn-primary" %>
+              <br>
+              <br>
             </div>
           </div>
         </div>
