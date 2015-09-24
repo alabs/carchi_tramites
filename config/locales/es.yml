@@ -128,3 +128,12 @@ es:
       subject: "[carchi] Tu solicitud ha sido rechazada"
   alerts:
     notice: "Aviso"
+  formtastic:
+    yes: 'Sí'
+    no: 'No'
+    create: 'Crear %{model}'
+    update: 'Actualizar %{model}'
+    submit: 'Guardar %{model}'
+    cancel: 'Cancelar %{model}'
+    reset: 'Resetear %{model}'
+    required: 'requerido'
