@@ -11,7 +11,7 @@ Sexo:                <%= @inscription.sex_name %>
 Fecha de nacimiento: <%= l @inscription.born_at %>
 Cantón:              <%= @inscription.canton_name %>
 Parroquia:           <%= @inscription.parroquia_name %>
-Dirección:           <%= @inscription.address %>
+Domicilio actual:    <%= @inscription.address %>
 <% if @inscription.event.ttype_class == "actividad" %>
 Nivel educativo:  <%= @inscription.ed_level %>
 Unidad educativa: <%= @inscription.ed_unity %>
@@ -27,7 +27,7 @@ Teléfono (casa):        <%= @inscription.rep_phone_home %>
 Teléfono (celular):     <%= @inscription.rep_phone_celular %>
 Cantón:                 <%= @inscription.rep_canton_name %>
 Parroquia:              <%= @inscription.rep_parroquia_name %>
-Dirección:              <%= @inscription.rep_address %>
+Domicilio actual:       <%= @inscription.rep_address %>
 Nombre del trabajo:     <%= @inscription.rep_work_name %>
 Dirección del trabajo:  <%= @inscription.rep_work_address %>
 Teléfono del trabajo:   <%= @inscription.rep_work_phone %>
