@@ -79,3 +79,11 @@ body {
 .fc-basicWeek-button {
   border-radius: 0px;
 }
+
+#session_new label {
+  width: 30%;
+}
+
+body.logged_out #login form fieldset input[type="text"], body.logged_out #login form fieldset input[type="email"], body.logged_out #login form fieldset input[type="password"] {
+  width: 60%;
+}
