@@ -84,7 +84,7 @@ es:
         status: "Estado"
         status_name: "Estado"
         born_at: "Fecha de nacimiento"
-        address: "Dirección"
+        address: "Domicilio actual"
         ed_level: "Educación"
         ed_unity: "Unidad educativa"
         observations: "Observaciones"
