@@ -1,6 +1,6 @@
 ActiveAdmin.register Inscription do
 
-  permit_params :event_id, :first_name, :last_name, :email, :phone, :motive, :document_id, :sex, :born_at, :address, :parroquia, :canton, :provincia, :admin_observation, :ed_level, :ed_unity, :observations, :rep_document_id, :rep_full_name, :rep_sex, :rep_title, :rep_phone_home, :rep_phone_celular, :rep_parroquia, :rep_canton, :rep_provincia, :rep_address, :rep_work_name, :rep_work_address, :rep_work_phone, :plant_location, :plant_representation
+  permit_params :event_id, :first_name, :last_name, :email, :phone, :motive, :office, :document_id, :sex, :born_at, :address, :parroquia, :canton, :provincia, :admin_observation, :ed_level, :ed_unity, :observations, :rep_document_id, :rep_full_name, :rep_sex, :rep_title, :rep_phone_home, :rep_phone_celular, :rep_parroquia, :rep_canton, :rep_provincia, :rep_address, :rep_work_name, :rep_work_address, :rep_work_phone, :plant_location, :plant_representation
 
   #scope "Todas", :all, -> { all }
   #scope "[estado] Pendiente", :pending
@@ -86,6 +86,7 @@ ActiveAdmin.register Inscription do
       panel "Datos de la cita" do
         attributes_table_for inscription do
           row :motive
+          row :office
           row :appointed_at 
         end
       end

@@ -4,6 +4,12 @@
 
   <%= f.input :motive %>
 
+  <%= f.input :office_show, as: :select, collection: options_for_select(['Sí', 'No'], 'No'), input_html: {class: 'js-office-show'} %>
+  
+  <div class="js-office-show-wrapper hide">
+    <%= f.input :office %>
+  </div>
+
   <%# f.input :appointed_at, as: :select, collection: Slot.all_hours %>
 
   <div class="panel panel-default audiencia">

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150905005156) do
+ActiveRecord::Schema.define(version: 20150924042556) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(version: 20150905005156) do
     t.datetime "appointed_at"
     t.text     "plant_location",       limit: 65535
     t.text     "plant_representation", limit: 65535
+    t.text     "office"
   end
 
   add_index "inscriptions", ["event_id"], name: "index_inscriptions_on_event_id"

@@ -24,6 +24,18 @@ showAppointedAt = () ->
       $('#inscription_appointed_at_input a').removeClass('active')
       $("a[data-value='#{hour}']").trigger('click')
 
+showOffice = () ->
+  if $('.js-office-show').length > 0
+    changeOffice($('.js-office-show'))
+    $('.js-office-show').on 'change', ->
+      changeOffice($(this))
+
+changeOffice = ($el) ->
+  if $el.val() == "No"
+    $('.js-office-show-wrapper').hide('slow')
+  else
+    $('.js-office-show-wrapper').show('slow').removeClass('hide')
+
 
 locationCascadeSelect = (parent, child) ->
   # http://snipplr.com/view/26338/cascading-select-boxes/
@@ -77,6 +89,7 @@ locationCascadeSelectWrapper = () ->
 
 $ ->
   showAppointedAt()
+  showOffice()
   locationCascadeSelectWrapper()
   if $('.js-modal').length > 0
     $('.js-modal').modal('show')

@@ -39,6 +39,7 @@ Ha habido una nueva inscripción en <%= @inscription.event.category.title %> - <
 
   <% if @inscription.event.ttype_class == "audiencia" %>
     <dt>Motivo de la audiencia: </dt><dd><%= @inscription.motive %></dd>
+    <dt>Oficio de la audiencia: </dt><dd><%= @inscription.office %></dd>
     <dt>Fecha de la audiencia:  </dt><dd><%= @inscription.appointed_at %></dd>
   <% end %>
 

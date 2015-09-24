@@ -1,5 +1,7 @@
 class Inscription < ActiveRecord::Base
 
+  attr_accessor :office_show
+
   belongs_to :event
   has_many :inscriptions_plants
   accepts_nested_attributes_for :inscriptions_plants
