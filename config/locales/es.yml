@@ -47,6 +47,7 @@ es:
         starts_at: "Empieza el"
         ends_at: "Termina el"
       plant:
+        active: "¿Disponible para ciudadanos?"
         name: "Nombre"
       slot:
         dow: "Día de la semana"
