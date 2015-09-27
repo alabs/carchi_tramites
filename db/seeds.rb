@@ -9,9 +9,9 @@
 
 events = [
   { 
-    title: "Solicitud a la dirección de Medio Ambiente de plantas autoctonas para reforestación",
+    title: "Solicitud a la dirección de Gestion Ambiental de plantas autoctonas para reforestación",
     type: 3,
-    description: "<p><b>Producto 3.3 - Solicitud a la dirección de Medio Ambiente de plantas autoctonas para reforestación</b></p>
+    description: "<p><b>Producto 3.3 - Solicitud a la dirección de Gestion Ambiental de plantas autoctonas para reforestación</b></p>
     
     <p>En el siguiente formulario podrás solicitar a la dirección de Medio Ambiente de plantas autoctonas para reforestación. Aparte de los datos que se piden normalmente verás que tendrás que poner un texto con la planta que solicita y numero de plantas. Una vez tu petición sea realizada recibirás un correo electrónico como acuse de recibo. Una vez lo haya revisado un funcionario del Departamento de Medio Ambiente, estudiará la solicitud y procederá a aceptarla o denegarla. Recibirás un correo electrónico con el resultado.</p>
     
@@ -31,8 +31,6 @@ events = [
   {title: "Informática", type: 1}, 
   {title: "Danza contemporánea", type: 1}, 
   {title: "Danza tradicional y música andina ecuatoriana",  type: 1}, 
-  {title: "Prefectura", type: 1}, 
-  {title: "Medio Ambiente", type: 1}, 
 ]
 
 events.each do |e|
