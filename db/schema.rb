@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150927010138) do
+ActiveRecord::Schema.define(version: 20150927023636) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -93,7 +93,6 @@ ActiveRecord::Schema.define(version: 20150927010138) do
     t.string   "canton",               limit: 255
     t.string   "provincia",            limit: 255
     t.string   "ed_level",             limit: 255
-    t.string   "ed_unity",             limit: 255
     t.text     "observations",         limit: 65535
     t.string   "rep_document_id",      limit: 255
     t.text     "rep_full_name",        limit: 65535
@@ -113,9 +112,11 @@ ActiveRecord::Schema.define(version: 20150927010138) do
     t.text     "plant_location",       limit: 65535
     t.text     "plant_representation", limit: 65535
     t.text     "office",               limit: 65535
+    t.integer  "institute_id",         limit: 4
   end
 
   add_index "inscriptions", ["event_id"], name: "index_inscriptions_on_event_id", using: :btree
+  add_index "inscriptions", ["institute_id"], name: "index_inscriptions_on_institute_id", using: :btree
 
   create_table "inscriptions_plants", force: :cascade do |t|
     t.integer  "inscription_id", limit: 4
@@ -127,6 +128,12 @@ ActiveRecord::Schema.define(version: 20150927010138) do
 
   add_index "inscriptions_plants", ["inscription_id"], name: "index_inscriptions_plants_on_inscription_id", using: :btree
   add_index "inscriptions_plants", ["plant_id"], name: "index_inscriptions_plants_on_plant_id", using: :btree
+
+  create_table "institutes", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "plants", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -145,4 +152,5 @@ ActiveRecord::Schema.define(version: 20150927010138) do
   end
 
   add_foreign_key "emails", "events"
+  add_foreign_key "inscriptions", "institutes"
 end

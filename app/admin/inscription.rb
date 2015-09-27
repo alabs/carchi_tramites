@@ -1,24 +1,9 @@
-# FIXME: DRY app helpers inscriptions 
-def get_locations(type, prefix)
-  # :parroquias, "ins"
-  # :parroquias, "rep"
-  #Rails.cache.fetch("locations__#{prefix}_#{type}") do 
-    result = File.open("db/geo/ecuador_#{type}.csv").read().split(/\n/)
-    result = result.map { |n| n.split(',') }
-    case type
-    when :provincias
-      result = result.map {|n| [ n[1], "c_#{prefix}provincia_#{n[0]}" ] }
-    when :cantones
-      result = result.map {|n| [ n[2], "c_#{prefix}canton_#{n[0]}_#{n[1]}", {'class': "sub_c_#{prefix}provincia_#{n[0]}"} ] }
-    when :parroquias
-      result = result.map {|n| [ n[3], "c_#{prefix}parroquia_#{n[0]}_#{n[1]}_#{n[2]}", {'class': "sub_c_#{prefix}canton_#{n[0]}_#{n[1]}"} ] }
-    end
-  #end
-end
-
 ActiveAdmin.register Inscription do
 
-  permit_params :event_id, :first_name, :last_name, :email, :phone, :motive, :office, :document_id, :sex, :born_at, :address, :parroquia, :canton, :provincia, :admin_observation, :ed_level, :ed_unity, :observations, :rep_document_id, :rep_full_name, :rep_sex, :rep_title, :rep_phone_home, :rep_phone_celular, :rep_parroquia, :rep_canton, :rep_provincia, :rep_address, :rep_work_name, :rep_work_address, :rep_work_phone, :plant_location, :plant_representation
+  config.clear_action_items!
+  actions :all, :except => [:new]
+
+  permit_params :event_id, :first_name, :last_name, :email, :phone, :motive, :office, :document_id, :sex, :born_at, :address, :parroquia, :canton, :provincia, :admin_observation, :ed_level, :institute_id, :observations, :rep_document_id, :rep_full_name, :rep_sex, :rep_title, :rep_phone_home, :rep_phone_celular, :rep_parroquia, :rep_canton, :rep_provincia, :rep_address, :rep_work_name, :rep_work_address, :rep_work_phone, :plant_location, :plant_representation
 
   filter :first_name
   filter :last_name
@@ -83,14 +68,14 @@ ActiveAdmin.register Inscription do
       f.input :sex, as: :select, collection: Inscription::SEX.to_a
       f.input :born_at, as: :datepicker
       f.input :address, input_html: {rows: 2}
-      f.input :provincia, as: :select, collection: get_locations(:provincias, "ins")
-      f.input :canton, as: :select, collection: get_locations(:cantones, "ins")
-      f.input :parroquia, as: :select, collection: get_locations(:parroquias, "ins")
+      f.input :provincia
+      f.input :canton
+      f.input :parroquia
       f.input :phone
       f.input :email
       if f.object.event and f.object.event.ttype_class == "actividad"
-        f.input :ed_level
-        f.input :ed_unity
+        f.input :ed_level, as: :select, collection: Inscription::ED_LEVEL.to_a
+        f.input :institute
         f.input :observations
         f.inputs "Datos de representante" do 
           f.input :rep_document_id
@@ -99,9 +84,9 @@ ActiveAdmin.register Inscription do
           f.input :rep_title
           f.input :rep_phone_home
           f.input :rep_phone_celular
-          f.input :rep_provincia, get_locations(:provincias, "rep")
-          f.input :rep_canton, get_locations(:cantones, "rep")
-          f.input :rep_parroquia, get_locations(:parroquias, "rep")
+          f.input :rep_provincia
+          f.input :rep_canton
+          f.input :rep_parroquia
           f.input :rep_address
           f.input :rep_work_name
           f.input :rep_work_address
@@ -118,12 +103,33 @@ ActiveAdmin.register Inscription do
   end
 
   show do 
+    if inscription.admin_observation?
+      panel "Respuesta del Administrador" do 
+        attributes_table_for inscription do
+          row :admin_observation
+        end
+      end
+    end
     if inscription.event.ttype_class == "audiencia"
       panel "Datos de la cita" do
         attributes_table_for inscription do
           row :motive
           row :office
           row :appointed_at 
+        end
+      end
+    end
+    if inscription.event.ttype_class == "plantas"
+      panel "Plantas solicitadas" do
+        attributes_table_for inscription do 
+          row :plant_location
+          row :plant_representation
+        end
+        table_for inscription.inscriptions_plants do 
+          column "Especie", :plant do |ic_plant|
+            span ic_plant.plant.name
+          end
+          column "Cantidad", :quantity
         end
       end
     end
@@ -147,13 +153,14 @@ ActiveAdmin.register Inscription do
       row :created_at
       if inscription.event.ttype_class == "actividad"
         row :ed_level
-        row :ed_unity
+        row :institute do |inscription|
+          inscription.institute
+        end
         row :observations
       end
       if inscription.event.ttype_class == "audiencia"
         row :appointed_at
       end
-      row :admin_observation
     end
     if inscription.event.ttype_class == "actividad"
       panel "Datos del Representante" do
@@ -174,20 +181,6 @@ ActiveAdmin.register Inscription do
         end
       end
     end
-    if inscription.event.ttype_class == "plantas"
-      panel "Plantas solicitadas" do
-        attributes_table_for inscription do 
-          row :plant_location
-          row :plant_representation
-        end
-        table_for inscription.inscriptions_plants do 
-          column "Especie", :plant do |ic_plant|
-            span ic_plant.plant.name
-          end
-          column "Cantidad", :quantity
-        end
-      end
-    end
     active_admin_comments
   end
 
@@ -205,6 +198,18 @@ ActiveAdmin.register Inscription do
         dd link_to('Rechazar inscripción', observations_deny_admin_inscription_path(inscription), class: "button button-danger", method: :post, data: { confirm: "¿Estas segura de querer rechazar esta inscripción? Enviaremos un email comúnicandole que su inscripción ha sido rechazada." }) 
       end
     end
+  end
+
+  action_item :new_juventud, only: :index, if: proc{ current_admin_user.admin? or current_admin_user.actividad? } do 
+     link_to "Añadir inscripción en Actividad de la Casa de la Juventud", juventud_path, target: "_blank"
+  end
+
+  action_item :new_audiencia, only: :index, if: proc{ current_admin_user.admin? or current_admin_user.audiencia? } do 
+     link_to "Añadir cita de Audiencia con el Prefecto", audiencia_path, target: "_blank"
+  end
+
+  action_item :new_planta, only: :index, if: proc{ current_admin_user.admin? or current_admin_user.plantas? } do 
+     link_to "Añadir petición de Plantas para Reforestación", medio_ambiente_path, target: "_blank"
   end
 
   # TODO: DRY observations
@@ -244,6 +249,13 @@ ActiveAdmin.register Inscription do
     end
     flash[:notice] = msg
     redirect_to action: :index
+  end
+
+  controller do
+    def preview
+      @inscription = Inscription.find(params[:id])
+      render :layout => 'preview'
+    end
   end
 
 end

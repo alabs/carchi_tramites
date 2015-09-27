@@ -18,9 +18,9 @@ Actividades gratuitas del Carchi de Informática, Danza, etc.
         <div class="panel-heading">
           <h3 class="panel-title"> <%= event.title %> </h3>
         </div>
-        <!-- div class="panel-body">
-          <h5> <# event.description.truncate %> </h5>
-        </div -->
+        <div class="panel-body">
+          <h5> <%= event.description %> </h5>
+        </div>
         <div class="panel-footer">
           <%= link_to "Inscribirse", new_inscription_path(event_id: event), class: "btn btn-primary" %>
           <% if admin_user_signed_in? %>

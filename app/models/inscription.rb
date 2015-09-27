@@ -3,6 +3,7 @@ class Inscription < ActiveRecord::Base
   attr_accessor :office_show
 
   belongs_to :event
+  belongs_to :institute
   has_many :inscriptions_plants
   accepts_nested_attributes_for :inscriptions_plants
 
@@ -33,6 +34,21 @@ class Inscription < ActiveRecord::Base
     "Rechazado" => 2
   }
 
+  ED_LEVEL = {
+    "1°" => 1,
+    "2°" => 2,
+    "3°" => 3,
+    "4°" => 4,
+    "5°" => 5,
+    "6°" => 6,
+    "7°" => 7,
+    "8°" => 8,
+    "9°" => 9,
+    "10°" => 10,
+    "11°" => 11,
+    "12°" => 12,
+  }
+
   def self.by_event_type type
     joins(:event).where('events.ttype = ?', type)
   end
@@ -51,6 +67,10 @@ class Inscription < ActiveRecord::Base
 
   def status_name
     Inscription::STATUS.invert[self.status]
+  end
+
+  def ed_level_name
+    Inscription::ED_LEVEL.invert[self.ed_level]
   end
 
   def status_calendar_class

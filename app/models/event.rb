@@ -23,7 +23,12 @@ class Event < ActiveRecord::Base
   end
 
   def ttype_class
-    Event::TYPE.invert[self.ttype].downcase
+    case self.ttype
+      when 1 then "actividad"
+      when 2 then "audiencia"
+      when 3 then "plantas"
+      else "actividad"
+    end
   end
 
   def description_html

@@ -32,7 +32,7 @@ class InscriptionsController < ApplicationController
   def inscription_params
     params.require(:inscription).permit(:event_id, :first_name, :last_name, :phone, 
       :email, :document_id, :sex, :born_at, :address, :parroquia, :canton, :provincia,
-      :ed_level, :ed_unity, :observations, :rep_document_id, :rep_full_name, :rep_sex, 
+      :ed_level, :institute_id, :observations, :rep_document_id, :rep_full_name, :rep_sex, 
       :rep_title, :rep_phone_home, :rep_phone_celular, :rep_parroquia, :rep_canton, 
       :rep_provincia, :rep_address, :rep_work_name, :rep_work_address, :rep_work_phone, 
       :motive, :office, :appointed_at, :plant_location, :plant_representation, 

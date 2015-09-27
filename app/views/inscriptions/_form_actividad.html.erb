@@ -1,5 +1,6 @@
 <!-- ACTIVIDADES DE LA CASA DE LA JUVENTUD -->
-<%= f.inputs :ed_level, :ed_unity, :observations %>
+<%= f.input :ed_level, as: :select, collection: Inscription::ED_LEVEL.to_a %>
+<%= f.input :institute, as: :select, collection: Institute.all %>
 <legend>Datos del representante legal</legend>
 <%= f.input :rep_document_id, input_html: { maxlength: 15 } %>
 <%= f.input :rep_full_name, as: :string %>

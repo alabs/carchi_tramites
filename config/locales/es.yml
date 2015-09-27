@@ -7,6 +7,8 @@ es:
       events: "Eventos"
       inscription: "Inscripción"
       inscriptions: "Inscripciones"
+      institute: "Unidad Educativa"
+      institutes: "Unidades Educativas"
       plant: "Plantas"
       plants: "Plantas"
       email: "Correo electrónico"
@@ -61,6 +63,8 @@ es:
       inscriptions_plants:
         quantity: "Cantidad"
         id: "Planta"
+      institute:
+        title: "Nombre"
       inscription:
         full_name: "Nombre completo"
         first_name: "Nombre"
@@ -81,8 +85,8 @@ es:
         status_name: "Estado"
         born_at: "Fecha de nacimiento"
         address: "Domicilio actual"
-        ed_level: "Educación"
-        ed_unity: "Unidad educativa"
+        ed_level: "Nivel educativo"
+        institute: "Unidad educativa"
         observations: "Observaciones"
         rep_document_id: "Cédula de Identidad"
         rep_full_name: "Nombre completo"
