@@ -6,6 +6,11 @@ body {
   font-family: "Roboto",sans-serif;
 }
 
+abbr {
+  color: #B13F00; 
+  margin-left: 0.5em;
+}
+
 input[type='number'] {
   -moz-appearance:textfield;
 }
