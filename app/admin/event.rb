@@ -2,11 +2,10 @@ ActiveAdmin.register Event do
 
   menu parent: "Administración"
 
-  permit_params :title, :slug, :description, :category_id, :ttype, :limit, :starts_at, :ends_at, :price
+  permit_params :title, :slug, :description, :admin_email, :ttype, :limit, :starts_at, :ends_at, :price
 
   filter :title
   filter :description
-  filter :category
   filter :price
   filter :limit
   filter :starts_at
@@ -23,7 +22,6 @@ ActiveAdmin.register Event do
     selectable_column
     id_column
     column :title
-    column :category
     column :ttype_name
     actions
   end
@@ -42,7 +40,7 @@ ActiveAdmin.register Event do
       row :description do |event|
         event.description.html_safe
       end
-      row :category
+      row :admin_email
       if event.ttype_class == "actividad"
         row :price
         row :limit
@@ -79,14 +77,18 @@ ActiveAdmin.register Event do
       #  f.input :slug, hint: "URL que utilizará. No obligatorio, se genera automáticamente con el título. Una vez que se haya compartido y empezado a utilizar públicamente NO cambiar ya que generaría 'páginas no encontradas'."
       #end
       f.input :description, as: :ckeditor
-      f.input :ttype, as: :select, collection: Event::TYPE.to_a, hint: "Tipo de evento.<br><b>Actividad</b>: Actividades de la Casa de la Juventud.<br><b>Audiencia</b>: Petición de Audiencia con el Prefecto.<br><b>Plantas</b>: Petición de Reforestación de Plantas (Gestión Ambiental)."
-      f.input :category, as: :select, collection: Category.all, label_html: { class: "js-event-category hide" }, hint: "Categoría del evento. En caso de ser Actividades de la Casa de la Juventud se pondrá su tipo de curso ('Informática', 'Danza Contemporánea', 'Danza Tradicional y Música Andina Ecuatoriana', etc), para la Petición de Reforestación de Plantas Autóctonas será 'Gestión Ambiental' y para la Petición de Audiencia con el Prefecto será 'Prefectura'."
+      f.input :admin_email, hint: "Correo electrónico del administrador de la Categoría. Recibirá un correo electrónico al inscribirse un ciudadano nuevo. Pueden ser uno o varios. Formato: En el caso de ser varios 'foo1@example.com, foo2@example.com'."
+      if current_admin_user.admin?
+        f.input :ttype, as: :select, collection: Event::TYPE.to_a, hint: "Tipo de evento.<br><b>Actividad</b>: Actividades de la Casa de la Juventud.<br><b>Audiencia</b>: Petición de Audiencia con el Prefecto.<br><b>Plantas</b>: Petición de Reforestación de Plantas (Gestión Ambiental)."
+      end
     end
-    f.inputs "Exclusivo Actividades de la Casa de la Juventud" do
-      f.input :limit, hint: "Al alcanzar el límite de inscritos aprobados, se pondrá un aviso en el formulario de inscripción para nuevas inscripciones diciendo 'Este curso ha llegado al límite de inscritos aceptados, por lo que ya no hay más plazas disponibles. Puedes inscribirte y te contactaremos si hay alguna plaza disponible.'. Así mismo se mostrará un aviso en el Panel de Administración de este Evento y se enviará un correo electrónico al administrador de este Evento." 
-      f.input :price, hint: "Precio que se pide para la asistencia a este curso." 
-      f.input :starts_at, as: :datepicker, hint: "Fecha de inicio del curso."
-      f.input :ends_at, as: :datepicker, hint: "Fecha de fin del curso."
+    if current_admin_user.actividad? or current_admin_user.admin?
+      f.inputs "Exclusivo Actividades de la Casa de la Juventud" do
+        f.input :limit, hint: "Al alcanzar el límite de inscritos aprobados, se pondrá un aviso en el formulario de inscripción para nuevas inscripciones diciendo 'Este curso ha llegado al límite de inscritos aceptados, por lo que ya no hay más plazas disponibles. Puedes inscribirte y te contactaremos si hay alguna plaza disponible.'. Así mismo se mostrará un aviso en el Panel de Administración de este Evento y se enviará un correo electrónico al administrador de este Evento." 
+        f.input :price, hint: "Precio que se pide para la asistencia a este curso." 
+        f.input :starts_at, as: :datepicker, hint: "Fecha de inicio del curso."
+        f.input :ends_at, as: :datepicker, hint: "Fecha de fin del curso."
+      end
     end
     f.actions
   end

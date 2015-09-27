@@ -9,8 +9,8 @@ class InscriptionMailer < ApplicationMailer
 
   def pending_admin inscription_id
     @inscription = Inscription.find inscription_id
-    if @inscription.event.category.admin_email?
-      mail to: @inscription.event.category.admin_email.split(','), subject: "[carchi] Inscripción pendiente en #{@inscription.event.title}"
+    if @inscription.event.admin_email?
+      mail to: @inscription.event.admin_email.split(','), subject: "[carchi] Inscripción pendiente en #{@inscription.event.title}"
     end
   end
 
@@ -26,7 +26,7 @@ class InscriptionMailer < ApplicationMailer
 
   def send_inscription_email(inscription_id, ttype)
     @inscription = Inscription.find inscription_id
-    @email = @inscription.event.category.emails.find_by_ttype ttype 
+    @email = @inscription.event.emails.find_by_ttype ttype 
     if @email
       #debugger if @email.nil?
       mail to: @inscription.email, subject: @email.subject

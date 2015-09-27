@@ -1,13 +1,24 @@
+# FIXME: DRY app helpers inscriptions 
+def get_locations(type, prefix)
+  # :parroquias, "ins"
+  # :parroquias, "rep"
+  #Rails.cache.fetch("locations__#{prefix}_#{type}") do 
+    result = File.open("db/geo/ecuador_#{type}.csv").read().split(/\n/)
+    result = result.map { |n| n.split(',') }
+    case type
+    when :provincias
+      result = result.map {|n| [ n[1], "c_#{prefix}provincia_#{n[0]}" ] }
+    when :cantones
+      result = result.map {|n| [ n[2], "c_#{prefix}canton_#{n[0]}_#{n[1]}", {'class': "sub_c_#{prefix}provincia_#{n[0]}"} ] }
+    when :parroquias
+      result = result.map {|n| [ n[3], "c_#{prefix}parroquia_#{n[0]}_#{n[1]}_#{n[2]}", {'class': "sub_c_#{prefix}canton_#{n[0]}_#{n[1]}"} ] }
+    end
+  #end
+end
+
 ActiveAdmin.register Inscription do
 
   permit_params :event_id, :first_name, :last_name, :email, :phone, :motive, :office, :document_id, :sex, :born_at, :address, :parroquia, :canton, :provincia, :admin_observation, :ed_level, :ed_unity, :observations, :rep_document_id, :rep_full_name, :rep_sex, :rep_title, :rep_phone_home, :rep_phone_celular, :rep_parroquia, :rep_canton, :rep_provincia, :rep_address, :rep_work_name, :rep_work_address, :rep_work_phone, :plant_location, :plant_representation
-
-  #scope "Todas", :all, -> { all }
-  #scope "[estado] Pendiente", :pending
-  #scope "[estado] Aprobado", :approved
-  #scope "[estado] Denegado", :denied
-  #scope("[tipo] Gestión Ambiental") { |scope| scope.by_event_type(2) }
-  #scope("[tipo] Juventud") { |scope| scope.by_event_type(3) }
 
   filter :first_name
   filter :last_name
@@ -15,7 +26,6 @@ ActiveAdmin.register Inscription do
   filter :phone
   filter :sex, as: :select, collection: Inscription::SEX.to_a
   filter :status, as: :select, collection: Inscription::STATUS.to_a
-  filter :event_category_id, label: "Categoría", as: :select, collection: Event::TYPE.to_a, if:  proc { current_admin_user.is?(:admin) }
   filter :event, if:  proc { current_admin_user.is?(:admin) }
   filter :inscriptions_plants_plant_name, as: :select, collection: Plant.all, if: proc { current_admin_user.is?(:plantas) or current_admin_user.is?(:admin) }
   filter :appointed_at, if: proc { current_admin_user.is?(:actividades) or current_admin_user.is?(:admin) }
@@ -27,9 +37,6 @@ ActiveAdmin.register Inscription do
       link_to inscription.full_name, admin_inscription_path(inscription)
     end
     if current_admin_user.is?(:actividad) or current_admin_user.is?(:admin)
-      column :category do |inscription|
-        div inscription.event.category.title
-      end
       column :event
     end
     column :status do |inscription|
@@ -94,9 +101,6 @@ ActiveAdmin.register Inscription do
     attributes_table do
       row :id
       row :event
-      row :category do |inscription|
-        inscription.event.category
-      end
       row :full_name
       row :first_name
       row :last_name
@@ -165,7 +169,6 @@ ActiveAdmin.register Inscription do
     dl do
       dt "Estado"
       dd inscription.status_name, class: inscription.status_class
-      # FIXME: be more beauty, refactory TTYPES/Category relation
       if inscription.pending?
         dt "Acciones"
         dd link_to('Aprobar inscripción', observations_approve_admin_inscription_path(inscription), class: "button", method: :post, data: { confirm: "¿Estas segura de querer aprobar esta inscripción? Enviaremos un email confirmándole la inscripción." }) 
@@ -175,6 +178,7 @@ ActiveAdmin.register Inscription do
     end
   end
 
+  # TODO: DRY observations
   member_action :observations_approve, :method => :post do
     @inscription = Inscription.find(params[:id])
   end

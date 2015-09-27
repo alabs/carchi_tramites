@@ -1,7 +1,7 @@
 FactoryGirl.define do
 
   factory :email do
-    category
+    event
     ttype 0
     subject "Pendiente de respuesta para tu inscripción"
     body_html "Debemos revisarla y decirte algo"

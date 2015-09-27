@@ -1,6 +1,6 @@
 class Email < ActiveRecord::Base
 
-  belongs_to :category
+  belongs_to :event
 
   TYPE = {
     "new" => 0,

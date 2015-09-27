@@ -3,8 +3,7 @@ require "test_helper"
 class EventsMailerTest < ActionMailer::TestCase
 
   def setup
-    @category = FactoryGirl.create(:category)
-    @event = FactoryGirl.create(:event, category: @category)
+    @event = FactoryGirl.create(:event)
   end
 
   def test_limit_reached

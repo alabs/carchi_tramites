@@ -1,7 +1,7 @@
 require 'test_helper'
 
 def test_mail_from_db(action)
-  email = FactoryGirl.create(:email, action, category: @inscription.event.category)
+  email = FactoryGirl.create(:email, action, event: @inscription.event)
   mail = InscriptionMailer.send(action, @inscription.id)
   assert_equal(email.subject, mail.subject)
   assert_equal([@inscription.email], mail.to)

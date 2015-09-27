@@ -2,19 +2,15 @@ ActiveAdmin.register Email do
 
   menu parent: "Administración"
 
-  permit_params :category_id, :ttype, :subject, :body_text, :body_html, :ttype
+  permit_params :event_id, :ttype, :subject, :body_text, :body_html, :ttype
 
-  filter :subject
-  filter :body_text
-  filter :body_html
-  filter :category, as: :select, collection: Category.all
-  filter :ttype, as: :select, collection: Email::TYPE.to_a
+  before_filter :skip_sidebar!, :only => :index
 
   index do
     selectable_column
     id_column
     column :subject
-    column :category
+    column :event
     column :ttype_name
     actions
   end
@@ -22,7 +18,7 @@ ActiveAdmin.register Email do
   show do
     attributes_table do
       row :id
-      row :category
+      row :event
       row :ttype_name
       row :subject
       row :body_text
@@ -35,7 +31,7 @@ ActiveAdmin.register Email do
 
   form do |f|
     f.inputs "Email" do
-      f.input :category, as: :select, collection: Category.all
+      f.input :event, as: :select, collection: Event.all
       f.input :ttype, as: :select, collection: Email::TYPE.to_a, hint: 'Tipo de mensaje:<br><b>new</b>: se envía al inscribirse y pasar a estado "Pendiente".<br><b>approved</b>: se envía al aprobarse una inscripción<br><b>denied</b>: se envía al rechazarse una inscripción'
       f.input :subject, hint: "Asunto del email"
       f.input :body_text, hint: "Texto del mensaje, en formato texto plano"

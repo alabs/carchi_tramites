@@ -2,7 +2,6 @@ class PageController < ApplicationController
 
   def index
     @events = Event.all
-    @categories = Category.all
     @no_layout = true
   end
 

@@ -4,9 +4,9 @@ class Event < ActiveRecord::Base
   friendly_id :title, use: :slugged
 
   has_many :inscriptions
-  belongs_to :category
+  has_many :emails
 
-  validates :title, :description, :category, :ttype, presence: true
+  validates :title, :description, :ttype, presence: true
 
   scope :type_activities, -> { where(ttype:1) }
   scope :type_audience, -> { where(ttype:2) }

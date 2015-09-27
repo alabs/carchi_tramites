@@ -6,16 +6,13 @@
         <div class="row-fluid">
           <ul class="nav nav-list span6">
             <li>
-              <% ev_audie = Event.type_audience.first %>
-              <% if ev_audie %>
-                <%= link_to "Petición de Audiencia con Prefecto", new_inscription_path(event_id: ev_audie) %>
-              <% end %>
+              <%= link_to "Petición de Audiencia con Prefecto", audiencia_path %>
             </li>
             <li>
-                <%= link_to "Solicitud para Gestión Ambiental", new_inscription_path(event_id: ev_audie) %>
+                <%= link_to "Solicitud para Gestión Ambiental", medio_ambiente_path %>
             </li>
             <li>
-                <%= link_to "Actividades de la Casa de la Juventud", new_inscription_path(event_id: ev_audie) %>
+                <%= link_to "Actividades de la Casa de la Juventud", juventud_path %>
             </li>
           </ul>
           <ul class="nav nav-list span6">
@@ -34,6 +31,7 @@
             <li><a href="https://gobiernoabierto.carchi.gob.ec/es/site/page/tos">Condiciones de uso</a></li>
             <li><a href="https://gobiernoabierto.carchi.gob.ec/es/site/page/privacy">Política de privacidad</a></li>
             <li><a href="https://github.com/alabs/carchi_tramites">Código fuente</a></li>
+            <li> <%= link_to "Acceso al administrador", admin_root_path %> </li>
         </ul>
 
         <a href="http://creativecommons.org/licenses/by/3.0/es/" rel="external"><%= image_tag "cc_l_by_30_es_88x31.png" %></a>

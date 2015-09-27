@@ -6,8 +6,7 @@
 <% end %>
 
 <div class="span11">
-  <h1><%= @event.category.title %></h1>
-  <h2><%= @event.title %></h2>
+  <h1><%= @event.title %></h1>
 
   <% if @event.has_reached_limit? %>
     <div class="alert alert-danger">
