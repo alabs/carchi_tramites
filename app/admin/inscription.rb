@@ -23,7 +23,7 @@ ActiveAdmin.register Inscription do
   filter :first_name
   filter :last_name
   filter :email
-  filter :phone
+  filter :phone, as: :string
   filter :sex, as: :select, collection: Inscription::SEX.to_a
   filter :status, as: :select, collection: Inscription::STATUS.to_a
   filter :event, if:  proc { current_admin_user.admin? }

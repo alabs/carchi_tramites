@@ -24,6 +24,7 @@ class Inscription < ActiveRecord::Base
   SEX = {
     "Mujer" => 0,
     "Hombre" => 1,
+    "Otro" => 2,
   }
 
   STATUS = {

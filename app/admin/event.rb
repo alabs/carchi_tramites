@@ -4,13 +4,7 @@ ActiveAdmin.register Event do
 
   permit_params :title, :slug, :description, :admin_email, :ttype, :limit, :starts_at, :ends_at, :price
 
-  filter :title
-  filter :description
-  filter :price
-  filter :limit
-  filter :starts_at
-  filter :ends_at
-  filter :ttype, as: :select, collection: Event::TYPE.to_a
+  before_filter :skip_sidebar!, :only => :index
 
   controller do
     def find_resource
