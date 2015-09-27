@@ -251,11 +251,9 @@ ActiveAdmin.register Inscription do
     redirect_to action: :index
   end
 
-  controller do
-    def preview
-      @inscription = Inscription.find(params[:id])
-      render :layout => 'preview'
-    end
+  member_action :preview, :method => :get do 
+    @inscription = Inscription.find(params[:id])
+    render :layout => 'preview'
   end
 
 end
