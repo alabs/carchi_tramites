@@ -1,6 +1,6 @@
 <%= semantic_form_for @inscription, url: approve_admin_inscription_path(@inscription), method: :post do |form| %>
   <%= form.inputs "Observaciones a la aprobación" do %>
-    <%= form.input :admin_observation, hint: "Se enviará junto con el correo electrónico comunicando la aprobación a la inscripción." %>
+    <%= form.input :admin_observation, hint: t('observations.hint') %>
   <% end %>
   <%= form.submit :value => 'Agregar observación y enviar aprobación' %>
   <%= link_to "Cancelar", admin_inscription_path(@inscription), class: "button danger button-danger" %>

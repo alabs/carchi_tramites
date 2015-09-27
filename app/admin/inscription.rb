@@ -221,8 +221,13 @@ ActiveAdmin.register Inscription do
     inscription.admin_observation = params[:inscription][:admin_observation]
     inscription.save
     inscription.approve!
-    InscriptionMailer.approved(inscription.id).deliver_now
-    flash[:notice] = "Hemos enviado un mail al usuario #{inscription.full_name} diciendole que ha sido aprobado."
+    if inscription.email?
+      InscriptionMailer.approved(inscription.id).deliver_now
+      msg = "Hemos enviado un mail al usuario #{inscription.full_name} diciendole que ha sido aprobado."
+    else
+      msg = "NO hemos enviado un mail. Debes llamar al usuario #{inscription.full_name} diciendole que ha sido aprobado. Su número de teléfono es #{inscription.phone}."
+    end
+    flash[:notice] = msg
     redirect_to action: :index
   end
 
@@ -231,8 +236,13 @@ ActiveAdmin.register Inscription do
     inscription.admin_observation = params[:inscription][:admin_observation]
     inscription.save
     inscription.deny!
-    InscriptionMailer.denied(inscription.id).deliver_now
-    flash[:notice] = "Hemos enviado un mail al usuario #{inscription.full_name} diciendole que ha sido rechazado."
+    if inscription.email?
+      InscriptionMailer.denied(inscription.id).deliver_now
+      msg = "Hemos enviado un mail al usuario #{inscription.full_name} diciendole que ha sido rechazado."
+    else
+      msg = "NO hemos enviado un mail. Debes llamar al usuario #{inscription.full_name} diciendole que ha sido rechazado. Su número de teléfono es #{inscription.phone}."
+    end
+    flash[:notice] = msg
     redirect_to action: :index
   end
 

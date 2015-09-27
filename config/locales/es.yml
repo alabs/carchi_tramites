@@ -125,6 +125,8 @@ es:
       subject: "[carchi] Tu solicitud ha sido rechazada"
   alerts:
     notice: "Aviso"
+  observations:
+    hint: "Se enviará junto con el correo electrónico (si tiene) comunicando el resultado de la inscripción."
   formtastic:
     yes: 'Sí'
     no: 'No'
