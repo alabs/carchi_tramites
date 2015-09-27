@@ -73,7 +73,7 @@ ActiveAdmin.register Event do
       f.input :description, as: :ckeditor
       f.input :admin_email, hint: "Correo electrónico del administrador de la Categoría. Recibirá un correo electrónico al inscribirse un ciudadano nuevo. Pueden ser uno o varios. Formato: En el caso de ser varios 'foo1@example.com, foo2@example.com'."
       if current_admin_user.admin?
-        f.input :ttype, as: :select, collection: Event::TYPE.to_a, hint: "Tipo de evento.<br><b>Actividad</b>: Actividades de la Casa de la Juventud.<br><b>Audiencia</b>: Petición de Audiencia con el Prefecto.<br><b>Plantas</b>: Petición de Reforestación de Plantas (Gestión Ambiental)."
+        f.input :ttype, as: :select, collection: Event::TYPE.to_a
       end
     end
     if current_admin_user.actividad? or current_admin_user.admin?

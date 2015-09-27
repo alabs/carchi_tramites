@@ -38,6 +38,7 @@ es:
       event:
         title: "Título"
         description: "Descripción"
+        admin_email: "Mail o mails de administradores"
         ttype: "Tipo"
         ttype_name: "Tipo"
         created_at: "Fecha de creación"

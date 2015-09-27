@@ -13,9 +13,9 @@ class Event < ActiveRecord::Base
   scope :type_trees, -> { where(ttype:3) }
 
   TYPE = {
-    "Actividad" => 1,
-    "Audiencia" => 2,
-    "Plantas" => 3,
+    "Actividades de la Casa de la Juventud" => 1,
+    "Petición de Audiencia con el Prefecto" => 2,
+    "Petición de Reforestación de Plantas (Gestión Ambiental)" => 3,
   }
 
   def ttype_name
