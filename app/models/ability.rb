@@ -10,18 +10,21 @@ class Ability
       can :manage, :all
     elsif user.plantas?
       can :manage, Inscription, event: {ttype: 3}
+      can [:read, :update], Email, event: {ttype: 3}
       can [:read, :update], Event, ttype: 3
       can [:read, :create, :update], Plant
       can :read, ActiveAdmin::Page, :name => "Dashboard"
     elsif user.audiencia?
       can :manage, Inscription, event: {ttype: 2}
       can [:read, :update], Event, ttype: 2
+      can [:read, :update], Email, event: {ttype: 2}
       can :manage, Slot
       can :read, ActiveAdmin::Page, :name => "Calendario"
       can :read, ActiveAdmin::Page, :name => "Dashboard"
     elsif user.actividad?
       can :read, ActiveAdmin::Page, :name => "Dashboard"
       can :manage, Inscription, event: {ttype: 1}
+      can [:read, :update], Email, event: {ttype: 1}
       can [:read, :create, :update], Event, ttype: 1
     else
       #can :manage, :all

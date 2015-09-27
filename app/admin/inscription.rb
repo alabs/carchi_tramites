@@ -26,9 +26,9 @@ ActiveAdmin.register Inscription do
   filter :phone
   filter :sex, as: :select, collection: Inscription::SEX.to_a
   filter :status, as: :select, collection: Inscription::STATUS.to_a
-  filter :event, if:  proc { current_admin_user.is?(:admin) }
-  filter :inscriptions_plants_plant_name, as: :select, collection: Plant.all, if: proc { current_admin_user.is?(:plantas) or current_admin_user.is?(:admin) }
-  filter :appointed_at, if: proc { current_admin_user.is?(:actividades) or current_admin_user.is?(:admin) }
+  filter :event, if:  proc { current_admin_user.admin? }
+  filter :inscriptions_plants_plant_name, as: :select, collection: Plant.all, if: proc { current_admin_user.plantas? or current_admin_user.admin? }
+  filter :appointed_at, if: proc { current_admin_user.audiencia? or current_admin_user.admin? }
   filter :created_at
 
   index do
@@ -36,8 +36,37 @@ ActiveAdmin.register Inscription do
     column :full_name do |inscription|
       link_to inscription.full_name, admin_inscription_path(inscription)
     end
-    if current_admin_user.is?(:actividad) or current_admin_user.is?(:admin)
+    if current_admin_user.actividad? or current_admin_user.admin?
       column :event
+    end
+    if current_admin_user.audiencia?
+      column :appointed_at
+      column :motivo do |inscription|
+        dl do 
+          dd "Motivo" 
+          dt inscription.motive
+        end
+        if inscription.office?
+          dl do 
+            dd "Oficio" 
+            dt inscription.office
+          end
+        end
+      end
+      column :contacto do |inscription|
+        if inscription.email?
+          dl do 
+            dd "Email" 
+            dt inscription.email
+          end
+        end
+        if inscription.phone?
+          dl do 
+            dd "Teléfono" 
+            dt inscription.phone
+          end
+        end
+      end
     end
     column :status do |inscription|
       div inscription.status_name, class: inscription.status_class

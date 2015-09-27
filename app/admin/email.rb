@@ -32,7 +32,7 @@ ActiveAdmin.register Email do
   form do |f|
     f.inputs "Email" do
       f.input :event, as: :select, collection: Event.all
-      f.input :ttype, as: :select, collection: Email::TYPE.to_a, hint: 'Tipo de mensaje:<br><b>new</b>: se envía al inscribirse y pasar a estado "Pendiente".<br><b>approved</b>: se envía al aprobarse una inscripción<br><b>denied</b>: se envía al rechazarse una inscripción'
+      f.input :ttype, as: :select, collection: Email::TYPE.to_a
       f.input :subject, hint: "Asunto del email"
       f.input :body_text, hint: "Texto del mensaje, en formato texto plano"
       f.input :body_html, as: :ckeditor, hint: "Texto del mensaje, en formato HTML"

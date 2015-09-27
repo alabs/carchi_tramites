@@ -2,9 +2,9 @@
 <fieldset>
   <legend>Petición de Audiencia con el Prefecto</legend>
 
-  <%= f.input :motive %>
+  <%= f.input :motive, required: true %>
 
-  <%= f.input :office_show, as: :select, collection: options_for_select(['Sí', 'No'], 'No'), input_html: {class: 'js-office-show'} %>
+  <%= f.input :office_show, as: :select, collection: options_for_select(['Sí', 'No'], 'No'), input_html: {class: 'js-office-show'}, required: true %>
   
   <div class="js-office-show-wrapper hide">
     <%= f.input :office %>

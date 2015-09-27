@@ -27,7 +27,7 @@ class InscriptionMailer < ApplicationMailer
   def send_inscription_email(inscription_id, ttype)
     @inscription = Inscription.find inscription_id
     @email = @inscription.event.emails.find_by_ttype ttype 
-    if @email
+    if @email and @inscription.email?
       #debugger if @email.nil?
       mail to: @inscription.email, subject: @email.subject
     end
