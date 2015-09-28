@@ -13,6 +13,7 @@ Cantón:              <%= @inscription.canton_name %>
 Parroquia:           <%= @inscription.parroquia_name %>
 Domicilio actual:    <%= @inscription.address %>
 <% if @inscription.event.ttype_class == "actividad" %>
+Educación:        <%= @inscription.ed_title_name %>
 Nivel educativo:  <%= @inscription.ed_level_name %>
 Unidad educativa: <%= @inscription.institute.title %>
 Observaciones:    <%= @inscription.observations %>

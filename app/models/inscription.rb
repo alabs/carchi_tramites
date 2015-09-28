@@ -47,6 +47,17 @@ class Inscription < ActiveRecord::Base
     "10°" => 10,
     "11°" => 11,
     "12°" => 12,
+    "13°" => 13,
+    "14°" => 14,
+    "15°" => 15,
+  }
+
+  ED_TITLE = {
+    "EDUCACION SECUNDARIA" => 0,
+    "EDUCACION SUPERIOR" => 1, 
+    "EDUCACION PRIMARIA" => 2,
+    "EDUCACION INICIAL PREKINDER" => 3,
+    "OTROS" => 4
   }
 
   def self.by_event_type type
@@ -70,7 +81,11 @@ class Inscription < ActiveRecord::Base
   end
 
   def ed_level_name
-    Inscription::ED_LEVEL.invert[self.ed_level]
+    Inscription::ED_LEVEL.invert[self.ed_level.to_i]
+  end
+
+  def ed_title_name
+    Inscription::ED_TITLE.invert[self.ed_title]
   end
 
   def status_calendar_class

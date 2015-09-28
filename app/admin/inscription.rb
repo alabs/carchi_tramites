@@ -3,7 +3,7 @@ ActiveAdmin.register Inscription do
   config.clear_action_items!
   actions :all, :except => [:new]
 
-  permit_params :event_id, :first_name, :last_name, :email, :phone, :motive, :office, :document_id, :sex, :born_at, :address, :parroquia, :canton, :provincia, :admin_observation, :ed_level, :institute_id, :observations, :rep_document_id, :rep_full_name, :rep_sex, :rep_title, :rep_phone_home, :rep_phone_celular, :rep_parroquia, :rep_canton, :rep_provincia, :rep_address, :rep_work_name, :rep_work_address, :rep_work_phone, :plant_location, :plant_representation
+  permit_params :event_id, :first_name, :last_name, :email, :phone, :motive, :office, :document_id, :sex, :born_at, :address, :parroquia, :canton, :provincia, :admin_observation, :ed_title, :ed_level, :ed_title, :institute_id, :observations, :rep_document_id, :rep_full_name, :rep_sex, :rep_title, :rep_phone_home, :rep_phone_celular, :rep_parroquia, :rep_canton, :rep_provincia, :rep_address, :rep_work_name, :rep_work_address, :rep_work_phone, :plant_location, :plant_representation
 
   filter :first_name
   filter :last_name
@@ -74,6 +74,7 @@ ActiveAdmin.register Inscription do
       f.input :phone
       f.input :email
       if f.object.event and f.object.event.ttype_class == "actividad"
+        f.input :ed_title, as: :select, collection: Inscription::ED_TITLE.to_a
         f.input :ed_level, as: :select, collection: Inscription::ED_LEVEL.to_a
         f.input :institute
         f.input :observations
@@ -152,7 +153,8 @@ ActiveAdmin.register Inscription do
       end
       row :created_at
       if inscription.event.ttype_class == "actividad"
-        row :ed_level
+        row :ed_level_name
+        row :ed_title_name
         row :institute do |inscription|
           inscription.institute
         end

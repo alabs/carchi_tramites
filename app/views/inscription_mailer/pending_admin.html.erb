@@ -16,6 +16,7 @@ Ha habido una nueva inscripción en <%= @inscription.event.title %>
   <dt>Parroquia:           </dt><dd><%= @inscription.parroquia_name %></dd>
   <dt>Domicilio actual:    </dt><dd><%= @inscription.address %></dd>
   <% if @inscription.event.ttype_class == "actividad" %>
+    <dt>Educación:        </dt><dd><%= @inscription.ed_title_name %></dd>
     <dt>Nivel educativo:  </dt><dd><%= @inscription.ed_level_name %></dd>
     <dt>Unidad educativa: </dt><dd><%= @inscription.institute.title %></dd>
     <dt>Observaciones:    </dt><dd><%= @inscription.observations %></dd>

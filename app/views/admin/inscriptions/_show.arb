@@ -47,6 +47,7 @@ attributes_table do
   end
   row :created_at
   if inscription.event.ttype_class == "actividad"
+    row :ed_title
     row :ed_level
     row :institute do |inscription|
       inscription.institute
