@@ -79,6 +79,7 @@ es:
       institute:
         title: "Nombre"
       inscription:
+        save_data: "Guardar datos para próximos trámites."
         full_name: "Nombre completo"
         first_name: "Nombre"
         last_name: "Apellido"

@@ -90,7 +90,18 @@ locationCascadeSelectWrapper = () ->
 $ ->
   showAppointedAt()
   showOffice()
-  locationCascadeSelectWrapper()
+  if $('.formtastic').length > 0
+    locationCascadeSelectWrapper()
   if $('.js-modal').length > 0
     $('.js-modal').modal('show')
+
+  if $('#new_inscription').length > 0
+    $('.js-phoenix').phoenix()
+    $('.js-phoenix').phoenix('load')
+    $('#new_inscription').on('submit', ->
+      if $('.js-save-data').is(":checked")
+        $('.js-phoenix').phoenix('save')
+      else
+        $('.js-phoenix').phoenix('remove')
+    )
 

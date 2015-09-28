@@ -1,6 +1,6 @@
 class Inscription < ActiveRecord::Base
 
-  attr_accessor :office_show
+  attr_accessor :office_show, :save_data
 
   belongs_to :event
   belongs_to :institute
