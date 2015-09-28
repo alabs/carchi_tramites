@@ -52,11 +52,11 @@ scope :pending,  -> { where(status: 0) }
   }
 
   ED_TITLE = {
-    "EDUCACION SECUNDARIA" => 0,
-    "EDUCACION SUPERIOR" => 1, 
-    "EDUCACION PRIMARIA" => 2,
-    "EDUCACION INICIAL PREKINDER" => 3,
-    "OTROS" => 4
+    "Educacion Secundaria" => 0,
+    "Educacion Superior" => 1, 
+    "Educacion Primaria" => 2,
+    "Educacion Inicial Prekinder" => 3,
+    "Otros" => 4
   }
 
   def self.by_event_type type

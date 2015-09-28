@@ -53,3 +53,17 @@ Utilizamos capistrano para subir los cambios. Configurar en config/deploy.rb, co
 cap staging deploy
 cap production deploy
 ```
+
+# Base de Datos antigua (Legacy)
+
+Para las Actividades de la Casa de la Juventud se parte de un sistema base ya creado con una base de datos, 
+
+
+Esta base de datos debe configurarse en el mismo servidor PostgreSQL en una base de datos diferente (denominada "legacy"). Se configurará dentro del fichero config/database.yml.
+
+Se ha preparado la tarea para la importación inicial de datos: 
+
+´´´
+rake carchi:db:seed                           # [carchi] Importa los estudiantes de la base de datos Legacy de la Casa de la Juventud y ejecuta rake db:seed
+´´´
+

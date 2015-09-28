@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 #
 
+
 events = [
   { 
     title: "Solicitud a la dirección de Gestion Ambiental de plantas autoctonas para reforestación",
@@ -32,17 +33,17 @@ events = [
 
 events.each do |e|
   event = Event.create(title: e[:title], ttype: e[:type], description: e.has_key?(:description) ? e[:description] : "BLA")
+end
+
+Event.all.each do |event|
   Email.create(event: event, ttype: 0, subject: "Pendiente", body_html: "Tu petición esta pendiente", body_text: "Tu petición esta pendiente")
   Email.create(event: event, ttype: 1, subject: "Aprobado", body_html: "Has sido aprobado", body_text: "Has sido aprobado")
   Email.create(event: event, ttype: 2, subject: "Denegado", body_html: "Has sido denegado", body_text: "Has sido denegado")
-
-  debugger unless event.valid?
 end
 
-[ "aliso", "yahuar", "quishuar", "puma maqui", "pino", "ciprés", "eucalipto" ].each do |plant|
-  Plant.create(name: plant)
+[ "Aliso", "Yahuar", "Quishuar", "Puma maqui", "Pino", "Ciprés", "Eucalipto" ].each do |plant|
+  Plant.create(name: plant, active: true)
 end
 
 Slot.create(dow: 1, starts_hour: "0800", ends_hour: "1600", time: "30")
 Slot.create(dow: 3, starts_hour: "0800", ends_hour: "1600", time: "30")
-
