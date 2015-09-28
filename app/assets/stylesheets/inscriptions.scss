@@ -34,6 +34,19 @@ input::-webkit-inner-spin-button {
   width: 100%;
 }
 
+
+#inscription_save_data_input {
+  input {
+    top: 0;
+  }
+  legend {
+    border: 0;
+  }
+  label {
+    padding-top: 5px;
+  }
+}
+
 .dl-horizontal dt {
   width: 60px;
 }

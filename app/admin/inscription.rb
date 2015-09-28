@@ -264,4 +264,8 @@ ActiveAdmin.register Inscription do
     render :layout => 'preview'
   end
 
+  action_item :preview, only: :show, if: proc{ current_admin_user.admin? or current_admin_user.actividad? } do 
+     link_to "Versión para imprimir", preview_admin_inscription_path(params[:id]), target: "_blank"
+  end
+
 end
