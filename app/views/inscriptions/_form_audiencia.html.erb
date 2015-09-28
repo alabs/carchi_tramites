@@ -36,13 +36,13 @@
         <div class="tab-content col-md-7">
           <% Slot.all.each do |slot| %>
             <div class="tab-pane" id="<%= slot.next_day_slot_name %>">
-              <%= f.input :appointed_at, as: :select, include_blank: false, collection: slot.all_hours(slot.next_day_slot), input_html: { class: "list-group" } %>
+              <%= f.input :appointed_at, as: :select, include_blank: false, collection: slot.all_hours_gc(slot.next_day_slot), input_html: { class: "list-group" } %>
             </div>
           <% end %>
 
           <% Slot.all.each do |slot| %>
             <div class="tab-pane" id="<%= slot.nextweek_slot_name %>">
-              <%= f.input :appointed_at, as: :select, include_blank: false, collection: slot.all_hours(slot.nextweek_slot), input_html: { class: "list-group" } %>
+              <%= f.input :appointed_at, as: :select, include_blank: false, collection: slot.all_hours_gc(slot.nextweek_slot), input_html: { class: "list-group" } %>
             </div>
           <% end %>
         </div>

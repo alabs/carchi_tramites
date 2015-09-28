@@ -46,11 +46,40 @@ class Slot < ActiveRecord::Base
   end
 
   def all_hours day_slot
+    # Comprueba en la base de datos local los ciudadanos que hayan pedido cita
+    # quita del listado de todas las horas disponibles los que ya estén pedidos.
     hours = []
     starts_sec = self.starts_hour/100.0*60*60
     ends_sec = self.ends_hour/100.0*60*60
     t = day_slot + starts_sec.seconds
     dates = Inscription.where("DATE(appointed_at) = ?", day_slot).pluck(:appointed_at)
+    while t < day_slot + ends_sec.seconds
+      hours << [ t.strftime("%H:%M"), t ] unless dates.include? t
+      t += 30.minutes
+    end
+    hours
+  end
+
+  def all_hours_gc day_slot
+    # Comprueba conectandose a Google Calendar que fechas encuentra disponible. 
+    # quita del listado de todas las horas disponibles los que ya estén pedidos.
+    hours = self.all_hours day_slot
+    cal = Google::Calendar.new(
+      :client_id     => Rails.application.secrets.google_calendar["client_id"],
+      :client_secret => Rails.application.secrets.google_calendar["secret_key"],
+      :calendar      => Rails.application.secrets.google_calendar["calendar_id"],
+      :redirect_url  => "urn:ietf:wg:oauth:2.0:oob"
+    )
+    cal.login_with_refresh_token(Rails.application.secrets.google_calendar["refresh_token"])
+    start_min = DateTime.parse hours.first.second.to_s
+    start_max = DateTime.parse hours.last.second.to_s
+    events = cal.find_events_in_range(start_min, start_max)
+
+    hours = []
+    starts_sec = self.starts_hour/100.0*60*60
+    ends_sec = self.ends_hour/100.0*60*60
+    t = day_slot + starts_sec.seconds
+    dates = events.collect { |e| DateTime.parse(e.start_time)..DateTime.parse(e.end_time) }
     while t < day_slot + ends_sec.seconds
       hours << [ t.strftime("%H:%M"), t ] unless dates.include? t
       t += 30.minutes

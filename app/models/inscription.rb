@@ -111,15 +111,34 @@ class Inscription < ActiveRecord::Base
   end
 
   def approve!
-    update_attribute(:status, 1)
+    self.update_attribute(:status, 1)
+    self.google_calendar_create!  if self.event.ttype_class == "audiencia" 
   end
 
   def deny!
-    update_attribute(:status, 2)
+    self.update_attribute(:status, 2)
   end
 
   def full_name
-    "#{first_name} #{last_name}"
+    "#{self.first_name} #{self.last_name}"
+  end
+
+  def google_calendar_create! 
+    require 'google_calendar'
+    cal = Google::Calendar.new(
+      :client_id     => Rails.application.secrets.google_calendar["client_id"],
+      :client_secret => Rails.application.secrets.google_calendar["secret_key"],
+      :calendar      => Rails.application.secrets.google_calendar["calendar_id"],
+      :redirect_url  => "urn:ietf:wg:oauth:2.0:oob"
+    )
+    cal.login_with_refresh_token(Rails.application.secrets.google_calendar["refresh_token"])
+    event = cal.create_event do |e|
+      e.title = "Cita con #{self.full_name}"
+      e.start_time = self.appointed_at
+      e.end_time = self.appointed_at + (30 * 60) # seconds * min
+    end
+    self.update_attribute(:google_calendar_id, event.id)
+    self.update_attribute(:google_calendar_link, event.html_link)
   end
 
   def get_provincia_name field

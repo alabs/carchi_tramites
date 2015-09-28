@@ -200,6 +200,12 @@ ActiveAdmin.register Inscription do
         dd link_to('Rechazar inscripción', observations_deny_admin_inscription_path(inscription), class: "button button-danger", method: :post, data: { confirm: "¿Estas segura de querer rechazar esta inscripción? Enviaremos un email comúnicandole que su inscripción ha sido rechazada." }) 
       end
     end
+    if inscription.google_calendar_link
+      dl do 
+        dt "Ver en Google Calendar"
+        dd link_to( image_tag("google-calendar-logo.png", style: "width: 50%"), inscription.google_calendar_link, target: "_blank")
+      end
+    end
   end
 
   action_item :new_juventud, only: :index, if: proc{ current_admin_user.admin? or current_admin_user.actividad? } do 

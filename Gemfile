@@ -50,5 +50,6 @@ gem 'formtastic', '~> 3.0'                    # forms helpers
 gem 'flag_shih_tzu'                           # tags
 gem 'friendly_id'                             # slugs 
 gem 'rails-footnotes', '~> 4.0'               # debug footnotes
+gem 'google_calendar'                         # google calendar API
 #gem 'id_ecuador'                              # validates cedula Ecuador
 #
