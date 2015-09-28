@@ -124,3 +124,14 @@ input::-webkit-inner-spin-button {
   background-color: #B13F00 !important;
   border-color: #B13F00 !important;
 }
+
+.dl-horizontal-big {
+  font-size: 1.1em; 
+
+  dt {
+    width: 260px;
+  }
+  dd {
+    margin-left: 280px;
+  }
+}

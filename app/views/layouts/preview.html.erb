@@ -7,13 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'activeadmin/print', media: 'print', 'data-turbolinks-track' => true %>
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="span12">
-          <div class="panel">
-            <%= yield %>
+    <div role="main">
+      <div id="content" class="container">
+        <div class="container">
+          <div class="row wrapper no-nav">
+            <article class="module">
+              <div class="module-content">
+              <%= yield %>
+              </div>
+            </article>
           </div>
         </div>
       </div>

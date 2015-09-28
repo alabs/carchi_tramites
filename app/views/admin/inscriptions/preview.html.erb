@@ -1,6 +1,15 @@
+<div class="container">
+
   <% if @inscription.event.ttype_class == "actividad" %>
-    <%= image_tag "logo-juventud.jpg", style: "width: 40%; text-align: center;" %>
+    <div class="row">
+        <%= image_tag "logo-vertical.jpg", class: "pull-left", style: "padding-left: 1em;" %>
+        <%= image_tag "logo-juventud.jpg", class: "pull-right", style: "padding-right: 2em;" %>
+    </div>
+    <h1 style="font-size: 1.4em;">Registro de inscripción a Actividad de la Casa de la Juventud</h1>
+    <h2 style="font-size: 1.3em;"><%= @inscription.event.title %></h2>
+    <h3 style="font-size: 1.2em;">Datos del estudiante</h3>
   <% end %>
+
   <dl class="dl-horizontal dl-horizontal-big">
     <dt>Nombre:              </dt><dd><%= @inscription.first_name %></dd>
     <dt>Apellido:            </dt><dd><%= @inscription.last_name %></dd>
@@ -22,25 +31,37 @@
       <% end %>
     </dl>
 
-    <h2>Datos del representante</h2>
+    <h3>Datos del representante</h3>
     <dl class="dl-horizontal dl-horizontal-big">
       <dt>Cédula:                 </dt><dd><%= @inscription.rep_document_id %></dd>
       <dt>Nombre completo:        </dt><dd><%= @inscription.rep_full_name %></dd>
       <dt>Sexo:                   </dt><dd><%= @inscription.rep_sex_name %></dd>
-      <dt>Título:                 </dt><dd><%= @inscription.rep_title %></dd>
+      <% if @inscription.rep_title %>
+        <dt>Título:                 </dt><dd><%= @inscription.rep_title %></dd>
+      <% end %>
       <dt>Teléfono (casa):        </dt><dd><%= @inscription.rep_phone_home %></dd>
       <dt>Teléfono (celular):     </dt><dd><%= @inscription.rep_phone_celular %></dd>
       <dt>Cantón:                 </dt><dd><%= @inscription.rep_canton_name %></dd>
       <dt>Parroquia:              </dt><dd><%= @inscription.rep_parroquia_name %></dd>
-      <dt>Dirección:              </dt><dd><%= @inscription.rep_address %></dd>
-      <dt>Nombre del trabajo:     </dt><dd><%= @inscription.rep_work_name %></dd>
-      <dt>Dirección del trabajo:  </dt><dd><%= @inscription.rep_work_address %></dd>
-      <dt>Teléfono del trabajo:   </dt><dd><%= @inscription.rep_work_phone %></dd>
+      <% if @inscription.rep_address %>
+        <dt>Dirección:              </dt><dd><%= @inscription.rep_address %></dd>
+      <% end %>
+      <% if @inscription.rep_work_name %>
+        <dt>Nombre del trabajo:     </dt><dd><%= @inscription.rep_work_name %></dd>
+      <% end %>
+      <% if @inscription.rep_work_address %>
+        <dt>Dirección del trabajo:  </dt><dd><%= @inscription.rep_work_address %></dd>
+      <% end %>
+      <% if @inscription.rep_work_phone %>
+        <dt>Teléfono del trabajo:   </dt><dd><%= @inscription.rep_work_phone %></dd>
+      <% end %>
     <% end %>
 
     <% if @inscription.event.ttype_class == "audiencia" %>
       <dt>Motivo de la audiencia: </dt><dd><%= @inscription.motive %></dd>
-      <dt>Oficio de la audiencia: </dt><dd><%= @inscription.office %></dd>
+      <% if @inscription.office %>
+        <dt>Oficio de la audiencia: </dt><dd><%= @inscription.office %></dd>
+      <% end %>
       <dt>Fecha de la audiencia:  </dt><dd><%= @inscription.appointed_at %></dd>
     <% end %>
 
@@ -51,3 +72,4 @@
   </dl>
 
   <hr>
+</div>
