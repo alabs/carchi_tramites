@@ -39,6 +39,7 @@ gem 'ckeditor'                                # admin wysiwyg
 gem 'devise'                                  # users
 gem 'cancancan', '~> 1.10'                    # users permissions
 gem 'mysql2'                                  # database
+gem 'pg'                                      # database
 gem 'capistrano',  '~> 3.1'                   # deploy
 gem 'capistrano-rails', '~> 1.1'              # deploy
 gem 'capistrano-rvm'                          # deploy
