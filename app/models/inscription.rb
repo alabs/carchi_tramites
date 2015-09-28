@@ -11,14 +11,13 @@ class Inscription < ActiveRecord::Base
   validates :document_id, :sex, :born_at, :address, :parroquia, :canton, :provincia, :first_name, :last_name, :phone, :event, presence: true
 
   #validates :email, presence: true, unless: self.event.plantas?
-
-  scope :pending,  -> { where(status: 0) }
+scope :pending,  -> { where(status: 0) }
   scope :approved, -> { where(status: 1) }
   scope :denied,   -> { where(status: 2) }
   scope :female,   -> { where(sex: 0) }
   scope :male, -> { where(sex: 1) }
-  scope :last_week,  -> { where("inscriptions.created_at >= ?", 7.days) }
-  scope :last_month, -> { where("inscriptions.created_at >= ?", 30.days) }
+  scope :last_week,  -> { where("inscriptions.created_at >= ?", Date.today-7.days) }
+  scope :last_month, -> { where("inscriptions.created_at >= ?", Date.today-30.days) }
 
   before_save :default_values
 
