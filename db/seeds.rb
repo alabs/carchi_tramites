@@ -28,9 +28,6 @@ events = [
     Por otro lado el funcionario tiene un panel de Administración donde puede ver todas las peticiones pendientes por resolver y aprobarlas o denegarlas.
       </p>",
   },
-  {title: "Informática", type: 1}, 
-  {title: "Danza contemporánea", type: 1}, 
-  {title: "Danza tradicional y música andina ecuatoriana",  type: 1}, 
 ]
 
 events.each do |e|
