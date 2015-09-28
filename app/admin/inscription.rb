@@ -141,7 +141,7 @@ ActiveAdmin.register Inscription do
       row :first_name
       row :last_name
       row :document_id
-      row :sex
+      row :sex_name
       row :born_at
       row :provincia_name
       row :canton_name
@@ -169,7 +169,7 @@ ActiveAdmin.register Inscription do
         attributes_table_for inscription do
           row :rep_document_id 
           row :rep_full_name
-          row :rep_sex
+          row :rep_sex_name
           row :rep_title
           row :rep_phone_home
           row :rep_phone_celular
@@ -186,7 +186,7 @@ ActiveAdmin.register Inscription do
     active_admin_comments
   end
 
-  sidebar "Acciones pendientes", only: [:show, :edit] do
+  sidebar "Acciones", only: [:show, :edit] do
     if inscription.pending?
       span "Revisa la inscripción, estúdiala y comúnicate con el inscrito o su responsable legal y luego Aprueba o Rechaza la inscripción."
     end

@@ -107,6 +107,7 @@ es:
         rep_document_id: "Cédula de Identidad"
         rep_full_name: "Nombre completo"
         rep_sex: "Sexo"
+        rep_sex_name: "Sexo"
         rep_title: "Título"
         rep_phone_home: "Teléfono domicilio"
         rep_phone_celular: "Teléfono celular"
