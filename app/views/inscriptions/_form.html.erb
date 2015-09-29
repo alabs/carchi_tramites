@@ -14,7 +14,8 @@
   <legend>Datos personales</legend>
   <%= f.input :event_id, as: :hidden, input_html: {value: @event.id, class: "js-phoenix"} %>
   <%= f.input :document_id, required: true, input_html: { maxlength: 15, class: "js-phoenix" } %>
-  <%= f.inputs :first_name, :last_name, input_html: {class: "js-phoenix"} %>
+  <%= f.input :first_name, input_html: {class: "js-phoenix"} %>
+  <%= f.input :last_name, input_html: {class: "js-phoenix"} %>
   <%= f.input :sex, as: :select, collection: Inscription::SEX.to_a, input_html: {class: "js-phoenix"} %>
   <%= f.input :born_at, start_year: 1900, end_year: Date.today.year-3, input_html: {class: "js-phoenix"} %>
 
