@@ -62,9 +62,9 @@ Esta base de datos debe configurarse en el mismo servidor PostgreSQL en una base
 
 Se ha preparado la tarea para la importación inicial de datos: 
 
-´´´
+```
 rake carchi:db:seed                           # [carchi] Importa los estudiantes de la base de datos Legacy de la Casa de la Juventud y ejecuta rake db:seed
-´´´
+```
 
 # Integración con Google Calendar
 
@@ -74,17 +74,17 @@ También hay que conseguir el Calendar ID que se encuentra en la configuración 
 
 Una vez tengamos estas tres claves las pondremos en nuestro config/secrets.yml 
 
-´´´
+```
   google_calendar: 
     client_id: changeme
     secret_key: changeme
     calendar_id: changeme
-´´´
+```
 
 Por último para conseguir el valor del refresh_token debemos dar los permisos necesarios siguiendo las instrucciones de la tarea creada para ello.
 
-´´´
+```
 rake carchi:google_calendar:refresh_token     # [carchi] Consigue el refresh_token inicial
-´´´
+```
 
 Más instrucciones y documentación de la librería: https://github.com/northworld/google_calendar
