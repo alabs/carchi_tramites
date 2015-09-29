@@ -14,6 +14,8 @@ ActiveAdmin.register AdminUser do
 
   permit_params :email, :password, :password_confirmation, roles_array: []
 
+  before_filter :skip_sidebar!, :only => :index
+
   show do 
     attributes_table do 
       row :email
