@@ -55,6 +55,7 @@ class Slot < ActiveRecord::Base
     dates = Inscription.where("DATE(appointed_at) = ?", day_slot).pluck(:appointed_at)
     while t < day_slot + ends_sec.seconds
       hours << [ t.strftime("%H:%M"), t ] unless dates.include? t
+      # FIXME: duration from DB
       t += 30.minutes
     end
     hours
@@ -63,7 +64,6 @@ class Slot < ActiveRecord::Base
   def all_hours_gc day_slot
     # Comprueba conectandose a Google Calendar que fechas encuentra disponible. 
     # quita del listado de todas las horas disponibles los que ya estén pedidos.
-    hours = self.all_hours day_slot
     cal = Google::Calendar.new(
       :client_id     => Rails.application.secrets.google_calendar["client_id"],
       :client_secret => Rails.application.secrets.google_calendar["secret_key"],
@@ -71,20 +71,26 @@ class Slot < ActiveRecord::Base
       :redirect_url  => "urn:ietf:wg:oauth:2.0:oob"
     )
     cal.login_with_refresh_token(Rails.application.secrets.google_calendar["refresh_token"])
+    hours = self.all_hours day_slot
     start_min = DateTime.parse hours.first.second.to_s
     start_max = DateTime.parse hours.last.second.to_s
     events = cal.find_events_in_range(start_min, start_max)
-
-    hours = []
-    starts_sec = self.starts_hour/100.0*60*60
-    ends_sec = self.ends_hour/100.0*60*60
-    t = day_slot + starts_sec.seconds
     dates = events.collect { |e| DateTime.parse(e.start_time)..DateTime.parse(e.end_time) }
-    while t < day_slot + ends_sec.seconds
-      hours << [ t.strftime("%H:%M"), t ] unless dates.include? t
-      t += 30.minutes
-    end
+    # FIXME: no deberíamos tener que revisarlo varias veces para que borre, pero sino solo borra algunos
+    hours = process_date dates, hours
+    hours = process_date dates, hours
+    hours = process_date dates, hours
+    hours = process_date dates, hours
+    hours = process_date dates, hours
+    hours = process_date dates, hours
+    hours = process_date dates, hours
     hours
+  end
+
+  def process_date dates, hours
+    hours.each do |hour|
+      dates.each { |date| hours.delete(hour) if date.cover? hour.second }
+    end
   end
 
 end

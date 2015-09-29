@@ -30,7 +30,9 @@
   <%= f.inputs :email, required: false, input_html: {class: "js-phoenix"} %>
 
   <% if @event.ttype_class == "audiencia" %>
-    <%= render partial: "form_audiencia", locals: {f: f} %>
+    <% cache "form-audiencia" do %>
+      <%= render partial: "form_audiencia", locals: {f: f} %>
+    <% end %>
   <% end %>
 
   <% if @event.ttype_class == "actividad" %>

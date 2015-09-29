@@ -56,8 +56,7 @@ cap production deploy
 
 # Base de Datos antigua (Legacy)
 
-Para las Actividades de la Casa de la Juventud se parte de un sistema base ya creado con una base de datos, 
-
+Para las Actividades de la Casa de la Juventud se parte de un sistema base ya creado con una base de datos, el SISTEMA DE INSCRIPCIÓN Y SEGUIMIENTO DE ESTUDIANTES (SISECJ), desarrollado por Ing. Xavier Narváez M. en PHP con base de datos PostgreSQL. 
 
 Esta base de datos debe configurarse en el mismo servidor PostgreSQL en una base de datos diferente (denominada "legacy"). Se configurará dentro del fichero config/database.yml.
 
@@ -67,3 +66,25 @@ Se ha preparado la tarea para la importación inicial de datos:
 rake carchi:db:seed                           # [carchi] Importa los estudiantes de la base de datos Legacy de la Casa de la Juventud y ejecuta rake db:seed
 ´´´
 
+# Integración con Google Calendar
+
+Para el correcto funcionamiento del Google Calendar hace falta dar permisos en la cuenta de Google. Esto se realiza primero configurando una nueva aplicación en [Google Developers Console](https://console.developers.google.com/), habilitando la API de Google Calendar y creando las Credentials de acceso OAUTH2 del tipo Otro. Apuntaremos el Client ID y Secret de la aplicación.
+
+También hay que conseguir el Calendar ID que se encuentra en la configuración del calendario de [Google Calendar](https://www.google.com/calendar/). 
+
+Una vez tengamos estas tres claves las pondremos en nuestro config/secrets.yml 
+
+´´´
+  google_calendar: 
+    client_id: changeme
+    secret_key: changeme
+    calendar_id: changeme
+´´´
+
+Por último para conseguir el valor del refresh_token debemos dar los permisos necesarios siguiendo las instrucciones de la tarea creada para ello.
+
+´´´
+rake carchi:google_calendar:refresh_token     # [carchi] Consigue el refresh_token inicial
+´´´
+
+Más instrucciones y documentación de la librería: https://github.com/northworld/google_calendar

@@ -13,7 +13,6 @@ showAppointedAt = () ->
       # if it's a new appointmnet
       $('.audiencia .nav li a').random().trigger('click')
       $('#inscription_appointed_at_input:visible a').random().trigger('click')
-      console.log('new')
     else
       # if there is an already filled up appointment 
       day = $('#js-appointed-at-day').html()
@@ -23,6 +22,16 @@ showAppointedAt = () ->
       # activate hour
       $('#inscription_appointed_at_input a').removeClass('active')
       $("a[data-value='#{hour}']").trigger('click')
+
+showNoAvailableAppointemnts = () ->
+  if $('.js-appointed-at-availability').length > 0
+    $('.tab-pane').each( ->
+      $tab = $(this)
+      if $tab.find('.list-group a').length == 0
+        console.log($tab)
+        msg = '<div class="alert alert-info"><b>Lo sentimos</b> El prefecto no tiene ningún horario disponible para este día</div>'
+        $tab.html(msg)
+    )
 
 showOffice = () ->
   if $('.js-office-show').length > 0
@@ -89,6 +98,7 @@ locationCascadeSelectWrapper = () ->
 
 $ ->
   showAppointedAt()
+  showNoAvailableAppointemnts()
   showOffice()
   if $('.formtastic').length > 0
     locationCascadeSelectWrapper()
