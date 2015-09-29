@@ -3,10 +3,12 @@
 <%= f.input :ed_level, as: :select, collection: Inscription::ED_LEVEL.to_a, input_html: {class: "js-phoenix"} %>
 <%= f.input :institute, as: :select, collection: Institute.all, input_html: {class: "js-phoenix"} %>
 <legend>Datos del representante legal</legend>
-<%= f.input :rep_document_id, input_html: { maxlength: 15 } %>
+<%= f.input :rep_document_id, input_html: { maxlength: 15, class: "js-phoenix" } %>
 <%= f.input :rep_full_name, as: :string, input_html: {class: "js-phoenix"} %>
 <%= f.input :rep_sex, as: :select, collection: Inscription::SEX.to_a, input_html: {class: "js-phoenix"} %>
-<%= f.inputs :rep_title, :rep_phone_home, :rep_phone_celular, input_html: {class: "js-phoenix"} %>
+<%= f.input :rep_title, input_html: {class: "js-phoenix"} %>
+<%= f.input :rep_phone_home, input_html: {class: "js-phoenix"} %>
+<%= f.input :rep_phone_celular, input_html: {class: "js-phoenix"} %>
 
 <!-- LOCATION starts -->
 <%= f.input :rep_provincia, as: :select, collection: get_locations(:provincias, "rep"), class: "js-phoenix" %>
@@ -15,4 +17,6 @@
 <%= f.input :rep_address, input_html: {class: "js-phoenix"} %>
 <!-- LOCATION ends -->
   
-<%= f.inputs :rep_work_name, :rep_work_address, :rep_work_phone, input_html: {class: "js-phoenix"} %>
+<%= f.input :rep_work_name,, input_html: {class: "js-phoenix"} %>
+<%= f.input :rep_work_address, input_html: {class: "js-phoenix"} %>
+<%= f.input :rep_work_phone, input_html: {class: "js-phoenix"} %>
