@@ -12,6 +12,7 @@ Ver https://github.com/alabs/carchi_deploy
 ```
 sudo apt-get install libqt4-dev          # capybara-webkit
 sudo apt-get install libmysqlclient-dev  # mysql2
+sudo apt-get install libpq-dev           # postgres pg 
 
 git clone https://github.com/alabs/carchi_tramites
 cd carchi_tramites
