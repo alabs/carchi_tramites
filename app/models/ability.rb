@@ -23,6 +23,8 @@ class Ability
       can :read, ActiveAdmin::Page, :name => "Dashboard"
     elsif user.actividad?
       can :read, ActiveAdmin::Page, :name => "Dashboard"
+      can [:read, :create, :update], Institute
+      can [:read, :create, :update], Instructor
       can :manage, Inscription, event: {ttype: 1}
       can [:read, :update], Email, event: {ttype: 1}
       can [:read, :create, :update], Event, ttype: 1

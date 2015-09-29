@@ -5,6 +5,7 @@ ActiveAdmin.register Inscription do
 
   permit_params :event_id, :first_name, :last_name, :email, :phone, :motive, :office, :document_id, :sex, :born_at, :address, :parroquia, :canton, :provincia, :admin_observation, :ed_title, :ed_level, :ed_title, :institute_id, :observations, :rep_document_id, :rep_full_name, :rep_sex, :rep_title, :rep_phone_home, :rep_phone_celular, :rep_parroquia, :rep_canton, :rep_provincia, :rep_address, :rep_work_name, :rep_work_address, :rep_work_phone, :plant_location, :plant_representation
 
+  filter :first_name_or_last_name_or_email_or_phone, as: :string, label: "Buscar"
   filter :first_name
   filter :last_name
   filter :email
@@ -15,6 +16,7 @@ ActiveAdmin.register Inscription do
   filter :inscriptions_plants_plant_name, as: :select, collection: Plant.all, if: proc { current_admin_user.plantas? or current_admin_user.admin? }
   filter :appointed_at, if: proc { current_admin_user.audiencia? or current_admin_user.admin? }
   filter :created_at
+
 
   index do
     selectable_column
