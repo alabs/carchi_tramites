@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html moznomarginboxes mozdisallowselectionprint>
   <head>
     <title><%= yield :title %> | Atención Ciudadana el Carchi, Ecuador</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -8,6 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= stylesheet_link_tag    'activeadmin/print', media: 'print', 'data-turbolinks-track' => true %>
+    <style type="text/css" media="print">
+        @page {
+          size: auto;   /* auto is the initial value */
+          margin: 0mm;  /* this affects the margin in the printer settings */
+        }
+        #footnotes_debug {
+          display: none; 
+        }
+        body {
+          line-height: 1em;
+        }
+    </style>
   </head>
   <body>
     <div role="main">
