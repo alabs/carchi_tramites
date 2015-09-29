@@ -132,6 +132,7 @@ scope :pending,  -> { where(status: 0) }
     )
     cal.login_with_refresh_token(Rails.application.secrets.google_calendar["refresh_token"])
     event = cal.create_event do |e|
+      # FIXME: description: Motive + Oficio + Admin Observation approve
       e.title = "Cita con #{self.full_name}"
       e.start_time = self.appointed_at
       e.end_time = self.appointed_at + (30 * 60) # seconds * min

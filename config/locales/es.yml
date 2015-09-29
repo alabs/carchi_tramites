@@ -78,6 +78,16 @@ es:
         id: "Planta"
       institute:
         title: "Nombre"
+        principal_name: "Nombre del Rector"
+        phone: "Teléfono"
+        address: "Dirección"
+        parroquia: "Parroquia"
+        canton: "Cantón"
+        provincia: "Provincia"
+        foundated_at: "Fecha de creación"
+        ttype_name: "Tipo de Unidad"
+        ttype: "Tipo de Unidad"
+        students_number: "Número de estudiantes"
       inscription:
         save_data: "Guardar datos para próximos trámites."
         full_name: "Nombre completo"
