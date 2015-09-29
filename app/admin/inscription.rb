@@ -1,5 +1,8 @@
 ActiveAdmin.register Inscription do
 
+  # xlsx
+  config.xlsx_builder.i18n_scope = [:activerecord, :attributes, :inscription]
+
   # Deshabilita el enlace de Añadir inscripcion
   # En nuestro caso seran tres enlaces a los distintos tipos de peticiones 
   config.clear_action_items!
@@ -212,15 +215,15 @@ ActiveAdmin.register Inscription do
   end
 
   action_item :new_juventud, only: :index, if: proc{ current_admin_user.admin? or current_admin_user.actividad? } do 
-     link_to "Añadir inscripción en Actividad de la Casa de la Juventud", juventud_path, target: "_blank"
+    link_to "Añadir inscripción en Actividad de la Casa de la Juventud", juventud_path, target: "_blank"
   end
 
   action_item :new_audiencia, only: :index, if: proc{ current_admin_user.admin? or current_admin_user.audiencia? } do 
-     link_to "Añadir cita de Audiencia con el Prefecto", audiencia_path, target: "_blank"
+    link_to "Añadir cita de Audiencia con el Prefecto", audiencia_path, target: "_blank"
   end
 
   action_item :new_planta, only: :index, if: proc{ current_admin_user.admin? or current_admin_user.plantas? } do 
-     link_to "Añadir petición de Plantas para Reforestación", medio_ambiente_path, target: "_blank"
+    link_to "Añadir petición de Plantas para Reforestación", medio_ambiente_path, target: "_blank"
   end
 
   # TODO: DRY observations
@@ -268,7 +271,7 @@ ActiveAdmin.register Inscription do
   end
 
   action_item :preview, only: :show, if: proc{ current_admin_user.admin? or current_admin_user.actividad? } do 
-     link_to "Versión para imprimir", preview_admin_inscription_path(params[:id]), target: "_blank"
+    link_to "Versión para imprimir", preview_admin_inscription_path(params[:id]), target: "_blank"
   end
 
 end
