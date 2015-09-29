@@ -55,8 +55,7 @@ class Slot < ActiveRecord::Base
     dates = Inscription.where("DATE(appointed_at) = ?", day_slot).pluck(:appointed_at)
     while t < day_slot + ends_sec.seconds
       hours << [ t.strftime("%H:%M"), t ] unless dates.include? t
-      # FIXME: duration from DB
-      t += 30.minutes
+      t += self.time.minutes
     end
     hours
   end

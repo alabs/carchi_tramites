@@ -28,7 +28,6 @@ showNoAvailableAppointemnts = () ->
     $('.tab-pane').each( ->
       $tab = $(this)
       if $tab.find('.list-group a').length == 0
-        console.log($tab)
         msg = '<div class="alert alert-info"><b>Lo sentimos</b> El prefecto no tiene ningún horario disponible para este día</div>'
         $tab.html(msg)
     )
