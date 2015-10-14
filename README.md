@@ -44,7 +44,7 @@ rake test
 Se puede ver en el sistema de Integración Continua (CI) 
 
 
-[![Build Status](https://travis-ci.org/alabs/carchi_tramites.svg?branch=production)](https://travis-ci.org/alabs/carchi_tramites)
+[![Build Status](https://travis-ci.org/alabs/carchi_tramites.svg?branch=master)](https://travis-ci.org/alabs/carchi_tramites)
 
 # Deploy 
 
