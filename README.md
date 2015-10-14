@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/alabs/carchi_tramites.svg?branch=master)](https://travis-ci.org/alabs/carchi_tramites)
 
 # Descripción
 
