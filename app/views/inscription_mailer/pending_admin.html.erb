@@ -18,7 +18,9 @@ Ha habido una nueva inscripción en <%= @inscription.event.title %>
   <% if @inscription.event.ttype_class == "actividad" %>
     <dt>Educación:        </dt><dd><%= @inscription.ed_title_name %></dd>
     <dt>Nivel educativo:  </dt><dd><%= @inscription.ed_level_name %></dd>
-    <dt>Unidad educativa: </dt><dd><%= @inscription.institute.title %></dd>
+    <% unless @inscription.institute.nil? %>
+      <dt>Unidad educativa: </dt><dd><%= @inscription.institute.title %></dd>
+    <% end %>
     <dt>Observaciones:    </dt><dd><%= @inscription.observations %></dd>
   </dl>
 

@@ -15,7 +15,9 @@ Domicilio actual:    <%= @inscription.address %>
 <% if @inscription.event.ttype_class == "actividad" %>
 Educación:        <%= @inscription.ed_title_name %>
 Nivel educativo:  <%= @inscription.ed_level_name %>
-Unidad educativa: <%= @inscription.institute.title %>
+<% unless @inscription.institute.nil? %>
+  Unidad educativa: <%= @inscription.institute.title %>
+<% end %>
 Observaciones:    <%= @inscription.observations %>
 
 Datos del representante: 
