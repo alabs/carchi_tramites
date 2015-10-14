@@ -2,7 +2,7 @@
 lock '3.4.0'
 
 set :application, 'tramites'
-set :repo_url, 'git@github.com:alabs/carchi_tramites.git'
+set :repo_url, 'https://github.com/alabs/carchi_tramites'
 set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 
