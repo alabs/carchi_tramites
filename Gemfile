@@ -24,7 +24,6 @@ group :development, :test do
   gem 'capybara'                                # tests features
   gem 'capybara-webkit'                         # tests features with javascript
   gem 'minitest-reporters'                      # tests colors
-  gem 'database_cleaner'                        # tests db cleaner
   gem 'letter_opener_web'                       # mailcatcher
 end
 

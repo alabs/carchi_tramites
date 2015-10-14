@@ -20,18 +20,6 @@ class ActionDispatch::IntegrationTest
   include Capybara::DSL
 end
 
-DatabaseCleaner.strategy = :truncation
-
-class Minitest::Spec
-  before :each do
-    DatabaseCleaner.start
-  end
-
-  after :each do
-    DatabaseCleaner.clean
-  end
-end
-
 Capybara::Webkit.configure do |config|
   config.block_unknown_urls
 end
