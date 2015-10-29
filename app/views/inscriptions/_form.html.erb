@@ -11,7 +11,7 @@
     * Campos requeridos
   </div>
 
-  <legend>Datos personales</legend>
+  <legend>Datos</legend>
   <%= f.input :event_id, as: :hidden, input_html: {value: @event.id, class: "js-phoenix"} %>
   <%= f.input :document_id, required: true, input_html: { maxlength: 15, class: "js-phoenix" } %>
   <%= f.input :first_name, input_html: {class: "js-phoenix"} %>
