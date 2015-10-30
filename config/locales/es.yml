@@ -136,7 +136,7 @@ es:
         rep_work_phone: "Teléfono de la empresa de trabajo"
         admin_observation: "Observaciones"
         motive: "Motivo de la Audiencia"
-        office: "Describa el oficio"
+        office: "Ingrese el número del oficio"
         office_show: "¿Tiene ingresado oficio?"
         appointed_at: "Fecha de la Cita"
         plant_location: "Ubicación de las Plantas"

@@ -11,7 +11,7 @@
     * Campos requeridos
   </div>
 
-  <legend>Datos</legend>
+  <legend>Datos personales</legend>
   <%= f.input :event_id, as: :hidden, input_html: {value: @event.id, class: "js-phoenix"} %>
   <%= f.input :document_id, required: true, input_html: { maxlength: 15, class: "js-phoenix" } %>
   <%= f.input :first_name, input_html: {class: "js-phoenix"} %>
@@ -44,7 +44,7 @@
     <%= render partial: "form_plantas", locals: {f: f} %>
   <% end %>
  
-  <%= f.input :save_data, as: :check_boxes, collection: [" No marcar si se trata de un computador público"], input_html: {class: 'js-save-data'} %>
+  <%# f.input :save_data, as: :check_boxes, collection: [" No marcar si se trata de un computador público"], input_html: {class: 'js-save-data'} %>
 
   <div class="well">
     <%= f.actions do %>

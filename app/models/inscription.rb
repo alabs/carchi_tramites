@@ -122,7 +122,17 @@ scope :pending,  -> { where(status: 0) }
     "#{self.first_name} #{self.last_name}"
   end
 
-  def google_calendar_create! 
+  def google_calendar_description
+    desc  = "Teléfono: #{self.phone} - Motivo: #{self.motive}"
+    desc += " - Oficio: #{self.office}" if self.office
+    desc
+  end
+
+  def google_calendar_title
+    "Cita con #{self.full_name}"
+  end
+  
+  def google_calendar_login
     require 'google_calendar'
     cal = Google::Calendar.new(
       :client_id     => Rails.application.secrets.google_calendar["client_id"],
@@ -131,12 +141,25 @@ scope :pending,  -> { where(status: 0) }
       :redirect_url  => "urn:ietf:wg:oauth:2.0:oob"
     )
     cal.login_with_refresh_token(Rails.application.secrets.google_calendar["refresh_token"])
+    cal
+  end
+
+  def google_create_event cal
     event = cal.create_event do |e|
-      # FIXME: description: Motive + Oficio + Admin Observation approve
-      e.title = "Cita con #{self.full_name}"
+      e.title = self.google_calendar_title
+      e.description = self.google_calendar_description
+      e.location = self.google_calendar_location
       e.start_time = self.appointed_at
+      # FIXME: should be with slot
       e.end_time = self.appointed_at + (30 * 60) # seconds * min
     end
+    event
+  end
+
+  def google_calendar_create!
+    inscription = self
+    cal = self.google_calendar_login
+    event = google_create_event cal
     self.update_attribute(:google_calendar_id, event.id)
     self.update_attribute(:google_calendar_link, event.html_link)
   end
