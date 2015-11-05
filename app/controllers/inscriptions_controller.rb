@@ -15,13 +15,7 @@ class InscriptionsController < ApplicationController
     @event = Event.friendly.find(inscription_params[:event_id])
     if @inscription.save
       InscriptionMailer.pending(@inscription.id).deliver_now
-      if @event.price? 
-        msg = "Tienes que dirigirte a la Casa de la Juventud a cancelar los $#{@event.price}"
-      else
-        msg = "Revisaremos tu inscripción y te avisaremos el resultado en breve."
-      end
-      flash[:notice] = msg
-      redirect_to root_url
+      redirect_to root_url, flash: { notice: @event.price? ? @event.msg_price : @event.msg_default }
     else  
       render :action => 'new'
     end  

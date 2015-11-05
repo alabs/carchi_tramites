@@ -39,5 +39,12 @@ class Event < ActiveRecord::Base
     self.inscriptions.approved.size >= self.limit if self.limit
   end
 
+  def msg_default
+    "Revisaremos tu inscripción y te avisaremos el resultado en breve."
+  end
+
+  def msg_price
+    "Tienes que dirigirte a la Casa de la Juventud a cancelar los $#{@event.price}"
+  end
 
 end

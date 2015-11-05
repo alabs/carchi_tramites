@@ -128,6 +128,10 @@ scope :pending,  -> { where(status: 0) }
     desc
   end
 
+  def google_calendar_location
+    "Despacho del Prefecto"
+  end
+
   def google_calendar_title
     "Cita con #{self.full_name}"
   end
