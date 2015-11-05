@@ -1,11 +1,14 @@
 
 
+# jquery function: get a random element
 $.fn.random = () ->
   ret = $()
   if this.length > 0
     ret = ret.add(this[Math.floor((Math.random() * this.length))])
     return ret
 
+# appointments on /solicitar/peticion-de-audiencia-con-el-prefecto
+# when there is an old appointment, if it's a new or if it's already filled up
 showAppointedAt = () ->
   # check if we're on appointment form
   if $('#js-appointed-at-day').length > 0
@@ -13,6 +16,7 @@ showAppointedAt = () ->
       # if it's a new appointmnet
       $('.audiencia .nav li a').random().trigger('click')
       $('#inscription_appointed_at_input:visible a').random().trigger('click')
+      $('.tab-pane:hidden list-group-item').removeClass('active')
     else
       # if there is an already filled up appointment 
       day = $('#js-appointed-at-day').html()
@@ -23,6 +27,8 @@ showAppointedAt = () ->
       $('#inscription_appointed_at_input a').removeClass('active')
       $("a[data-value='#{hour}']").trigger('click')
 
+# appointments on /solicitar/peticion-de-audiencia-con-el-prefecto
+# no available appointments
 showNoAvailableAppointemnts = () ->
   if $('.js-appointed-at-availability').length > 0
     $('.tab-pane').each( ->
@@ -32,19 +38,31 @@ showNoAvailableAppointemnts = () ->
         $tab.html(msg)
     )
 
+
+# do you have an office? ¿tiene ingresado oficio? on /solicitar/peticion-de-audiencia-con-el-prefecto
 showOffice = () ->
   if $('.js-office-show').length > 0
     changeOffice($('.js-office-show'))
     $('.js-office-show').on 'change', ->
       changeOffice($(this))
 
+# do you have an office? ¿tiene ingresado oficio? on /solicitar/peticion-de-audiencia-con-el-prefecto
 changeOffice = ($el) ->
   if $el.val() == "No"
     $('.js-office-show-wrapper').hide('slow')
   else
     $('.js-office-show-wrapper').show('slow').removeClass('hide')
 
+# appointments on /solicitar/peticion-de-audiencia-con-el-prefecto
+# put active tab-pane on last position, to save that on the form POST
+movePaneToLast = () ->
+  content = $('.tab-pane.active')[0].outerHTML
+  $('.tab-pane.active').remove()
+  $('.tab-content').append(content)
+  $('.select').listgroup()
 
+
+# location select with subcategories, for Provincia / Cantón / Parroquias selects
 locationCascadeSelect = (parent, child) ->
   # http://snipplr.com/view/26338/cascading-select-boxes/
   childOptions = child.find('option:not(.static)')
@@ -55,6 +73,7 @@ locationCascadeSelect = (parent, child) ->
   childOptions.not('.static, .sub_' + parent.val()).remove()
 
 
+# location select with subcategories, for Provincia / Cantón / Parroquias selects
 locationCascadeSelectWrapper = () ->
   # show / hide based on classes and data-value attributes
   # view app/views/inscriptions/_form_audiencia.html.erb
@@ -95,15 +114,22 @@ locationCascadeSelectWrapper = () ->
     $('#inscription_rep_parroquia').find('option').removeAttr('selected')
     $('#inscription_rep_parroquia').find('option[value="c_repparroquia_4_1_50"]').prop("selected", true)
 
+
+
 $ ->
   showAppointedAt()
   showNoAvailableAppointemnts()
   showOffice()
+
+  # activate selects 
   if $('.formtastic').length > 0
     locationCascadeSelectWrapper()
+
+  # show pretty modals
   if $('.js-modal').length > 0
     $('.js-modal').modal('show')
 
+  # save form for for later 
   if $('#new_inscription').length > 0
     $('.js-phoenix').phoenix()
     $('.js-phoenix').phoenix('load')
@@ -113,4 +139,15 @@ $ ->
       else
         $('.js-phoenix').phoenix('remove')
     )
+
+  # move last active  pane to last
+  if $('.tab-pane').length > 0
+    movePaneToLast()
+
+  $('a[data-toggle="tab"]').on 'shown.bs.tab', ->
+    #$('.tab-pane:hidden .list-group-item').removeClass('active')
+    #$('#inscription_appointed_at_input:visible a').random().trigger('click')
+    console.log('change')
+    movePaneToLast()
+
 
