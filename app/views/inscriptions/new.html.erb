@@ -5,7 +5,7 @@
   <%= link_to "Volver al Inicio", root_path, class: "btn btn-warning pull-right" %>
 <% end %>
 
-<div class="span11">
+<div class="span8">
   <h1><%= @event.title %></h1>
 
   <% if @event.has_reached_limit? %>
@@ -19,4 +19,23 @@
 
   <%= render partial: "inscriptions/event_metadata", locals: {event: @event} %>
   <%= render 'form', locals: {inscription: @inscription} %>
+</div>
+
+<div class="span3 hidden-phone hidden-tablet">
+  <% if @event.ttype_class == "audiencia" %>
+      <%= image_tag "audiencia_prefecto.jpg", class: "audiencia_photo" %>
+      <%= image_tag "audiencia_viceprefecta.jpg", class: "audiencia_photo" %>
+  <% end %>
+
+  <% if @event.ttype_class == "actividad" %>
+    <div class="well">
+      <%= link_to "Ver noticias de la Casa de la Juventud", "https://gobiernoabierto.carchi.gob.ec/es/areas/7/news", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+
+  <% if @event.ttype_class == "plantas" %>
+    <div class="well" style="margin-top: 50px;">
+      <%= link_to "Ver noticias de la Casa de la Juventud", "https://gobiernoabierto.carchi.gob.ec/es/areas/7/news", class: "btn btn-primary", target: "_blank" %>
+    </div>
+  <% end %>
 </div>
