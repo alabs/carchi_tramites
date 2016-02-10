@@ -1,11 +1,23 @@
 class PageController < ApplicationController
 
+  def ayuda
+  end
+
+  def noticias
+    url = "https://gobiernoabierto.carchi.gob.ec/es/news.rss"
+    feed = Feedjira::Feed.fetch_and_parse url
+    @entries = feed.entries
+  end
+
   def index
     @events = Event.all
     @no_layout = true
   end
 
   def juventud
+    url = "https://gobiernoabierto.carchi.gob.ec/es/areas/7/news.rss"
+    feed = Feedjira::Feed.fetch_and_parse url
+    @entries = feed.entries
     @events = Event.type_activities
   end
 

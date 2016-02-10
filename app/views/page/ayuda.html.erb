@@ -1,0 +1,86 @@
+<%= content_for :title, "Ayuda" %>
+<%= link_to "Volver al Inicio", root_path, class: "btn btn-warning pull-right" %>
+
+<div class="container">
+  <h1><span>Ayuda de Atención Ciudadana el Carchi</h1>
+
+  <div class="row">
+
+    <!--Nav Bar -->
+    <nav class="col-xs-2 bs-docs-sidebar">
+        <ul id="sidebar" class="nav nav-stacked fixed">
+            <li>
+                <a href="#objetivo">Objetivo</a>
+            </li>
+            <li>
+                <a href="#estructura">Estructura</a>
+                <ul class="nav nav-stacked">
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#tramites">Trámites</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!--Main Content -->
+    <div class="col-xs-8">
+        <section id="objetivo" class="group">
+            <h3>Objetivo</h3>
+            <p> Plataforma de Atención Ciudadana, contacto y trámites de la Prefectura de Carchi, Ecuador. </p>
+        </section>
+        <section id="estructura" class="group">
+            <h3>Estructura</h3>
+            <div id="contacto" class="subgroup">
+              <h4>Contacto</h4>
+              <p>
+                <ul>
+                  <li>
+                    <b>
+                      Atención teléfonica:
+                    </b>
+                    <ol>
+                      <li>Teléfono: 593 (06) 2980-302</li>
+                      <li>Pbx: 593 (06) 2980-302 ext 138</li>
+                      <li>Ver Directorio Telefónico en la home</li>
+                    </ol>
+                  </li>
+                  <li>
+                    <b>
+                      Atención por Internet
+                    </b>
+                    <ol>
+                      <li>Mail: <%= mail_to "info@carchi.gob.ec" %></li>
+                    </ol>
+                  </li>
+                  <li>
+                    <b>
+                      Atención presencial
+                    </b>
+                    <ol>
+                      <li> Dirección: Calle 10 de Agosto entre Sucre y Olmedo, Tulcán, Carchi, Ecuador.</li>
+                    </ol>
+                  </li>
+                  </ul>
+                </p>
+            </div>
+            <div id="tramites" class="subgroup">
+                <h4>Trámites</h4>
+                <p>
+                <ul>
+                  <li>
+                    <%= link_to "Petición de Audiencia con Prefecto", audiencia_path %>: podrás solicitar la Petición de Audiencia con el Prefecto. Una vez tu petición sea realizada recibirás un correo electrónico como acuse de recibo. Una vez lo haya revisado la secretaria te enviaremos otro correo, confirmando o denegando la petición. 
+                  </li>
+                  <li>
+                    <%= link_to "Solicitud para Gestión Ambiental", medio_ambiente_path %>:  podrás solicitar a la dirección de Medio Ambiente de plantas autoctonas para reforestación. Aparte de los datos que se piden normalmente verás que tendrás que poner un texto con la planta que solicita y numero de plantas. Una vez tu petición sea realizada recibirás un correo electrónico como acuse de recibo. Una vez lo haya revisado un funcionario del Departamento de Medio Ambiente, estudiará la solicitud y procederá a aceptarla o denegarla. Recibirás un correo electrónico con el resultado.
+                  </li>
+                  <li>
+                    <%= link_to "Actividades de la Casa de la Juventud", juventud_path %>: Aquí puedes ver las actividades realizadas por la Casa de la Juventud así como inscribirte a las mismas. Una vez tu petición sea realizada recibirás un correo electrónico como acuse de recibo. Cuando lo haya revisado el personal administrativo de la Casa de la Juventud te enviaremos otro correo, aceptando o denegando tu petición.
+                  </li>
+                </ul>
+              </p>
+            </div>
+        </section>
+    </div>
+  </div>
+
+</div>

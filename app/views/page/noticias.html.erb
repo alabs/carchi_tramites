@@ -1,0 +1,9 @@
+<%= content_for :title, "Noticias de la Prefectura" %>
+<%= link_to "Volver al Inicio", root_path, class: "btn btn-warning pull-right" %>
+
+<div class="container">
+  <h1><span>Noticias</span> de la Prefectura</h1>
+  <div class="center">
+    <%= render partial: "feed", locals: { entries: @entries, css_class: "col-md-3" } %>
+  </div>
+</div>

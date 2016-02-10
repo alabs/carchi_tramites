@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/audiencia', to: 'page#audiencia'
   get '/juventud', to: 'page#juventud'
   get '/medio-ambiente', to: 'page#medio_ambiente'
+  get '/ayuda', to: 'page#ayuda'
+  get '/noticias', to: 'page#noticias'
 
   get 'solicitar/:event_id', to: 'inscriptions#new', as: "new_inscription"
   resources :inscriptions, path: 'solicitar', only: [:create]
