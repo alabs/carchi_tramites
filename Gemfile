@@ -16,6 +16,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'web-console', '~> 2.0', group: :development   # better error 
 
+group :staging, :production do
+  gem 'airbrake'                                # error tracking / errbit
+end
+
 group :development, :test do
   gem 'byebug'                                  # debugger
   gem 'spring'                                  # speed cache
@@ -44,7 +48,6 @@ gem 'capistrano',  '~> 3.1'                   # deploy
 gem 'capistrano-rails', '~> 1.1'              # deploy
 gem 'capistrano-rvm'                          # deploy
 gem 'capistrano-bundler'                      # deploy
-gem 'airbrake'                                # error tracking / errbit
 gem 'cocoon'                                  # nested models forms
 gem 'formtastic', '~> 3.0'                    # forms helpers
 gem 'flag_shih_tzu'                           # tags
