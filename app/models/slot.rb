@@ -1,3 +1,5 @@
+require 'gcalendarsync'
+
 class Slot < ActiveRecord::Base
 
   validates :dow, :starts_hour, :ends_hour, :time, presence: true
@@ -61,35 +63,10 @@ class Slot < ActiveRecord::Base
   end
 
   def all_hours_gc day_slot
-    # Comprueba conectandose a Google Calendar que fechas encuentra disponible. 
-    # quita del listado de todas las horas disponibles los que ya estén pedidos.
-    cal = Google::Calendar.new(
-      :client_id     => Rails.application.secrets.google_calendar["client_id"],
-      :client_secret => Rails.application.secrets.google_calendar["secret_key"],
-      :calendar      => Rails.application.secrets.google_calendar["calendar_id"],
-      :redirect_url  => "urn:ietf:wg:oauth:2.0:oob"
-    )
-    cal.login_with_refresh_token(Rails.application.secrets.google_calendar["refresh_token"])
-    hours = self.all_hours day_slot
-    start_min = DateTime.parse hours.first.second.to_s
-    start_max = DateTime.parse hours.last.second.to_s
-    events = cal.find_events_in_range(start_min, start_max)
-    dates = events.collect { |e| DateTime.parse(e.start_time)..DateTime.parse(e.end_time) }
-    # FIXME: no deberíamos tener que revisarlo varias veces para que borre, pero sino solo borra algunos
-    hours = process_date dates, hours
-    hours = process_date dates, hours
-    hours = process_date dates, hours
-    hours = process_date dates, hours
-    hours = process_date dates, hours
-    hours = process_date dates, hours
-    hours = process_date dates, hours
-    hours
-  end
-
-  def process_date dates, hours
-    hours.each do |hour|
-      dates.each { |date| hours.delete(hour) if date.cover? hour.second }
-    end
+    # response should be an array of available dates
+    # [["08:00", Tue, 23 Feb 2016 08:00:00 PET -05:00], ["08:30", Tue, 23 Feb 2016 08:30:00 PET -05:00], ["09:00", Tue, 23 Feb 2016 09:00:00 PET -05:00], ["09:30", Tue, 23 Feb 2016 09:30:00 PET -05:00], ["10:00", Tue, 23 Feb 2016 10:00:00 PET -05:00], ["10:30", Tue, 23 Feb 2016 10:30:00 PET -05:00], ["11:00", Tue, 23 Feb 2016 11:00:00 PET -05:00], ["11:30", Tue, 23 Feb 2016 11:30:00 PET -05:00], ["12:00", Tue, 23 Feb 2016 12:00:00 PET -05:00], ["12:30", Tue, 23 Feb 2016 12:30:00 PET -05:00], ["13:00", Tue, 23 Feb 2016 13:00:00 PET -05:00], ["13:30", Tue, 23 Feb 2016 13:30:00 PET -05:00], ["14:00", Tue, 23 Feb 2016 14:00:00 PET -05:00], ["14:30", Tue, 23 Feb 2016 14:30:00 PET -05:00], ["15:00", Tue, 23 Feb 2016 15:00:00 PET -05:00], ["15:30", Tue, 23 Feb 2016 15:30:00 PET -05:00]]
+    gc = GCalendarSync.new
+    hours = gc.cached_call(self, day_slot)
   end
 
 end

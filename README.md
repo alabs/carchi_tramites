@@ -88,4 +88,10 @@ Por último para conseguir el valor del refresh_token debemos dar los permisos n
 rake carchi:google_calendar:refresh_token     # [carchi] Consigue el refresh_token inicial
 ```
 
+Se ha hecho una tarea rake para poner en crontab con el fin de que la web no tenga retrasos para comprobar los slots disponibles en el Google Calendar, ya que generaba errores en el servidor. 
+
+```
+rake carchi:google_calendar:cache_slots
+```
+
 Más instrucciones y documentación de la librería: https://github.com/northworld/google_calendar
