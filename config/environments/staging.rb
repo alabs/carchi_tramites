@@ -82,5 +82,5 @@ Rails.application.configure do
       enable_starttls_auto: false
   }
 
-  config.action_mailer.default_url_options = { :host => 'tramites.alabs.org' }
+  config.action_mailer.default_url_options = { :host => 'beta.atencionciudadana.carchi.gob.ec' }
 end
