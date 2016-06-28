@@ -1,6 +1,6 @@
-<div class="row-fluid js-grid">
+<div class="row-fluid">
   <% entries.each do |entry| %>
-    <div class="js-grid-item col-sm-6 <%= css_class %>">
+    <div class="col-sm-6 <%= css_class %>" style="height: 600px;">
       <div class="thumbnail">
         <% if defined? entry.image %>
           <%= link_to entry.url do %>
