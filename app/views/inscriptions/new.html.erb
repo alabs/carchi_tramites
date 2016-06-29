@@ -26,16 +26,4 @@
       <%= image_tag "audiencia_prefecto.jpg", class: "audiencia_photo" %>
       <%= image_tag "audiencia_viceprefecta.jpg", class: "audiencia_photo" %>
   <% end %>
-
-  <% if @event.ttype_class == "actividad" %>
-    <div class="well">
-      <%= link_to "Ver noticias de la Casa de la Juventud", "https://gobiernoabierto.carchi.gob.ec/es/areas/7/news", class: "btn btn-primary" %>
-    </div>
-  <% end %>
-
-  <% if @event.ttype_class == "plantas" %>
-    <div class="well" style="margin-top: 50px;">
-      <%= link_to "Ver noticias de la Casa de la Juventud", "https://gobiernoabierto.carchi.gob.ec/es/areas/7/news", class: "btn btn-primary", target: "_blank" %>
-    </div>
-  <% end %>
 </div>
