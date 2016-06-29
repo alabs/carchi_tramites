@@ -17,7 +17,7 @@ class PageController < ApplicationController
   def juventud
     url = "https://gobiernoabierto.carchi.gob.ec/es/areas/7/news.rss"
     feed = Feedjira::Feed.fetch_and_parse url
-    @entries = feed.entries
+    @entries = feed.entries[0..1] # only 2 posts from RSS
     @events = Event.type_activities
   end
 
