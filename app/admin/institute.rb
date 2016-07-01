@@ -41,7 +41,7 @@ ActiveAdmin.register Institute do
       f.input :parroquia
       f.input :canton
       f.input :provincia
-      f.input :foundated_at
+      f.input :foundated_at, start_year: 1900
       f.input :ttype, as: :select, collection: Institute::TYPE.to_a
       f.input :students_number
     end

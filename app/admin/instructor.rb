@@ -34,7 +34,7 @@ ActiveAdmin.register Instructor do
     f.inputs "Instructor" do
       f.input :document_id
       f.input :full_name
-      f.input :born_at
+      f.input :born_at, start_year: 1900
       f.input :sex, as: :select, collection: Inscription::SEX.to_a
       f.input :event
       f.input :title
