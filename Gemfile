@@ -39,7 +39,7 @@ end
 
 gem 'activeadmin', '~> 1.0.0.pre1'            # admin
 gem 'active_skin'                             # admin css
-gem 'activeadmin-axlsx', github: 'ybart/activeadmin-axlsx'
+gem 'activeadmin-xls', github: 'thambley/activeadmin-xls'                         # admin xlsx export
 gem 'ckeditor'                                # admin wysiwyg
 gem 'devise'                                  # users
 gem 'cancancan', '~> 1.10'                    # users permissions
