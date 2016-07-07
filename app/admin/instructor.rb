@@ -1,5 +1,7 @@
 ActiveAdmin.register Instructor do
 
+  #config.xls_builder.i18n_scope = [:activerecord, :attributes, :inscription]
+
   menu parent: "Departamento: Casa de la Juventud"
 
   permit_params :document_id, :full_name, :born_at, :event_id, :title, :phone, :phone_home, :address, :sex

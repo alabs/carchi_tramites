@@ -1,5 +1,7 @@
 ActiveAdmin.register Event do
 
+  #config.xls_builder.i18n_scope = [:activerecord, :attributes, :inscription]
+
   menu parent: "Administración"
 
   permit_params :title, :slug, :description, :admin_email, :ttype, :limit, :starts_at, :ends_at, :price

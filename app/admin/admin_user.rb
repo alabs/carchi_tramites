@@ -10,6 +10,8 @@ end
 
 ActiveAdmin.register AdminUser do
 
+  #config.xls_builder.i18n_scope = [:activerecord, :attributes, :inscription]
+
   menu parent: "Administración"
 
   permit_params :email, :password, :password_confirmation, roles_array: []

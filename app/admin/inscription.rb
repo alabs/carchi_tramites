@@ -1,7 +1,6 @@
 ActiveAdmin.register Inscription do
 
-  # xlsx
-  config.xlsx_builder.i18n_scope = [:activerecord, :attributes, :inscription]
+  config.xls_builder.i18n_scope = [:activerecord, :attributes, :inscription]
 
   # Deshabilita el enlace de Añadir inscripcion
   # En nuestro caso seran tres enlaces a los distintos tipos de peticiones 

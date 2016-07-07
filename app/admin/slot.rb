@@ -1,5 +1,7 @@
 ActiveAdmin.register Slot do
 
+  #config.xls_builder.i18n_scope = [:activerecord, :attributes, :inscription]
+
   menu parent: "Departamento: Prefectura"
 
   permit_params :dow, :starts_hour, :ends_hour, :time

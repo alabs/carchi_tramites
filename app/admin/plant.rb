@@ -1,5 +1,7 @@
 ActiveAdmin.register Plant do
 
+  #config.xls_builder.i18n_scope = [:activerecord, :attributes, :inscription]
+
   menu parent: "Departamento: Gestión Ambiental"
 
   permit_params :name, :active
